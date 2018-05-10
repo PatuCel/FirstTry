@@ -293,8 +293,9 @@ bool GLViewImpl::initWithRect(const std::string& viewName, Rect rect, float fram
     int neededHeight = rect.size.height * _frameZoomFactor;
 
     _mainWindow = glfwCreateWindow(neededWidth, neededHeight, _viewName.c_str(), _monitor, nullptr);
-
-    if (_mainWindow == nullptr)
+	glfwSetWindowPos(_mainWindow, rect.origin.x, rect.origin.y); //Antonio.Luna: Setting Windows Position Based on "rect.origin"
+	
+	if (_mainWindow == nullptr)
     {
         std::string message = "Can't create window";
         if (!_glfwError.empty())

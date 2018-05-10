@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "Scenes/GameplayScene.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -58,8 +58,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("FirstTry", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+		HDC hScreenDC = GetDC(nullptr);
+		int initPosX = (GetDeviceCaps(hScreenDC, HORZRES)/2) - designResolutionSize.width/2;
+		int initPosY = (GetDeviceCaps(hScreenDC, VERTRES)/2) - designResolutionSize.height/2;
+        glview = GLViewImpl::createWithRect("FirstTry", cocos2d::Rect(initPosX, initPosY, designResolutionSize.width, designResolutionSize.height));
 #else
         glview = GLViewImpl::create("FirstTry");
 #endif
@@ -94,7 +97,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = GameplayScene::createScene();
 
     // run
     director->runWithScene(scene);
