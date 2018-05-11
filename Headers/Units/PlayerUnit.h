@@ -9,7 +9,7 @@ USING_NS_CC;
 class PlayerUnit: public BaseUnit
 {
 public:
-	static PlayerUnit* createPlayer(const std::string filePath, int state, Vec2 pos);
+	static PlayerUnit* createPlayer(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon);
 
 };
 

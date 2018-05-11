@@ -1,6 +1,6 @@
 #include "Units/PlayerUnit.h"
 
-PlayerUnit* PlayerUnit::createPlayer(const std::string filePath, int state, Vec2 pos)
+PlayerUnit* PlayerUnit::createPlayer(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon)
 {
-	return (PlayerUnit*) createUnit(filePath, state, pos);
+	return (PlayerUnit*) createUnit(filePath, pos, state, weapon);
 }

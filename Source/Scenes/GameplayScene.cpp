@@ -55,7 +55,7 @@ bool GameplayScene::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-	PlayerUnit* testPlayer = PlayerUnit::createPlayer("player.png", 0, Vec2(300, 300));
+	PlayerUnit* testPlayer = PlayerUnit::createPlayer("player.png", Vec2(300, 300), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(testPlayer, 2);
 
     return true;
