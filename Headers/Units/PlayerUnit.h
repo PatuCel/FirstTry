@@ -6,8 +6,7 @@
 class PlayerUnit: public BaseUnit
 {
 public:
-	PlayerUnit(const std::string filePath);
-	~PlayerUnit();
+	static PlayerUnit* createPlayer(const std::string filePath, int state, cocos2d::Vec2 pos);
 
 };
 

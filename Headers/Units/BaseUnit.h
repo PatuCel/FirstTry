@@ -3,10 +3,10 @@
 
 #include "cocos2d.h"
 
-class BaseUnit : cocos2d::Sprite
+class BaseUnit : public cocos2d::Sprite
 {
 public:
-	static BaseUnit* create(const std::string filePath);
+	static BaseUnit* createUnit(const std::string filePath, int state, cocos2d::Vec2 pos);
 };
 
 #endif // _BASE_UNIT_H_

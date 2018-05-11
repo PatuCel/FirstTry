@@ -1,11 +1,6 @@
 #include "Units/PlayerUnit.h"
 
-PlayerUnit::PlayerUnit(const std::string filePath)
+PlayerUnit* PlayerUnit::createPlayer(const std::string filePath, int state, cocos2d::Vec2 pos)
 {
-	create(filePath);
-}
-
-PlayerUnit::~PlayerUnit()
-{
-
+	return (PlayerUnit*) createUnit(filePath, state, pos);
 }

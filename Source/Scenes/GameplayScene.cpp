@@ -1,6 +1,8 @@
 #include "Scenes/GameplayScene.h"
 #include "SimpleAudioEngine.h"
 
+#include "Units/PlayerUnit.h"
+
 USING_NS_CC;
 
 Scene* GameplayScene::createScene()
@@ -55,6 +57,9 @@ bool GameplayScene::init()
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
+
+	PlayerUnit* testPlayer = PlayerUnit::createPlayer("player.png", 0, cocos2d::Vec2(300, 300));
+	this->addChild(testPlayer, 2);
 
     return true;
 }
