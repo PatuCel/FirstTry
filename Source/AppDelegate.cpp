@@ -20,7 +20,7 @@ using namespace CocosDenshion;
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_Y);
+static cocos2d::Size designResolutionSize = cocos2d::Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
 
 AppDelegate::AppDelegate()
 {
