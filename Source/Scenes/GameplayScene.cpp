@@ -1,6 +1,6 @@
-#include "Scenes/GameplayScene.h"
+#include "../../Headers/Scenes/GameplayScene.h"
 #include "SimpleAudioEngine.h"
-#include "Units/PlayerUnit.h"
+#include "../../Headers/Units/PlayerUnit.h"
 
 USING_NS_CC;
 

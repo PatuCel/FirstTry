@@ -13,6 +13,18 @@
     <Filter Include="Source\Units">
       <UniqueIdentifier>{78c32cc2-9000-4ef2-90c1-bdb10fe8979d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{346198b6-f819-435f-b12c-5678ebe5249b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Managers">
+      <UniqueIdentifier>{3c84d835-0ee8-498b-a2b9-73bd0c518b37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Units">
+      <UniqueIdentifier>{8ace3f19-cf3b-4b7a-ace5-8cad0a1f02f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Scenes">
+      <UniqueIdentifier>{e88785c1-22bb-4e32-a183-c361a9e356b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\AppDelegate.cpp">
@@ -38,26 +50,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\AppDelegate.h">
-      <Filter>Source</Filter>
+    <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
+      <Filter>Headers\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Main.h">
-      <Filter>Source</Filter>
+    <ClInclude Include="..\..\Headers\Scenes\GameplayScene.h">
+      <Filter>Headers\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Scenes\GameplayScene.h">
-      <Filter>Source\Scenes</Filter>
+    <ClInclude Include="..\..\Headers\Scenes\LogoScene.h">
+      <Filter>Headers\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Scenes\LogoScene.h">
-      <Filter>Source\Scenes</Filter>
+    <ClInclude Include="..\..\Headers\Units\BaseUnit.h">
+      <Filter>Headers\Units</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Managers\SceneManager.h">
-      <Filter>Source\Managers</Filter>
+    <ClInclude Include="..\..\Headers\Units\PlayerUnit.h">
+      <Filter>Headers\Units</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Units\BaseUnit.h">
-      <Filter>Source\Units</Filter>
+    <ClInclude Include="..\..\Headers\AppDelegate.h">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Units\PlayerUnit.h">
-      <Filter>Source\Units</Filter>
+    <ClInclude Include="..\..\Headers\Main.h">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
