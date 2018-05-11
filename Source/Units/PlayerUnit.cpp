@@ -1,8 +1,8 @@
-#include "../../Headers/Units/PlayerUnit.h"
+#include "Units/PlayerUnit.h"
 
-PlayerUnit::PlayerUnit(std::string spritePath, int posX, int posY)
+PlayerUnit::PlayerUnit(const std::string filePath)
 {
-	init(spritePath, posX, posY);
+	create(filePath);
 }
 
 PlayerUnit::~PlayerUnit()

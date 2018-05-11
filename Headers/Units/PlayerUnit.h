@@ -1,12 +1,12 @@
 #ifndef  _PLAYER_UNIT_H_
 #define  _PLAYER_UNIT_H_
 
-#include "../../Headers/Units/BaseUnit.h"
+#include "Units/BaseUnit.h"
 
 class PlayerUnit: public BaseUnit
 {
 public:
-	PlayerUnit(std::string spritePath, int posX, int posY);
+	PlayerUnit(const std::string filePath);
 	~PlayerUnit();
 
 };

@@ -1,6 +1,6 @@
-#include "../Headers/AppDelegate.h"
-#include "../Headers/Scenes/GameplayScene.h"
-#include "../Headers/Managers/SceneManager.h"
+#include "AppDelegate.h"
+#include "Scenes/GameplayScene.h"
+#include "Managers/SceneManager.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
