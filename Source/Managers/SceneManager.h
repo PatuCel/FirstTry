@@ -1,5 +1,5 @@
-#ifndef __SCENEMANAGER_H__
-#define __SCENEMANAGER_H__
+#ifndef __SCENE_MANAGER_H__
+#define __SCENE_MANAGER_H__
 
 #include "cocos2d.h"
 
@@ -47,4 +47,4 @@ private:
 	static SceneManager* mSceneManager;
 };
 
-#endif // __SCENEMANAGER_H__
+#endif // __SCENE_MANAGER_H__

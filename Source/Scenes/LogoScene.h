@@ -1,5 +1,5 @@
-#ifndef __LOGOSCENE_H__
-#define __LOGOSCENE_H__
+#ifndef __LOGO_SCENE_H__
+#define __LOGO_SCENE_H__
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h" //Button Widgets,Labels etc
@@ -24,4 +24,4 @@ public:
 	void nextScene(float);
 };
 
-#endif // __GS_LOGO_H__
+#endif // __LOGO_SCENE_H__

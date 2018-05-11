@@ -1,6 +1,6 @@
 #include "SceneManager.h"
-#include "..\Scenes\LogoScene.h"
-#include "..\Scenes\GameplayScene.h"
+#include "Scenes/LogoScene.h"
+#include "Scenes/GameplayScene.h"
 
 
 USING_NS_CC;

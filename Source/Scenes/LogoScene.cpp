@@ -1,8 +1,9 @@
 #include "LogoScene.h"
-#include "..\Managers\SceneManager.h"
-using namespace cocos2d::ui; //use for Button, Scrollview,Label,Panel etc.
+#include "Managers/SceneManager.h"
+
 USING_NS_CC;
 
+using namespace cocos2d::ui; //use for Button, Scrollview,Label,Panel etc.
 using namespace cocostudio::timeline;
 
 Scene* LogoScene::createScene()
