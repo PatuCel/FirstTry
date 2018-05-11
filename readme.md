@@ -14,3 +14,4 @@ Lorem
 ## DOCUMENTATION
 
 * [Cocos2dx](http://www.cocos2d-x.org/docs/cocos2d-x/en/index.html)
+* [Cocos2dx Api](http://www.cocos2d-x.org/docs/api-ref/cplusplus/v3x/)
