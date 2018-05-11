@@ -10,3 +10,7 @@ Lorem
 
 ## OPTIONAL TOOLS
 * [githubDesktop](https://desktop.github.com/) - Github tool 
+
+## DOCUMENTATION
+
+* [Cocos2dx](http://www.cocos2d-x.org/docs/cocos2d-x/en/index.html)
