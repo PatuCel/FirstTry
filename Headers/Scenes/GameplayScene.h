@@ -2,16 +2,17 @@
 #define __GAMEPLAY_SCENE_H__
 
 #include "cocos2d.h"
+USING_NS_CC;
 
-class GameplayScene : public cocos2d::Scene
+class GameplayScene : public Scene
 {
 public:
-    static cocos2d::Scene* createScene();
+    static Scene* createScene();
 
     virtual bool init();
     
     // a selector callback
-    void menuCloseCallback(cocos2d::Ref* pSender);
+    void menuCloseCallback(Ref* pSender);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);

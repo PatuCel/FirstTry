@@ -1,8 +1,6 @@
 #include "Units/BaseUnit.h"
 
-USING_NS_CC;
-
-BaseUnit* BaseUnit::createUnit(const std::string filePath, int state, cocos2d::Vec2 pos)
+BaseUnit* BaseUnit::createUnit(const std::string filePath, int state, Vec2 pos)
 {
 	BaseUnit* baseUnit = new (std::nothrow) BaseUnit();
 

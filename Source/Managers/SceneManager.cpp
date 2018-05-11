@@ -2,9 +2,6 @@
 #include "Scenes/LogoScene.h"
 #include "Scenes/GameplayScene.h"
 
-
-USING_NS_CC;
-
 SceneManager* SceneManager::mSceneManager = NULL;
 SceneManager::SceneManager()
 {

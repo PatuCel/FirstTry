@@ -3,10 +3,13 @@
 
 #include "Units/BaseUnit.h"
 
+#include "cocos2d.h"
+USING_NS_CC;
+
 class PlayerUnit: public BaseUnit
 {
 public:
-	static PlayerUnit* createPlayer(const std::string filePath, int state, cocos2d::Vec2 pos);
+	static PlayerUnit* createPlayer(const std::string filePath, int state, Vec2 pos);
 
 };
 
