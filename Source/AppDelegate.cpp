@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "Scenes/GameplayScene.h"
+#include "Managers\SceneManager.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -96,12 +97,18 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
+	//Init All Managers
+	SceneManager::getInstance();
+
+	SceneManager::getInstance()->changeScene(SceneManager::LOGO_SCENE, true);//new for calling Scenes
+
+	/*
     // create a scene. it's an autorelease object
     auto scene = GameplayScene::createScene();
 
     // run
     director->runWithScene(scene);
-
+	*/
     return true;
 }
 

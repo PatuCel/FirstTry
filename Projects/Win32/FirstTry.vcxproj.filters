@@ -7,6 +7,9 @@
     <Filter Include="Source\Scenes">
       <UniqueIdentifier>{92f8d277-34ed-44ce-969d-6570ad49e077}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Managers">
+      <UniqueIdentifier>{30215d51-ca3b-4cdb-b352-43c5742896b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\AppDelegate.cpp">
@@ -18,6 +21,12 @@
     <ClCompile Include="..\..\Source\Scenes\GameplayScene.cpp">
       <Filter>Source\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Scenes\LogoScene.cpp">
+      <Filter>Source\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\SceneManager.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\AppDelegate.h">
@@ -28,6 +37,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Scenes\GameplayScene.h">
       <Filter>Source\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Scenes\LogoScene.h">
+      <Filter>Source\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Managers\SceneManager.h">
+      <Filter>Source\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
