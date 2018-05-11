@@ -1,5 +1,5 @@
-#include "../../Headers/Scenes/LogoScene.h"
-#include "../../Headers/Managers/SceneManager.h"
+#include "Scenes/LogoScene.h"
+#include "Managers/SceneManager.h"
 
 USING_NS_CC;
 

@@ -3,15 +3,10 @@
 
 #include "cocos2d.h"
 
-class BaseUnit
+class BaseUnit : cocos2d::Sprite
 {
 public:
-	int m_unitPosX;
-	int m_unitPosY;
-	cocos2d::Sprite* m_unitSprite;
-
-	bool init(std::string spritePath, int posX, int posY);
-	cocos2d::Sprite* getSprite();
+	static BaseUnit* create(const std::string filePath);
 };
 
 #endif // _BASE_UNIT_H_

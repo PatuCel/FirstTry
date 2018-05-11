@@ -1,5 +1,5 @@
-#include "../Headers/main.h"
-#include "../Headers/AppDelegate.h"
+#include "main.h"
+#include "AppDelegate.h"
 #include "cocos2d.h"
 
 USING_NS_CC;

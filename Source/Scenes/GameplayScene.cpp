@@ -1,6 +1,5 @@
-#include "../../Headers/Scenes/GameplayScene.h"
+#include "Scenes/GameplayScene.h"
 #include "SimpleAudioEngine.h"
-#include "../../Headers/Units/PlayerUnit.h"
 
 USING_NS_CC;
 
@@ -56,11 +55,6 @@ bool GameplayScene::init()
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
-
-    /////////////////////////////
-    // 3. add your codes below...
-	PlayerUnit* myPlayer = new PlayerUnit("player.png", (visibleSize.width/2 + origin.x), (visibleSize.height/2 + origin.y));
-	this->addChild(myPlayer->getSprite(), 0);
 
     return true;
 }
