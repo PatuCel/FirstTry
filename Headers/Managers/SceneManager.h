@@ -2,9 +2,9 @@
 #define __SCENE_MANAGER_H__
 
 #include "cocos2d.h"
+USING_NS_CC;
 
-
-class SceneManager :public cocos2d::Ref
+class SceneManager :public Ref
 {
 public:
 	SceneManager();

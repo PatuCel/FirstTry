@@ -10,4 +10,7 @@
 // C RunTime Header Files
 #include "platform/CCStdC.h"
 
+#include "cocos2d.h"
+USING_NS_CC;
+
 #endif    // __MAIN_H__

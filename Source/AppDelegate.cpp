@@ -1,4 +1,5 @@
 #include "AppDelegate.h"
+#include "Globals.h"
 #include "Scenes/GameplayScene.h"
 #include "Managers/SceneManager.h"
 
@@ -11,15 +12,13 @@
 
 #if USE_AUDIO_ENGINE
 #include "audio/include/AudioEngine.h"
-using namespace cocos2d::experimental;
+using namespace experimental;
 #elif USE_SIMPLE_AUDIO_ENGINE
 #include "audio/include/SimpleAudioEngine.h"
 using namespace CocosDenshion;
 #endif
 
-USING_NS_CC;
-
-static cocos2d::Size designResolutionSize = cocos2d::Size(640, 960);
+static Size designResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
 
 AppDelegate::AppDelegate()
 {
@@ -60,7 +59,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		HDC hScreenDC = GetDC(nullptr);
 		int initPosX = (GetDeviceCaps(hScreenDC, HORZRES)/2) - designResolutionSize.width/2;
 		int initPosY = (GetDeviceCaps(hScreenDC, VERTRES)/2) - designResolutionSize.height/2;
-        glview = GLViewImpl::createWithRect("FirstTry", cocos2d::Rect(initPosX, initPosY, designResolutionSize.width, designResolutionSize.height));
+        glview = GLViewImpl::createWithRect("FirstTry", Rect(initPosX, initPosY, designResolutionSize.width, designResolutionSize.height));
 #else
         glview = GLViewImpl::create("FirstTry");
 #endif
