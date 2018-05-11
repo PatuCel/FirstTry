@@ -1,4 +1,5 @@
 #include "AppDelegate.h"
+#include "Globals.h"
 #include "Scenes/GameplayScene.h"
 #include "Managers/SceneManager.h"
 
@@ -19,7 +20,7 @@ using namespace CocosDenshion;
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(640, 960);
+static cocos2d::Size designResolutionSize = cocos2d::Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_Y);
 
 AppDelegate::AppDelegate()
 {

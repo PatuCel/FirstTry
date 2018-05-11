@@ -173,6 +173,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\AppDelegate.h" />
+    <ClInclude Include="..\..\Headers\Globals.h" />
     <ClInclude Include="..\..\Headers\Main.h" />
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h" />
     <ClInclude Include="..\..\Headers\Scenes\GameplayScene.h" />
