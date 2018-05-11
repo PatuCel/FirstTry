@@ -10,6 +10,9 @@
     <Filter Include="Source\Managers">
       <UniqueIdentifier>{30215d51-ca3b-4cdb-b352-43c5742896b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Units">
+      <UniqueIdentifier>{78c32cc2-9000-4ef2-90c1-bdb10fe8979d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\AppDelegate.cpp">
@@ -27,6 +30,12 @@
     <ClCompile Include="..\..\Source\Managers\SceneManager.cpp">
       <Filter>Source\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Units\BaseUnit.cpp">
+      <Filter>Source\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Units\PlayerUnit.cpp">
+      <Filter>Source\Units</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\AppDelegate.h">
@@ -43,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Managers\SceneManager.h">
       <Filter>Source\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Units\BaseUnit.h">
+      <Filter>Source\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Units\PlayerUnit.h">
+      <Filter>Source\Units</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

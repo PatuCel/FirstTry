@@ -1,5 +1,6 @@
 #include "Scenes/GameplayScene.h"
 #include "SimpleAudioEngine.h"
+#include "Units/PlayerUnit.h"
 
 USING_NS_CC;
 
@@ -20,7 +21,7 @@ bool GameplayScene::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Scene::init() )
+    if(!Scene::init() )
     {
         return false;
     }
@@ -58,39 +59,9 @@ bool GameplayScene::init()
 
     /////////////////////////////
     // 3. add your codes below...
+	PlayerUnit* myPlayer = new PlayerUnit("player.png", (visibleSize.width/2 + origin.x), (visibleSize.height/2 + origin.y));
+	this->addChild(myPlayer->getSprite(), 0);
 
-    // add a label shows "Hello World"
-    // create and initialize a label
-
-    auto label = Label::createWithTTF("Hello World", "fonts/arial.ttf", 24);
-    if (label == nullptr)
-    {
-        problemLoading("'fonts/arial.ttf'");
-    }
-    else
-    {
-        // position the label on the center of the screen
-        label->setPosition(Vec2(origin.x + visibleSize.width/2,
-                                origin.y + visibleSize.height - label->getContentSize().height));
-
-        // add the label as a child to this layer
-        this->addChild(label, 1);
-    }
-
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-    if (sprite == nullptr)
-    {
-        problemLoading("'HelloWorld.png'");
-    }
-    else
-    {
-        // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-        // add the sprite as a child to this layer
-        this->addChild(sprite, 0);
-    }
     return true;
 }
 
