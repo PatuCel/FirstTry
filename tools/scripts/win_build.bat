@@ -1,15 +1,9 @@
 @echo off
 
 call common_config.bat
-set REBUILD=""
-
-if "%1%" == "clean" (
-	set REBUILD="/t:Rebuild"
-)
-echo %VS150COMONTOOLS%
 
 call "%VS150COMONTOOLS%VsDevCmd.bat"
-msbuild /maxcpucount %REBUILD% /verbosity:minimal /p:Configuration=Debug %SLN_PATH%
+msbuild /maxcpucount /verbosity:minimal /p:Configuration=%MODE% %SLN_PATH%
 
 echo.
 if %ERRORLEVEL% EQU 0 (
