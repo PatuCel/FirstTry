@@ -1,7 +1,7 @@
 # Project Title
 Lorem
 
-### Prerequisites
+### PREREQUISITES
 
 * [Visual2017](https://www.visualstudio.com/es/free-developer-offers/) - Visual Studio Community
 ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/Visual2017.png)
@@ -15,3 +15,7 @@ Lorem
 
 * [Cocos2dx](http://www.cocos2d-x.org/docs/cocos2d-x/en/index.html)
 * [Cocos2dx Api](http://www.cocos2d-x.org/docs/api-ref/cplusplus/v3x/)
+
+## FREE ASSETS
+
+ *[OpenGameArt](https://opengameart.org/)
