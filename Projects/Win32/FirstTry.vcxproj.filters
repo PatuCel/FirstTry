@@ -48,6 +48,7 @@
     <ClCompile Include="..\..\Source\Units\PlayerUnit.cpp">
       <Filter>Source\Units</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
@@ -73,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Globals.h">
       <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\ResourceManager.h">
+      <Filter>Headers\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
