@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "Globals.h"
 #include "Scenes/GameplayScene.h"
+#include "Scenes/MainMenuScene.h"
 #include "Managers/SceneManager.h"
 
 // #define USE_AUDIO_ENGINE 1
@@ -19,6 +20,9 @@ using namespace CocosDenshion;
 #endif
 
 static Size designResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
+static Size smallResolutionSize = Size(512, 384);
+static Size mediumResolutionSize = Size(1024, 768);
+static Size largeResolutionSize = Size(2048, 1536);
 
 AppDelegate::AppDelegate()
 {
@@ -55,7 +59,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
 		HDC hScreenDC = GetDC(nullptr);
 		int initPosX = (GetDeviceCaps(hScreenDC, HORZRES)/2) - designResolutionSize.width/2;
 		int initPosY = (GetDeviceCaps(hScreenDC, VERTRES)/2) - designResolutionSize.height/2;
@@ -75,7 +79,29 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // Set the design resolution
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
 
-    register_all_packages();
+	std::vector<std::string> searchPaths;
+	float scaleFactor = 1.0f;
+	Size frameSize = glview->getFrameSize();
+
+	if (frameSize.height > mediumResolutionSize.height)
+	{
+		searchPaths.push_back("res/HDR");
+		scaleFactor = largeResolutionSize.height / designResolutionSize.height;
+	}
+	else if (frameSize.height > smallResolutionSize.height)
+	{
+		searchPaths.push_back("res/HD");
+		scaleFactor = mediumResolutionSize.height / designResolutionSize.height;
+	}
+	else
+	{
+		searchPaths.push_back("res/SD");
+		scaleFactor = smallResolutionSize.height / designResolutionSize.height;
+	}
+
+	director->setContentScaleFactor(scaleFactor);
+	FileUtils::getInstance()->setSearchPaths(searchPaths);
+	register_all_packages();
 
 	//Init All Managers
 	SceneManager::getInstance();

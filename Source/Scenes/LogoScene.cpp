@@ -46,7 +46,7 @@ void LogoScene::initGUI(){
 void LogoScene::nextScene(float dt)
 {
 	this->removeAllChildren();
-	SceneManager::getInstance()->changeScene(SceneManager::GAMEPLAY_SCENE, true);	
+	SceneManager::getInstance()->changeScene(SceneManager::MAINMENU_SCENE, true);	
 }
 
 void LogoScene::onEnter() //Every time you Enter on this scene after push, replace, pop will be enter here

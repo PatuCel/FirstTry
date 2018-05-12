@@ -1,6 +1,7 @@
 #include "Managers/SceneManager.h"
 #include "Scenes/LogoScene.h"
 #include "Scenes/GameplayScene.h"
+#include "Scenes/MainMenuScene.h"
 
 SceneManager* SceneManager::mSceneManager = NULL;
 SceneManager::SceneManager()
@@ -39,13 +40,16 @@ bool SceneManager::init()
 void SceneManager::changeScene(EnumSceneType SceneType, bool replace){
 	
 	Scene* pScene = NULL;
-	switch (SceneType){
-		case LOGO_SCENE:
-			pScene = LogoScene::createScene();
+	switch (SceneType) {
+	case LOGO_SCENE:
+		pScene = LogoScene::createScene();
 		break;
-		case GAMEPLAY_SCENE:
-			pScene = GameplayScene::createScene();
-			break;
+	case GAMEPLAY_SCENE:
+		pScene = GameplayScene::createScene();
+		break;
+	case MAINMENU_SCENE:
+		pScene = MainMenuScene::createScene();
+		break;
 	}
 	if (pScene == NULL)
 		return;
