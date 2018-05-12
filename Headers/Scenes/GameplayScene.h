@@ -1,5 +1,4 @@
-#ifndef __GAMEPLAY_SCENE_H__
-#define __GAMEPLAY_SCENE_H__
+#pragma once
 
 #include "cocos2d.h"
 USING_NS_CC;
@@ -17,5 +16,3 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
 };
-
-#endif // __GAMEPLAY_SCENE_H__

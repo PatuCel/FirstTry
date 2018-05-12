@@ -1,5 +1,4 @@
-#ifndef __LOGO_SCENE_H__
-#define __LOGO_SCENE_H__
+#pragma once
 
 #include "ui/CocosGUI.h" //Button Widgets,Labels etc
 #include "cocostudio/CocoStudio.h" //CCLoader 
@@ -26,4 +25,3 @@ public:
 	void nextScene(float);
 };
 
-#endif // __LOGO_SCENE_H__

@@ -1,5 +1,4 @@
-#ifndef __SCENE_MANAGER_H__
-#define __SCENE_MANAGER_H__
+#pragma once
 
 #include "cocos2d.h"
 USING_NS_CC;
@@ -46,5 +45,3 @@ public:
 private:
 	static SceneManager* mSceneManager;
 };
-
-#endif // __SCENE_MANAGER_H__

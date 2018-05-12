@@ -1,6 +1,4 @@
-#ifndef  _BASE_UNIT_H_
-#define  _BASE_UNIT_H_
-
+#pragma once
 #include "cocos2d.h"
 USING_NS_CC;
 
@@ -28,5 +26,3 @@ public:
 	void setUnitState(UnitState newState);
 	void setUnitWeapon(UnitWeapon newWeapon);
 };
-
-#endif // _BASE_UNIT_H_
