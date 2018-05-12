@@ -1,5 +1,4 @@
-#ifndef __RESOURCE_MANAGER_H__
-#define __RESOURCE_MANAGER_H__
+#pragma once
 
 #include "cocos2d.h"
 #include "2d/CCSpriteFrameCache.h"
@@ -20,4 +19,3 @@ public:
 private:
 	static ResourceManager* mResourceManager;
 };
-#endif
