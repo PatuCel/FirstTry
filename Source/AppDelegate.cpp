@@ -19,10 +19,13 @@ using namespace experimental;
 using namespace CocosDenshion;
 #endif
 
-static Size designResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
-static Size smallResolutionSize = Size(512, 384);
-static Size mediumResolutionSize = Size(1024, 768);
-static Size largeResolutionSize = Size(2048, 1536);
+static Size smallResolutionSize = Size(SCREEN_RESOLUTION_W / 2, SCREEN_RESOLUTION_H / 2);
+static Size mediumResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
+static Size largeResolutionSize = Size(SCREEN_RESOLUTION_W * 2, SCREEN_RESOLUTION_H * 2);
+
+//target resolution
+static cocos2d::Size designResolutionSize = mediumResolutionSize;
+
 
 AppDelegate::AppDelegate()
 {
