@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>background.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{1280,1920}</string>
+                <key>spriteSourceSize</key>
+                <string>{1280,1920}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{1280,1920}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>1280 1920 0 1920 0 0 1280 0</string>
+                <key>verticesUV</key>
+                <string>1281 1921 1 1921 1 1 1281 1</string>
+            </dict>
+            <key>player.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{256,254}</string>
+                <key>spriteSourceSize</key>
+                <string>{256,254}</string>
+                <key>textureRect</key>
+                <string>{{1283,1},{256,254}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 13 14 0 12 13 7 10 11 9 7 8 9 10 7 1 6 11 6 7 11 3 4 5 3 5 6 2 3 6 1 2 6 12 0 1 12 1 11</string>
+                <key>vertices</key>
+                <string>165 58 166 113 207 138 230 177 256 193 256 217 142 254 114 254 0 217 0 195 49 138 91 116 91 71 120 0 136 0</string>
+                <key>verticesUV</key>
+                <string>1448 59 1449 114 1490 139 1513 178 1539 194 1539 218 1425 255 1397 255 1283 218 1283 196 1332 139 1374 117 1374 72 1403 1 1419 1</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>tp_level_01.png</string>
+            <key>size</key>
+            <string>{1540,1922}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:1479bd312a7f384f733a4d5f2d87596a:09f7c8d2a0961b3a0a9961487d3bfb41:946fd814ca4086f5263ee77933525915$</string>
+            <key>textureFileName</key>
+            <string>tp_level_01.png</string>
+        </dict>
+    </dict>
+</plist>

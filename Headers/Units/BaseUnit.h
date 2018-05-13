@@ -22,7 +22,7 @@ public:
 	UnitState m_unitState;
 	UnitWeapon m_unitWeapon;
 
-	static BaseUnit* createUnit(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon);
+	static BaseUnit* createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon);
 	void setUnitState(UnitState newState);
 	void setUnitWeapon(UnitWeapon newWeapon);
 };

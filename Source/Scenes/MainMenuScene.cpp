@@ -17,7 +17,7 @@ bool MainMenuScene::init()
 		return false;
 	}
 
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("cityscene.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("tp_level_01.plist");
 
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Vec2 visibleSize = Director::getInstance()->getVisibleSize();
