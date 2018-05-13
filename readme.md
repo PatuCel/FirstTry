@@ -18,4 +18,4 @@ Lorem
 
 ## FREE ASSETS
 
- *[OpenGameArt](https://opengameart.org/)
+* [OpenGameArt](https://opengameart.org/)
