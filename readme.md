@@ -11,8 +11,9 @@ Lorem
 * [Git](https://git-scm.com/) - Download Latest Version
 
 ## OPTIONAL TOOLS
-* [githubDesktop](https://desktop.github.com/) - Github tool
-* [TortoiseGit](https://tortoisegit.org/) - TortoiseGit
+
+* [GitHub Desktop](https://desktop.github.com/) - GitHub Desktop app 
+* [TortoiseGit](https://tortoisegit.org/) - TortoiseGit is a Windows Shell Interface to Git and based on TortoiseSVN
 
 ## DOCUMENTATION
 
