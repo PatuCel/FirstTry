@@ -4,7 +4,7 @@ pushd tools\scripts\
 
 if "%VS150COMONTOOLS%" == "" (
 	echo
-	echo *Crate VS150COMONTOOLS Enviromment Variable First! ,Example: D:\Visual2017\Common7\Tools\"
+	echo *Create VS150COMONTOOLS Enviromment Variable First! ,Example: D:\Visual2017\Common7\Tools\"
 	goto :end
 )
 
