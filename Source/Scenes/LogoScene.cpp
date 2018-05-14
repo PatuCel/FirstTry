@@ -35,12 +35,12 @@ bool LogoScene::init()
 }
 
 void LogoScene::initGUI(){	
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("logo.plist");
-	auto visibleSize = Director::getInstance()->getVisibleSize();
-	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-	auto sprite = Sprite::createWithSpriteFrameName("logo.png");
-	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-	addChild(sprite);
+	// SpriteFrameCache::getInstance()->addSpriteFramesWithFile("logo.plist");
+	// auto visibleSize = Director::getInstance()->getVisibleSize();
+	// Vec2 origin = Director::getInstance()->getVisibleOrigin();
+	// auto sprite = Sprite::createWithSpriteFrameName("logo.png");
+	// sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+	// addChild(sprite);
 	this->scheduleOnce(schedule_selector(LogoScene::nextScene), 1.5f);
 }
 
