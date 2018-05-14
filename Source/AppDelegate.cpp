@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "Globals.h"
 #include "Scenes/GameplayScene.h"
+#include "Scenes/MainMenuScene.h"
 #include "Managers/SceneManager.h"
 
 // #define USE_AUDIO_ENGINE 1
@@ -18,7 +19,13 @@ using namespace experimental;
 using namespace CocosDenshion;
 #endif
 
-static Size designResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
+static Size smallResolutionSize = Size(SCREEN_RESOLUTION_W / 2, SCREEN_RESOLUTION_H / 2);
+static Size mediumResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
+static Size largeResolutionSize = Size(SCREEN_RESOLUTION_W * 2, SCREEN_RESOLUTION_H * 2);
+
+//target resolution
+static cocos2d::Size designResolutionSize = mediumResolutionSize;
+
 
 AppDelegate::AppDelegate()
 {
@@ -51,38 +58,60 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
-    // initialize director
-    auto director = Director::getInstance();
-    auto glview = director->getOpenGLView();
-    if(!glview) {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+	// initialize director
+	auto director = Director::getInstance();
+	auto glview = director->getOpenGLView();
+	if (!glview) {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
 		HDC hScreenDC = GetDC(nullptr);
-		int initPosX = (GetDeviceCaps(hScreenDC, HORZRES)/2) - designResolutionSize.width/2;
-		int initPosY = (GetDeviceCaps(hScreenDC, VERTRES)/2) - designResolutionSize.height/2;
-        glview = GLViewImpl::createWithRect("FirstTry", Rect(initPosX, initPosY, designResolutionSize.width, designResolutionSize.height));
+		int initPosX = (GetDeviceCaps(hScreenDC, HORZRES) / 2) - designResolutionSize.width / 2;
+		int initPosY = (GetDeviceCaps(hScreenDC, VERTRES) / 2) - designResolutionSize.height / 2;
+		glview = GLViewImpl::createWithRect("FirstTry", Rect(initPosX, initPosY, designResolutionSize.width, designResolutionSize.height));
 #else
-        glview = GLViewImpl::create("FirstTry");
+		glview = GLViewImpl::create("FirstTry");
 #endif
-        director->setOpenGLView(glview);
-    }
+		director->setOpenGLView(glview);
+	}
 
-    // turn on display FPS
-    director->setDisplayStats(true);
+	// turn on display FPS
+	director->setDisplayStats(true);
 
-    // set FPS. the default value is 1.0/60 if you don't call this
-    director->setAnimationInterval(1.0f / 60);
+	// set FPS. the default value is 1.0/60 if you don't call this
+	director->setAnimationInterval(1.0f / 60);
 
-    // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+	// Set the design resolution
+	glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
 
-    register_all_packages();
+	std::vector<std::string> searchPaths;
+	float scaleFactor = 1.0f;
+	Size frameSize = glview->getFrameSize();
+
+	if (frameSize.height > mediumResolutionSize.height)
+	{
+		searchPaths.push_back("res/HDR");
+		scaleFactor = largeResolutionSize.height / designResolutionSize.height;
+	}
+	else if (frameSize.height > smallResolutionSize.height)
+	{
+		searchPaths.push_back("res/HD");
+		scaleFactor = mediumResolutionSize.height / designResolutionSize.height;
+	}
+	else
+	{
+		searchPaths.push_back("res/SD");
+		scaleFactor = smallResolutionSize.height / designResolutionSize.height;
+	}
+
+	director->setContentScaleFactor(scaleFactor);
+	FileUtils::getInstance()->setSearchPaths(searchPaths);
+	register_all_packages();
 
 	//Init All Managers
 	SceneManager::getInstance();
 
 	SceneManager::getInstance()->changeScene(SceneManager::LOGO_SCENE, true); //new for calling Scenes
 
-    return true;
+	return true;
 }
 
 // This function will be called when the app is inactive. Note, when receiving a phone call it is invoked.

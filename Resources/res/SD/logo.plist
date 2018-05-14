@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>logo.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-1.5,0}</string>
+                <key>spriteSize</key>
+                <string>{110,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{113,113}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{110,113}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>2 7 8 6 2 5 6 7 2 2 3 4 2 4 5 0 1 2 0 2 8</string>
+                <key>vertices</key>
+                <string>74 2 110 39 94 81 104 113 17 112 0 39 30 5 48 0 66 0</string>
+                <key>verticesUV</key>
+                <string>75 3 111 40 95 82 105 114 18 113 1 40 31 6 49 1 67 1</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>logo.png</string>
+            <key>size</key>
+            <string>{112,115}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:48cd02a6878d6b22f57b2e0a9d8db06c:e0ea4b20ec4a99469e2bb16ad532be45:bbf3ce38815ed5366bdc819d848de8ea$</string>
+            <key>textureFileName</key>
+            <string>logo.png</string>
+        </dict>
+    </dict>
+</plist>

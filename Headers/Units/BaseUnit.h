@@ -1,6 +1,4 @@
-#ifndef  _BASE_UNIT_H_
-#define  _BASE_UNIT_H_
-
+#pragma once
 #include "cocos2d.h"
 USING_NS_CC;
 
@@ -24,9 +22,7 @@ public:
 	UnitState m_unitState;
 	UnitWeapon m_unitWeapon;
 
-	static BaseUnit* createUnit(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon);
+	static BaseUnit* createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon);
 	void setUnitState(UnitState newState);
 	void setUnitWeapon(UnitWeapon newWeapon);
 };
-
-#endif // _BASE_UNIT_H_

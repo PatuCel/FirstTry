@@ -1,8 +1,9 @@
-#ifndef __GAMEPLAY_SCENE_H__
-#define __GAMEPLAY_SCENE_H__
+#pragma once
 
 #include "cocos2d.h"
 USING_NS_CC;
+
+class PlayerUnit;
 
 class GameplayScene : public Scene
 {
@@ -13,9 +14,12 @@ public:
     
     // a selector callback
     void menuCloseCallback(Ref* pSender);
+
+	void movePlayer(Touch * touch, Event * event);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
-};
 
-#endif // __GAMEPLAY_SCENE_H__
+private:
+	PlayerUnit* _player;
+};

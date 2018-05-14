@@ -35,18 +35,19 @@ bool LogoScene::init()
 }
 
 void LogoScene::initGUI(){	
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("logo.plist");
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-	auto sprite = Sprite::create("Logo.jpg");
+	auto sprite = Sprite::createWithSpriteFrameName("logo.png");
 	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	addChild(sprite);
-	this->scheduleOnce(schedule_selector(LogoScene::nextScene), 1.5f);	
+	this->scheduleOnce(schedule_selector(LogoScene::nextScene), 1.5f);
 }
 
 void LogoScene::nextScene(float dt)
 {
 	this->removeAllChildren();
-	SceneManager::getInstance()->changeScene(SceneManager::GAMEPLAY_SCENE, true);	
+	SceneManager::getInstance()->changeScene(SceneManager::MAINMENU_SCENE, true);	
 }
 
 void LogoScene::onEnter() //Every time you Enter on this scene after push, replace, pop will be enter here

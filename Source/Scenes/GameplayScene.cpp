@@ -53,11 +53,26 @@ bool GameplayScene::init()
     // create menu, it's an autorelease object
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
-    this->addChild(menu, 1);
+    this->addChild(menu, 10);
 
-	PlayerUnit* testPlayer = PlayerUnit::createPlayer("player.png", Vec2(300, 300), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
-	this->addChild(testPlayer, 2);
 
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("tp_level_01.plist");
+
+	// background
+	//auto background = Sprite::createWithSpriteFrameName("background.png");
+	//background->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
+	//this->addChild(background, 0);
+
+	_player = PlayerUnit::createPlayer("player.png", Vec2(300, 300), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	this->addChild(_player, 1);
+
+
+	///Touch events
+	auto listener = EventListenerTouchOneByOne::create();
+	listener->onTouchBegan = [=](Touch* touch, Event* event) { return true; };
+	listener->onTouchMoved = [=](Touch* touch, Event* event) { movePlayer(touch, event); };
+	listener->onTouchEnded = [=](Touch* touch, Event* event) {};
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     return true;
 }
 
@@ -75,6 +90,11 @@ void GameplayScene::menuCloseCallback(Ref* pSender)
 
     //EventCustom customEndEvent("game_scene_close_event");
     //_eventDispatcher->dispatchEvent(&customEndEvent);
+}
 
-
+void GameplayScene::movePlayer(Touch* touch, Event* event)
+{
+	auto location = touch->getLocation();
+	if (_player->getBoundingBox().containsPoint(location))
+		_player->setPosition(location);
 }

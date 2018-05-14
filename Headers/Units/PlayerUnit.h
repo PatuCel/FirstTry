@@ -1,6 +1,4 @@
-#ifndef  _PLAYER_UNIT_H_
-#define  _PLAYER_UNIT_H_
-
+#pragma once
 #include "Units/BaseUnit.h"
 
 #include "cocos2d.h"
@@ -12,5 +10,3 @@ public:
 	static PlayerUnit* createPlayer(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon);
 
 };
-
-#endif // _PLAYER_UNIT_H_

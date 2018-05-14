@@ -48,6 +48,10 @@
     <ClCompile Include="..\..\Source\Units\PlayerUnit.cpp">
       <Filter>Source\Units</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\ResourceManager.cpp" />
+    <ClCompile Include="..\..\Source\Scenes\MainMenuScene.cpp">
+      <Filter>Source\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
@@ -73,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Globals.h">
       <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\ResourceManager.h">
+      <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Scenes\MainMenuScene.h">
+      <Filter>Headers\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

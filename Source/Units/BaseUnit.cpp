@@ -1,10 +1,10 @@
 #include "Units/BaseUnit.h"
 
-BaseUnit* BaseUnit::createUnit(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon)
+BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon)
 {
 	BaseUnit* baseUnit = new (std::nothrow) BaseUnit();
 
-	if(baseUnit && baseUnit->initWithFile(filePath))
+	if(baseUnit && baseUnit->initWithSpriteFrameName(spriteFrameName))
 	{
 		baseUnit->autorelease();
 
