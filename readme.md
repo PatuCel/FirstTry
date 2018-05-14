@@ -1,4 +1,7 @@
 # Project Title
+
+![CDNJS](https://img.shields.io/cdnjs/v/jquery.svg)
+
 PaTuCel 1stTry
 
 ### PREREQUISITES
