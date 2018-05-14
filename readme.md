@@ -12,8 +12,9 @@ PaTuCel 1stTry
 
 ## OPTIONAL TOOLS
 
-* [GitHub Desktop](https://desktop.github.com/) - GitHub Desktop app 
+* [GitHub Desktop](https://desktop.github.com/) - GitHub Desktop app
 * [TortoiseGit](https://tortoisegit.org/) - TortoiseGit is a Windows Shell Interface to Git and based on TortoiseSVN
+* [Atom](https://atom.io/) - Like Sublime but has Git build inside the editor.
 
 ## DOCUMENTATION
 
