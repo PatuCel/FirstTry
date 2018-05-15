@@ -35,3 +35,4 @@ PaTuCel 1stTry
 
 * Build Resources
 ![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorSetup.png)
+![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorBuild.png)
