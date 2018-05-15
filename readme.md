@@ -30,3 +30,8 @@ PaTuCel 1stTry
 ## FREE ASSETS
 
 * [OpenGameArt](https://opengameart.org/)
+
+## COCO CREATOR
+
+* Build Resources
+![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorSetup.png)
