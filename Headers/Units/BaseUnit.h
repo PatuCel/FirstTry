@@ -18,11 +18,12 @@ public:
 		UNIT_WEAPON_DEFAULT,
 		UNIT_WEAPON_SUPER
 	};
-
-	UnitState m_unitState;
-	UnitWeapon m_unitWeapon;
-
+	
 	static BaseUnit* createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon);
 	void setUnitState(UnitState newState);
 	void setUnitWeapon(UnitWeapon newWeapon);
+
+private:
+	UnitState m_unitState;
+	UnitWeapon m_unitWeapon;
 };
