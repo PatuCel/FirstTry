@@ -1,19 +1,19 @@
 #include "Scenes/LogoScene.h"
 #include "Managers/SceneManager.h"
+#include "reader/CreatorReader.h"
 
 using namespace ui; //use for Button, Scrollview,Label,Panel etc.
 using namespace cocostudio::timeline;
 
 Scene* LogoScene::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-	auto layer = LogoScene::create();
+	creator::CreatorReader* reader = creator::CreatorReader::createWithFilename("creator/Scene/LogoScene.ccreator");
+	reader->setup();
+	// get the scene graph
+	Scene* scene = reader->getSceneGraph();
 
-    // add layer as a child to scene
-    scene->addChild(layer);
+	// ...and use it
+	//Director::getInstance()->replaceScene(scene);
 
     // return the scene
     return scene;
@@ -35,6 +35,14 @@ bool LogoScene::init()
 }
 
 void LogoScene::initGUI(){	
+	creator::CreatorReader* reader = creator::CreatorReader::createWithFilename("creator/Scene/helloworld.ccreator");
+	reader->setup();
+	// get the scene graph
+	Scene* scene = reader->getSceneGraph();
+
+	// ...and use it
+	Director::getInstance()->replaceScene(scene);
+	/*
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("logo.plist");
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -42,6 +50,7 @@ void LogoScene::initGUI(){
 	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	addChild(sprite);
 	this->scheduleOnce(schedule_selector(LogoScene::nextScene), 1.5f);
+	*/
 }
 
 void LogoScene::nextScene(float dt)
