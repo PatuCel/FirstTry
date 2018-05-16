@@ -92,7 +92,7 @@ class BuildWorker extends WorkerBase {
         } 
         else {
             resdst = Path.join(projectRoot, 'Resources');
-            classes = Path.join(projectRoot, 'Classes');
+            classes = Path.join(projectRoot, 'libs/cocos_creator');//@PETS change the path when copy reader plugin
         }
 
         // copy resources

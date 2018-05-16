@@ -151,7 +151,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Classes\cocos_creator\cocos_creator.vcxproj">
+    <ProjectReference Include="..\..\libs\cocos_creator\cocos_creator.vcxproj">
       <Project>{5920d371-32e7-4ef6-b63f-de6d924a35f6}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\cocos2d\cocos\2d\libcocos2d.vcxproj">

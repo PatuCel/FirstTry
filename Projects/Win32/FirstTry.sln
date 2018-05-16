@@ -16,7 +16,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libSpine", "..\..\cocos2d\c
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "librecast", "..\..\cocos2d\external\recast\proj.win32\librecast.vcxproj", "{41E34993-647E-4282-8384-4AB1AE31A452}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cocos_creator", "..\..\Classes\cocos_creator\cocos_creator.vcxproj", "{5920D371-32E7-4EF6-B63F-DE6D924A35F6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cocos_creator", "..\..\libs\cocos_creator\cocos_creator.vcxproj", "{5920D371-32E7-4EF6-B63F-DE6D924A35F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
