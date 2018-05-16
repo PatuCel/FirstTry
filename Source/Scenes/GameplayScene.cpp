@@ -64,10 +64,10 @@ bool GameplayScene::init()
 	//background->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
 	//this->addChild(background, 0);
 
-	_player = PlayerUnit::createPlayer("player.png", Vec2(300, 300), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	_player = PlayerUnit::createPlayer("player.png", Vec2(50, 50), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(_player, 1);
 
-	LevelManager::getInstance()->loadLevel("level_001.json");
+	LevelManager::getInstance()->readLevel("level_001.json");
 
 	///Touch events
 	auto listener = EventListenerTouchOneByOne::create();

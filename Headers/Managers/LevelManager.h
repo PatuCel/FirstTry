@@ -10,7 +10,7 @@ class LevelManager
 public:
 	static LevelManager* getInstance();
 
-	bool loadLevel(const std::string filePath);
+	bool readLevel(const std::string filePath);
 
 private:
 	static LevelManager* m_levelManager;
