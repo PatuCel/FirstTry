@@ -89,17 +89,17 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	if (frameSize.height > mediumResolutionSize.height)
 	{
 		searchPaths.push_back("res/HDR");
-		scaleFactor = largeResolutionSize.height / designResolutionSize.height;
+		scaleFactor = MIN(largeResolutionSize.height / designResolutionSize.height, largeResolutionSize.width / designResolutionSize.width);
 	}
 	else if (frameSize.height > smallResolutionSize.height)
 	{
 		searchPaths.push_back("res/HD");
-		scaleFactor = mediumResolutionSize.height / designResolutionSize.height;
+		scaleFactor = MIN(mediumResolutionSize.height / designResolutionSize.height, mediumResolutionSize.width / designResolutionSize.width);
 	}
 	else
 	{
 		searchPaths.push_back("res/SD");
-		scaleFactor = smallResolutionSize.height / designResolutionSize.height;
+		scaleFactor = MIN(smallResolutionSize.height / designResolutionSize.height, smallResolutionSize.width / designResolutionSize.width);
 	}
 
 	director->setContentScaleFactor(scaleFactor);
