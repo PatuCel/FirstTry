@@ -6,6 +6,7 @@ PaTuCel 1stTry
 ### PREREQUISITES
 
 * [Visual2017](https://www.visualstudio.com/es/free-developer-offers/) - Visual Studio Community
+* [C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=30679#) - Visual C++ Redistributable for Visual Studio 2012 Update 4
 
 ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/Visual2017.png)
 
