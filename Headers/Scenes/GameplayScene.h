@@ -4,6 +4,7 @@
 USING_NS_CC;
 
 class PlayerUnit;
+class Boss;
 
 class GameplayScene : public Scene
 {
@@ -22,4 +23,5 @@ public:
 
 private:
 	PlayerUnit* _player;
+	Boss*_boss;
 };

@@ -4,6 +4,7 @@
 #include "Units/Boss.h"
 #include "Managers/LevelManager.h"
 #include "Managers/ResourceManager.h"
+#include "ui/UILoadingBar.h"
 
 
 Scene* GameplayScene::createScene()
@@ -64,9 +65,10 @@ bool GameplayScene::init()
 
 	// boss sprite
 	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
-	auto boss = Boss::createBoss(frameArray, 0.05f);
-	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
-	this->addChild(boss);
+	_boss = Boss::createBoss(frameArray, 0.05f);
+	_boss->setPosition(visibleSize.width / 2, visibleSize.height - _boss->getContentSize().height / 2);
+	_boss->setHealth(500);
+	this->addChild(_boss);
 
 	_player = PlayerUnit::createPlayer("player.png", Vec2(50, 50), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(_player, 1);
@@ -103,4 +105,11 @@ void GameplayScene::movePlayer(Touch* touch, Event* event)
 	auto location = touch->getLocation();
 	if (_player->getBoundingBox().containsPoint(location))
 		_player->setPosition(location);
+
+	//Test health -- 
+	if (_boss->getBoundingBox().containsPoint(location))
+	{
+		_boss->setPosition(location);
+		_boss->reduceHealth(10);
+	}
 }
