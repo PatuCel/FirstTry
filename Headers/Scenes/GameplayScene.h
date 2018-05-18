@@ -20,9 +20,6 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
 
-	void update(float) override;
-
 private:
 	PlayerUnit* _player;
-	TMXTiledMap* testwMap;
 };
