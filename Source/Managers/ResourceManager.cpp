@@ -28,3 +28,16 @@ Sprite* ResourceManager::LoadSprite(string spriteName)
 {
 	return Sprite::createWithSpriteFrameName(spriteName);
 }
+
+Vector<SpriteFrame*> ResourceManager::LoadSpriteAnimation(string format, int count)
+{
+	auto spritecache = SpriteFrameCache::getInstance();
+	Vector<SpriteFrame*> frames;
+	char str[100];
+	for (int i = 0; i < count; i++)
+	{
+		sprintf(str, format.c_str(), i);
+		frames.pushBack(spritecache->getSpriteFrameByName(str));
+	}
+	return frames;
+}

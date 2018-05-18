@@ -15,6 +15,7 @@ public:
 	static ResourceManager* getInstance();
 	void LoadSpriteSheet(string spriteSheetplist);
 	Sprite* LoadSprite(string spriteName);
+	Vector<SpriteFrame*> LoadSpriteAnimation(string format, int count);
 
 private:
 	static ResourceManager* mResourceManager;
