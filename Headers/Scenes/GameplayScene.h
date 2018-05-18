@@ -4,6 +4,7 @@
 USING_NS_CC;
 
 class PlayerUnit;
+class Boss;
 
 class GameplayScene : public Scene
 {
@@ -20,9 +21,10 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
 
-	void update(float) override;
+	void update(float delta) override;
 
 private:
 	PlayerUnit* _player;
+	Boss*_boss;
 	TMXTiledMap* testMap;
 };
