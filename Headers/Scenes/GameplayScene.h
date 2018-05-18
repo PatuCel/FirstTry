@@ -24,7 +24,7 @@ public:
 	void update(float delta) override;
 
 private:
-	PlayerUnit* _player;
-	Boss*_boss;
+	PlayerUnit* player;
+	Boss* boss;
 	TMXTiledMap* testMap;
 };
