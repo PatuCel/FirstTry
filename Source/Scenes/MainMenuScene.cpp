@@ -24,9 +24,9 @@ bool MainMenuScene::init()
 	Vec2 visibleSize = Director::getInstance()->getVisibleSize();
 
 	// background
-	auto background = ResourceManager::getInstance()->LoadSprite("background.png");
-	background->setPosition(origin.x + visibleSize.x / 2, origin.y + visibleSize.y / 2);
-	this->addChild(background);
+	//auto background = ResourceManager::getInstance()->LoadSprite("background.png");
+	//background->setPosition(origin.x + visibleSize.x / 2, origin.y + visibleSize.y / 2);
+	//this->addChild(background);
 
 	// Menu Items
 	auto playItem = MenuItemImage::create("menu_play0.png", "menu_play1.png", [&](Ref *sender) { changeScene(SceneManager::GAMEPLAY_SCENE); });

@@ -1,7 +1,10 @@
 #include "SimpleAudioEngine.h"
 #include "Scenes/GameplayScene.h"
 #include "Units/PlayerUnit.h"
+#include "Units/Boss.h"
 #include "Managers/LevelManager.h"
+#include "Managers/ResourceManager.h"
+
 
 Scene* GameplayScene::createScene()
 {
@@ -57,12 +60,13 @@ bool GameplayScene::init()
     this->addChild(menu, 10);
 
 
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("tp_level_01.plist");
+	ResourceManager::getInstance()->LoadSpriteSheet("tp_level_01.plist");
 
-	// background
-	//auto background = Sprite::createWithSpriteFrameName("background.png");
-	//background->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
-	//this->addChild(background, 0);
+	// boss sprite
+	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
+	auto boss = Boss::createBoss(frameArray, 0.05f);
+	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
+	this->addChild(boss);
 
 	_player = PlayerUnit::createPlayer("player.png", Vec2(50, 50), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(_player, 1);

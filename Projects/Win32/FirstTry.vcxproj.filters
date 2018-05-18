@@ -57,6 +57,9 @@
     <ClCompile Include="..\..\Source\Managers\LevelManager.cpp">
       <Filter>Source\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Units\Boss.cpp">
+      <Filter>Source\Units</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Managers\LevelManager.h">
       <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Units\Boss.h">
+      <Filter>Headers\Units</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

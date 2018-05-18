@@ -20,6 +20,7 @@ public:
 	};
 	
 	static BaseUnit* createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon);
+	static BaseUnit* createUnit(Vector<SpriteFrame*> frameArray, float delay);
 	void setUnitState(UnitState newState);
 	void setUnitWeapon(UnitWeapon newWeapon);
 

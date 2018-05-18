@@ -172,6 +172,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\..\Source\Scenes\LogoScene.cpp" />
     <ClCompile Include="..\..\Source\Scenes\MainMenuScene.cpp" />
     <ClCompile Include="..\..\Source\Units\BaseUnit.cpp" />
+    <ClCompile Include="..\..\Source\Units\Boss.cpp" />
     <ClCompile Include="..\..\Source\Units\PlayerUnit.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +186,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\..\Headers\Scenes\LogoScene.h" />
     <ClInclude Include="..\..\Headers\Scenes\MainMenuScene.h" />
     <ClInclude Include="..\..\Headers\Units\BaseUnit.h" />
+    <ClInclude Include="..\..\Headers\Units\Boss.h" />
     <ClInclude Include="..\..\Headers\Units\PlayerUnit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

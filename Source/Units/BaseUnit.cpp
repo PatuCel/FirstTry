@@ -19,6 +19,19 @@ BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, Unit
 	return nullptr;
 }
 
+BaseUnit* BaseUnit::createUnit(Vector<SpriteFrame*> frameArray, float delay)
+{
+	BaseUnit* baseUnit = new (std::nothrow) BaseUnit();
+
+	baseUnit->initWithSpriteFrame(frameArray.front());
+	baseUnit->setPosition(0, 0);
+
+	auto animation = Animation::createWithSpriteFrames(frameArray, delay);
+	baseUnit->runAction(RepeatForever::create(Animate::create(animation)));
+
+	return baseUnit;
+}
+
 void BaseUnit::setUnitState(UnitState newState)
 {
 	m_unitState = newState;
