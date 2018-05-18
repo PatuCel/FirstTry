@@ -22,8 +22,9 @@ PaTuCel 1stTry
 ## DOCUMENTATION
 
 * [Cocos2dx](http://www.cocos2d-x.org/docs/cocos2d-x/en/index.html)
-* [Cocos2dx Api](http://www.cocos2d-x.org/docs/api-ref/cplusplus/v3x/)
+	* [Cocos2dx Api](http://www.cocos2d-x.org/docs/api-ref/cplusplus/v3x/)
 * [CocosCreator](http://cocos2d-x.org/docs/creator/manual/en/)
+	* [CocosCreatorApi](http://www.cocos2d-x.org/docs/creator/api/en/)
 * [Git](https://git-scm.com/doc)
 * [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/)
 * [GitHub Desktop](https://help.github.com/desktop/)
