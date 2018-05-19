@@ -24,5 +24,4 @@ public:
 
 private:
 	PlayerUnit* _player;
-	TMXTiledMap* testMap;
 };

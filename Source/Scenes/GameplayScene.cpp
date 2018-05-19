@@ -2,9 +2,9 @@
 #include "Scenes/GameplayScene.h"
 #include "Units/PlayerUnit.h"
 #include "Units/Boss.h"
-#include "Managers/LevelManager.h"
 #include "Managers/ResourceManager.h"
-
+#include "Managers/MapManager.h"
+#include "Globals.h"
 
 Scene* GameplayScene::createScene()
 {
@@ -63,19 +63,17 @@ bool GameplayScene::init()
 	ResourceManager::getInstance()->LoadSpriteSheet("tp_level_01.plist");
 
 	// boss sprite
-	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
-	auto boss = Boss::createBoss(frameArray, 0.05f);
-	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
-	this->addChild(boss, 1);
+	//auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
+	//auto boss = Boss::createBoss(frameArray, 0.05f);
+	//boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
+	//this->addChild(boss, 1);
 
-	_player = PlayerUnit::createPlayer("player.png", Vec2(50, 50), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	_player = PlayerUnit::createPlayer("player.png", Vec2(SCREEN_RESOLUTION_W/2, SCREEN_RESOLUTION_H/2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(_player, 1);
-
-	LevelManager::getInstance()->readLevel("level_001.json");
-
-	testMap = TMXTiledMap::create("test.tmx");
-	this->addChild(testMap, 0);
-
+	
+	MapManager::getInstance()->loadMap("test.tmx");
+	this->addChild(MapManager::getInstance()->getMap(), 0);
+		
 	///Touch events
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch* touch, Event* event) { return true; };
@@ -106,12 +104,24 @@ void GameplayScene::menuCloseCallback(Ref* pSender)
 
 void GameplayScene::movePlayer(Touch* touch, Event* event)
 {
-	auto location = touch->getLocation();
-	if (_player->getBoundingBox().containsPoint(location))
-		_player->setPosition(location);
+	Vec2 location = touch->getLocation();
+	if(_player->getBoundingBox().containsPoint(location))
+	{
+		Vec2 tilePosition = MapManager::getInstance()->tileFromPosition(location);
+		int tileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_COLLISIONS)->getTileGIDAt(tilePosition);
+		if(!tileGID)
+		{
+			CCLOG("Moving Player");
+			_player->setPosition(location);
+		}
+		else
+		{
+			CCLOG("Collision!!!");
+		}
+	}
 }
 
 void GameplayScene::update(float delta)
 {
-	testMap->setPosition(Vec2(testMap->getPosition().x, testMap->getPosition().y - 1));
+	//MapManager::getInstance()->getMap()->setPosition(Vec2(MapManager::getInstance()->getMap()->getPosition().x, MapManager::getInstance()->getMap()->getPosition().y - 1));
 }

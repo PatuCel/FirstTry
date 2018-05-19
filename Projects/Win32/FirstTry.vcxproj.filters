@@ -60,6 +60,9 @@
     <ClCompile Include="..\..\Source\Units\Boss.cpp">
       <Filter>Source\Units</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\MapManager.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Units\Boss.h">
       <Filter>Headers\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\MapManager.h">
+      <Filter>Headers\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
