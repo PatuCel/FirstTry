@@ -165,6 +165,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   <ItemGroup>
     <ClCompile Include="..\..\Source\AppDelegate.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
+    <ClCompile Include="..\..\Source\Managers\CameraManager.cpp" />
     <ClCompile Include="..\..\Source\Managers\LevelManager.cpp" />
     <ClCompile Include="..\..\Source\Managers\MapManager.cpp" />
     <ClCompile Include="..\..\Source\Managers\ResourceManager.cpp" />
@@ -174,12 +175,14 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\..\Source\Scenes\MainMenuScene.cpp" />
     <ClCompile Include="..\..\Source\Units\BaseUnit.cpp" />
     <ClCompile Include="..\..\Source\Units\Boss.cpp" />
+    <ClCompile Include="..\..\Source\Units\EnemyUnit.cpp" />
     <ClCompile Include="..\..\Source\Units\PlayerUnit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\AppDelegate.h" />
     <ClInclude Include="..\..\Headers\Globals.h" />
     <ClInclude Include="..\..\Headers\Main.h" />
+    <ClInclude Include="..\..\Headers\Managers\CameraManager.h" />
     <ClInclude Include="..\..\Headers\Managers\LevelManager.h" />
     <ClInclude Include="..\..\Headers\Managers\MapManager.h" />
     <ClInclude Include="..\..\Headers\Managers\ResourceManager.h" />
@@ -189,6 +192,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\..\Headers\Scenes\MainMenuScene.h" />
     <ClInclude Include="..\..\Headers\Units\BaseUnit.h" />
     <ClInclude Include="..\..\Headers\Units\Boss.h" />
+    <ClInclude Include="..\..\Headers\Units\EnemyUnit.h" />
     <ClInclude Include="..\..\Headers\Units\PlayerUnit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

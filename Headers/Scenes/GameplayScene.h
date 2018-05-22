@@ -1,9 +1,9 @@
 #pragma once
+#include "Units/PlayerUnit.h"
+#include "Units/EnemyUnit.h"
 
 #include "cocos2d.h"
 USING_NS_CC;
-
-class PlayerUnit;
 
 class GameplayScene : public Scene
 {
@@ -15,13 +15,20 @@ public:
     // a selector callback
     void menuCloseCallback(Ref* pSender);
 
-	void movePlayer(Touch * touch, Event * event);
+	void movePlayer(Vec2 pos);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
 
+	void keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
+	void keyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
+
+	bool loadCollectibles();
+	bool loadEnemies();
+
 	void update(float) override;
 
 private:
-	PlayerUnit* _player;
+	PlayerUnit * _player;
+	std::vector<EnemyUnit*> _enemies;
 };

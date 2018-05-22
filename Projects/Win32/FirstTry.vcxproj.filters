@@ -63,6 +63,12 @@
     <ClCompile Include="..\..\Source\Managers\MapManager.cpp">
       <Filter>Source\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\CameraManager.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Units\EnemyUnit.cpp">
+      <Filter>Source\Units</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
@@ -103,6 +109,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Managers\MapManager.h">
       <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\CameraManager.h">
+      <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Units\EnemyUnit.h">
+      <Filter>Headers\Units</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

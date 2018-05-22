@@ -1,4 +1,4 @@
-#include "Managers\MapManager.h"
+#include "Managers/MapManager.h"
 
 MapManager* MapManager::m_mapManager = nullptr;
 
@@ -65,4 +65,30 @@ Vec2 MapManager::tileFromPosition(Vec2 position)
 	int y = ((m_map->getMapSize().height * m_map->getTileSize().height) - position.y) / m_map->getTileSize().height;
 
 	return Vec2(x, y);
+}
+
+Vec2 MapManager::positionFromTile(Vec2 tile)
+{
+	int x = (tile.x * m_map->getTileSize().width) + m_map->getTileSize().width/2;
+	int y = (m_map->getMapSize().height * m_map->getTileSize().height) - (tile.y * m_map->getTileSize().height) - m_map->getTileSize().height / 2;
+
+	return Vec2(x, y);
+}
+
+std::vector<Vec2> MapManager::getTilesFromLayer(MapLayer mapLayer)
+{
+	std::vector<Vec2> layerTiles;
+
+	for(int x=0; x<getLayer(mapLayer)->getLayerSize().width; x++)
+	{
+		for(int y=0; y<getLayer(mapLayer)->getLayerSize().height; y++)
+		{
+			if(getLayer(mapLayer)->getTileGIDAt(Vec2(x, y)))
+			{
+				layerTiles.push_back(Vec2(x,y));
+			}			
+		}
+	}
+
+	return layerTiles;
 }

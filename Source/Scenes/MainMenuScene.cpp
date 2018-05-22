@@ -1,6 +1,6 @@
-#include "Scenes\MainMenuScene.h"
-#include "Managers\SceneManager.h"
-#include "Managers\ResourceManager.h"
+#include "Scenes/MainMenuScene.h"
+#include "Managers/SceneManager.h"
+#include "Managers/ResourceManager.h"
 
 using namespace cocos2d;
 
