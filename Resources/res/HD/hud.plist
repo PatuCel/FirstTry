@@ -9,21 +9,21 @@
     <key>aliases</key>
     <array/>
     <key>spriteOffset</key>
-    <string>{22,4}</string>
+    <string>{46,9}</string>
     <key>spriteSize</key>
-    <string>{122,13}</string>
+    <string>{238,23}</string>
     <key>spriteSourceSize</key>
-    <string>{150,19}</string>
+    <string>{300,39}</string>
     <key>textureRect</key>
-    <string>{{0,25},{122,13}}</string>
+    <string>{{0,45},{238,23}}</string>
     <key>textureRotated</key>
     <false/>
     <key>triangles</key>
     <string>0 1 2 0 3 1</string>
     <key>vertices</key>
-    <string>22 14 140 4 140 14 22 4</string>
+    <string>46 29 280 9 280 29 46 9</string>
     <key>verticesUV</key>
-    <string>0 35 118 25 118 35 0 25</string>
+    <string>0 65 234 45 234 65 0 45</string>
    </dict>
    <key>./hp_bar_b</key>
    <dict>
@@ -32,19 +32,19 @@
     <key>spriteOffset</key>
     <string>{0,0}</string>
     <key>spriteSize</key>
-    <string>{154,22}</string>
+    <string>{304,43}</string>
     <key>spriteSourceSize</key>
-    <string>{150,19}</string>
+    <string>{300,39}</string>
     <key>textureRect</key>
-    <string>{{0,0},{154,22}}</string>
+    <string>{{0,0},{304,43}}</string>
     <key>textureRotated</key>
     <false/>
     <key>triangles</key>
-    <string>0 1 2 0 3 1</string>
+    <string>0 1 2 0 2 3 3 4 0</string>
     <key>vertices</key>
-    <string>0 19 150 0 150 19 0 0</string>
+    <string>296 39 0 39 0 0 300 0 300 32</string>
     <key>verticesUV</key>
-    <string>0 19 150 0 150 19 0 0</string>
+    <string>296 39 0 39 0 0 300 0 300 32</string>
    </dict>
   </dict>
   <key>metadata</key>
@@ -52,9 +52,9 @@
    <key>format</key>
    <integer>3</integer>
    <key>size</key>
-   <string>{153,37}</string>
+   <string>{303,67}</string>
    <key>textureFileName</key>
-   <string>.png</string>
+   <string>hud.png</string>
   </dict>
  </dict>
 </plist>

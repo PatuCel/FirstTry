@@ -54,7 +54,7 @@
    <key>size</key>
    <string>{603,125}</string>
    <key>textureFileName</key>
-   <string>.png</string>
+   <string>hud.png</string>
   </dict>
  </dict>
 </plist>
