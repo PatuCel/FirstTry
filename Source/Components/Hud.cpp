@@ -20,12 +20,12 @@ bool Hud::init()
 		scoreLabel->setTextColor(Color4B::YELLOW);
 		scoreLabel->setPosition(winSize.width - scoreLabel->getContentSize().width / 2, winSize.height - scoreLabel->getContentSize().height / 2);
 
-		auto bar = ui::LoadingBar::create("hp_loadingbar.png");
-		bar->setPercent(100);
+		auto bar = ui::LoadingBar::create("hud/hp_bar_0.png");
+		bar->setPercent(80);
 		bar->setColor(Color3B::YELLOW);
 		bar->setPosition(Vec2(bar->getContentSize().width / 2, winSize.height - bar->getContentSize().height / 2));
 		
-		auto hp = Sprite::create("hud_bar_hp.png");
+		auto hp = Sprite::create("hud/hp_bar_1.png");
 		hp->setPosition(Vec2(bar->getContentSize().width / 2, bar->getContentSize().height / 2));
 		bar->addChild(hp);
 

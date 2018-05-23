@@ -5,6 +5,7 @@
 #include "Managers/LevelManager.h"
 #include "Managers/ResourceManager.h"
 #include "ui/UILoadingBar.h"
+#include "components/Hud.h"
 
 
 Scene* GameplayScene::createScene()
@@ -87,6 +88,8 @@ bool GameplayScene::init()
 
 	this->scheduleUpdate();
 
+	auto hud = Hud::createHud();
+	this->addChild(hud, 10);
     return true;
 }
 
