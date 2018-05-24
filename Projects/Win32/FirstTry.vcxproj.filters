@@ -25,10 +25,10 @@
     <Filter Include="Headers\Scenes">
       <UniqueIdentifier>{e88785c1-22bb-4e32-a183-c361a9e356b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Componets">
+    <Filter Include="Source\Components">
       <UniqueIdentifier>{3f972917-2810-46c6-ba50-960ee4f210fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers\Componets">
+    <Filter Include="Headers\Components">
       <UniqueIdentifier>{96667bd6-3e43-473e-933e-16b511062818}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -67,7 +67,7 @@
       <Filter>Source\Units</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Components\Hud.cpp">
-      <Filter>Source\Componets</Filter>
+      <Filter>Source\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +108,7 @@
       <Filter>Headers\Units</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Headers\Components\Hud.h">
-      <Filter>Headers\Componets</Filter>
+      <Filter>Headers\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

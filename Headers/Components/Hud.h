@@ -9,5 +9,5 @@ public:
 	static Hud* createHud();
 	bool init();
 	void setScore(std::string score);
-	void updateRP(std::string score);
+	void setHP(float percent);
 };

@@ -4,6 +4,7 @@
 
 using namespace cocos2d;
 using namespace std;
+using namespace ui;
 
 Hud* Hud::createHud()
 {
@@ -11,17 +12,18 @@ Hud* Hud::createHud()
 	return (hud->init()) ? hud : nullptr;
 }
 
+
 bool Hud::init()
 {
 	if (Layer::init())
 	{
 		auto winSize = Director::getInstance()->getWinSize();
-		scoreLabel = Label::createWithSystemFont("000 466 764", "Arial", 16);
+		scoreLabel = Label::createWithSystemFont("0", "Arial", 16);
 		scoreLabel->setTextColor(Color4B::YELLOW);
 		scoreLabel->setPosition(winSize.width - scoreLabel->getContentSize().width / 2, winSize.height - scoreLabel->getContentSize().height / 2);
 
 		auto bar = ui::LoadingBar::create("hud/hp_bar_0.png");
-		bar->setPercent(80);
+		bar->setPercent(100);
 		bar->setColor(Color3B::YELLOW);
 		bar->setPosition(Vec2(bar->getContentSize().width / 2, winSize.height - bar->getContentSize().height / 2));
 		
@@ -37,13 +39,19 @@ bool Hud::init()
 	return false;
 }
 
+
 void Hud::setScore(string score)
 {
 	scoreLabel->setString(score);
 }
 
 
-void Hud::updateRP(string score)
+void Hud::setHP(float percent)
 {
-	scoreLabel->setString(score);
+	if (getChildrenCount() > 0)
+	{
+		auto hp = (LoadingBar*)getChildByName("hp");
+		if (hp)
+			hp->setPercent(percent);
+	}
 }

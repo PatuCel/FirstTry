@@ -89,6 +89,8 @@ bool GameplayScene::init()
 	this->scheduleUpdate();
 
 	auto hud = Hud::createHud();
+	hud->setScore("864");	//Player Score
+	hud->setHP(65);			//Player Health
 	this->addChild(hud, 10);
     return true;
 }
