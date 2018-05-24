@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>frames</key>
+  <dict>
+   <key>mainmenu/background.png</key>
+   <dict>
+    <key>aliases</key>
+    <array/>
+    <key>spriteOffset</key>
+    <string>{0,0}</string>
+    <key>spriteSize</key>
+    <string>{643,964}</string>
+    <key>spriteSourceSize</key>
+    <string>{640,960}</string>
+    <key>textureRect</key>
+    <string>{{0,0},{643,964}}</string>
+    <key>textureRotated</key>
+    <false/>
+    <key>triangles</key>
+    <string>0 1 2 0 3 1</string>
+    <key>vertices</key>
+    <string>0 960 640 0 640 960 0 0</string>
+    <key>verticesUV</key>
+    <string>0 960 640 0 640 960 0 0</string>
+   </dict>
+  </dict>
+  <key>metadata</key>
+  <dict>
+   <key>format</key>
+   <integer>3</integer>
+   <key>size</key>
+   <string>{642,963}</string>
+   <key>textureFileName</key>
+   <string>mainmenu.png</string>
+  </dict>
+ </dict>
+</plist>
