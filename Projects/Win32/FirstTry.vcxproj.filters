@@ -48,9 +48,23 @@
     <ClCompile Include="..\..\Source\Units\PlayerUnit.cpp">
       <Filter>Source\Units</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Managers\ResourceManager.cpp" />
     <ClCompile Include="..\..\Source\Scenes\MainMenuScene.cpp">
       <Filter>Source\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\ResourceManager.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Units\Boss.cpp">
+      <Filter>Source\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\MapManager.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\CameraManager.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Units\EnemyUnit.cpp">
+      <Filter>Source\Units</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +97,18 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Scenes\MainMenuScene.h">
       <Filter>Headers\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Units\Boss.h">
+      <Filter>Headers\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\MapManager.h">
+      <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\CameraManager.h">
+      <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Units\EnemyUnit.h">
+      <Filter>Headers\Units</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
