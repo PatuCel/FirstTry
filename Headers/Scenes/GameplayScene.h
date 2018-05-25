@@ -22,11 +22,18 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
+	
+	void keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
+	void keyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
 
-	void update(float delta) override;
+	bool loadCollectibles();
+	bool loadEnemies();
+
+	void update(float) override;
 
 private:
+	std::vector<EnemyUnit*> enemies;
+	TMXTiledMap* testMap;
 	PlayerUnit* player;
 	Boss* boss;
-	TMXTiledMap* testMap;
 };
