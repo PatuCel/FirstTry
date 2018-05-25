@@ -7,6 +7,7 @@ USING_NS_CC;
 
 class PlayerUnit;
 class Boss;
+class Hud;
 
 class GameplayScene : public Scene
 {
@@ -36,4 +37,5 @@ private:
 	TMXTiledMap* testMap;
 	PlayerUnit* player;
 	Boss* boss;
+	Hud* hud;
 };

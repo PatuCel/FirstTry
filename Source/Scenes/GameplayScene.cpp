@@ -88,7 +88,7 @@ bool GameplayScene::init()
 	listener->onTouchEnded = [=](Touch* touch, Event* event) {};
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);*/
 
-	auto hud = Hud::createHud();
+	hud = Hud::createHud();
 	hud->setScore("864");	//Player Score
 	hud->setHP(65);			//Player Health
 	this->addChild(hud, 10);
@@ -199,6 +199,8 @@ void GameplayScene::update(float delta)
 	CameraManager::getInstance()->setCameraPosition(Vec2(CameraManager::getInstance()->getCameraPosition().x, CameraManager::getInstance()->getCameraPosition().y + 1));
 	
 	movePlayer(Vec2(player->getPosition().x, player->getPosition().y + 1));
+	hud->setPositionY(hud->getPositionY() + 1);
+	boss->setPositionY(boss->getPositionY() + 1);
 
 	if(player->isMovingUp() && !player->isMovingDown())
 	{
