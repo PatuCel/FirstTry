@@ -73,7 +73,7 @@ bool GameplayScene::init()
 	boss->setHealth(500);
 	this->addChild(boss, 1);
 
-	player = PlayerUnit::createPlayer("player.png", Vec2(SCREEN_RESOLUTION_W / 2, SCREEN_RESOLUTION_H / 2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(player, 1);
 
 	MapManager::getInstance()->loadMap("test.tmx");
