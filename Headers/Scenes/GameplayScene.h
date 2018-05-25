@@ -5,6 +5,9 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+class PlayerUnit;
+class Boss;
+
 class GameplayScene : public Scene
 {
 public:
@@ -20,15 +23,10 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
 
-	void keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
-	void keyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
-
-	bool loadCollectibles();
-	bool loadEnemies();
-
-	void update(float) override;
+	void update(float delta) override;
 
 private:
-	PlayerUnit * _player;
-	std::vector<EnemyUnit*> _enemies;
+	PlayerUnit* player;
+	Boss* boss;
+	TMXTiledMap* testMap;
 };

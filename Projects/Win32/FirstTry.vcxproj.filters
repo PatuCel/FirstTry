@@ -25,6 +25,12 @@
     <Filter Include="Headers\Scenes">
       <UniqueIdentifier>{e88785c1-22bb-4e32-a183-c361a9e356b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Components">
+      <UniqueIdentifier>{3f972917-2810-46c6-ba50-960ee4f210fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Components">
+      <UniqueIdentifier>{96667bd6-3e43-473e-933e-16b511062818}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\AppDelegate.cpp">
@@ -65,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Units\EnemyUnit.cpp">
       <Filter>Source\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Components\Hud.cpp">
+      <Filter>Source\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Units\EnemyUnit.h">
       <Filter>Headers\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Components\Hud.h">
+      <Filter>Headers\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

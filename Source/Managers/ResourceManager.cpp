@@ -21,6 +21,7 @@ ResourceManager* ResourceManager::getInstance()
 
 void ResourceManager::LoadSpriteSheet(string spriteSheetplist)
 {
+	SpriteFrameCache::getInstance()->destroyInstance();
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(spriteSheetplist);
 }
 

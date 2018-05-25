@@ -3,9 +3,9 @@
 #include "Units/Boss.h"
 #include "Units/EnemyUnit.h"
 #include "Managers/ResourceManager.h"
-#include "Managers/MapManager.h"
-#include "Managers/CameraManager.h"
-#include "Globals.h"
+#include "ui/UILoadingBar.h"
+#include "components/Hud.h"
+
 
 Scene* GameplayScene::createScene()
 {
@@ -64,19 +64,20 @@ bool GameplayScene::init()
 	ResourceManager::getInstance()->LoadSpriteSheet("tp_level_01.plist");
 
 	// boss sprite
-	//auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
-	//auto boss = Boss::createBoss(frameArray, 0.05f);
-	//boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
-	//this->addChild(boss, 1);
+	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
+	boss = Boss::createBoss(frameArray, 0.05f);
+	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
+	boss->setHealth(500);
+	this->addChild(boss, 1);
 
-	_player = PlayerUnit::createPlayer("player.png", Vec2(SCREEN_RESOLUTION_W/2, SCREEN_RESOLUTION_H/2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
-	this->addChild(_player, 1);
-	
-	MapManager::getInstance()->loadMap("test.tmx");
-	this->addChild(MapManager::getInstance()->getMap(), 0);
-	loadCollectibles();
-	loadEnemies();	
-		
+	player = PlayerUnit::createPlayer("player.png", Vec2(50, 50), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	this->addChild(player, 1);
+
+	LevelManager::getInstance()->readLevel("level_001.json");
+
+	testMap = TMXTiledMap::create("test.tmx");
+	this->addChild(testMap, 0);
+
 	///Touch events
 	/*auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch* touch, Event* event) { return true; };
@@ -91,6 +92,10 @@ bool GameplayScene::init()
 
 	this->scheduleUpdate();
 
+	auto hud = Hud::createHud();
+	hud->setScore("864");	//Player Score
+	hud->setHP(65);			//Player Health
+	this->addChild(hud, 10);
     return true;
 }
 
@@ -141,45 +146,16 @@ void GameplayScene::keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d:
 }
 void GameplayScene::keyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
 {
-	if(keyCode == EventKeyboard::KeyCode::KEY_W)
-	{
-		_player->stopPlayerDirection(PLAYER_MOVE_DIRECTION_UP);
-	}
-	else if(keyCode == EventKeyboard::KeyCode::KEY_A)
-	{
-		_player->stopPlayerDirection(PLAYER_MOVE_DIRECTION_LEFT);
-	}
-	else if(keyCode == EventKeyboard::KeyCode::KEY_S)
-	{
-		_player->stopPlayerDirection(PLAYER_MOVE_DIRECTION_DOWN);
-	}
-	else if(keyCode == EventKeyboard::KeyCode::KEY_D)
-	{
-		_player->stopPlayerDirection(PLAYER_MOVE_DIRECTION_RIGHT);
-	}
-}
+	auto location = touch->getLocation();
+	if (player->getBoundingBox().containsPoint(location))
+		player->setPosition(location);
 
-bool GameplayScene::loadCollectibles()
-{
-	return true;
-}
-
-bool GameplayScene::loadEnemies()
-{
-	std::vector<Vec2> enemiesTiles =  MapManager::getInstance()->getTilesFromLayer(MAP_LAYER_ENEMIES);
-
-	for(int x=0; x<enemiesTiles.size(); x++)
+	//Test health -- 
+	if (boss->getBoundingBox().containsPoint(location))
 	{
-		auto tmpEnemy = EnemyUnit::createEnemy("player.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
-		_enemies.push_back(tmpEnemy);
+		boss->setPosition(location);
+		boss->reduceHealth(10);
 	}
-
-	for(int y=0; y<_enemies.size(); y++)
-	{
-		this->addChild(_enemies[y], 1);
-	}
-
-	return true;
 }
 
 void GameplayScene::update(float delta)

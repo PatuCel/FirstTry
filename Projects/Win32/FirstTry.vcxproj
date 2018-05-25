@@ -164,6 +164,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\AppDelegate.cpp" />
+    <ClCompile Include="..\..\Source\Components\Hud.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\Managers\CameraManager.cpp" />
     <ClCompile Include="..\..\Source\Managers\MapManager.cpp" />
@@ -179,6 +180,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\AppDelegate.h" />
+    <ClInclude Include="..\..\Headers\Components\Hud.h" />
     <ClInclude Include="..\..\Headers\Globals.h" />
     <ClInclude Include="..\..\Headers\Main.h" />
     <ClInclude Include="..\..\Headers\Managers\CameraManager.h" />
