@@ -116,12 +116,7 @@ void GameplayScene::movePlayer(Vec2 pos)
 	int tileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_COLLISIONS)->getTileGIDAt(tilePosition);
 	if(!tileGID)
 	{
-		CCLOG("Moving Player");
 		_player->setPosition(pos);
-	}
-	else
-	{
-		CCLOG("Collision!!!");
 	}
 }
 
@@ -193,20 +188,20 @@ void GameplayScene::update(float delta)
 	
 	movePlayer(Vec2(_player->getPosition().x, _player->getPosition().y + 1));
 
-	if(_player->isMovingUp())
+	if(_player->isMovingUp() && !_player->isMovingDown())
 	{
 		movePlayer(Vec2(_player->getPosition().x, _player->getPosition().y + 2));
 	}
-	else if(_player->isMovingDown())
+	else if(_player->isMovingDown() && !_player->isMovingUp())
 	{
 		movePlayer(Vec2(_player->getPosition().x, _player->getPosition().y - 2));
 	}
 
-	if(_player->isMovingLeft())
+	if(_player->isMovingLeft() && !_player->isMovingRight())
 	{
 		movePlayer(Vec2(_player->getPosition().x - 2, _player->getPosition().y));
 	}
-	else if(_player->isMovingRight())
+	else if(_player->isMovingRight() && !_player->isMovingLeft())
 	{
 		movePlayer(Vec2(_player->getPosition().x + 2, _player->getPosition().y));
 	}

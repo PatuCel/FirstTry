@@ -54,9 +54,6 @@
     <ClCompile Include="..\..\Source\Managers\ResourceManager.cpp">
       <Filter>Source\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Managers\LevelManager.cpp">
-      <Filter>Source\Managers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Units\Boss.cpp">
       <Filter>Source\Units</Filter>
     </ClCompile>
@@ -100,9 +97,6 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Scenes\MainMenuScene.h">
       <Filter>Headers\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Headers\Managers\LevelManager.h">
-      <Filter>Headers\Managers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Headers\Units\Boss.h">
       <Filter>Headers\Units</Filter>

@@ -15,38 +15,26 @@ void PlayerUnit::startPlayerDirection(PlayerMoveDirection direction)
 	switch(direction)
 	{
 		case PLAYER_MOVE_DIRECTION_UP:
-			if(!m_moveToDown)
-			{
-				m_moveToUp = true;
-			}
+			m_moveToUp = true;
 			break;
 
 		case PLAYER_MOVE_DIRECTION_LEFT:
-			if(!m_moveToRight)
-			{
-				m_moveToLeft = true;
-			}
+			m_moveToLeft = true;
 			break;
 
 		case PLAYER_MOVE_DIRECTION_DOWN:
-			if(!m_moveToUp)
-			{
-				m_moveToDown = true;
-			}
+			m_moveToDown = true;
 			break;
 
 		case PLAYER_MOVE_DIRECTION_RIGHT:
-			if(!m_moveToLeft)
-			{
-				m_moveToRight = true;
-			}
+			m_moveToRight = true;
 			break;
 	}
 }
 
 void PlayerUnit::stopPlayerDirection(PlayerMoveDirection direction)
 {
-	switch (direction)
+	switch(direction)
 	{
 	case PLAYER_MOVE_DIRECTION_UP:
 		m_moveToUp = false;
