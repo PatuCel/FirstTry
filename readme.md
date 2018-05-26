@@ -6,6 +6,7 @@ PaTuCel 1stTry
 ### PREREQUISITES
 
 * [Visual2017](https://www.visualstudio.com/es/free-developer-offers/) - Visual Studio Community
+* [C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=30679#) - Visual C++ Redistributable for Visual Studio 2012 Update 4
 
 ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/Visual2017.png)
 
@@ -21,7 +22,9 @@ PaTuCel 1stTry
 ## DOCUMENTATION
 
 * [Cocos2dx](http://www.cocos2d-x.org/docs/cocos2d-x/en/index.html)
-* [Cocos2dx Api](http://www.cocos2d-x.org/docs/api-ref/cplusplus/v3x/)
+	* [Cocos2dx Api](http://www.cocos2d-x.org/docs/api-ref/cplusplus/v3x/)
+* [CocosCreator](http://cocos2d-x.org/docs/creator/manual/en/)
+	* [CocosCreatorApi](http://www.cocos2d-x.org/docs/creator/api/en/)
 * [Git](https://git-scm.com/doc)
 * [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/)
 * [GitHub Desktop](https://help.github.com/desktop/)
@@ -29,3 +32,9 @@ PaTuCel 1stTry
 ## FREE ASSETS
 
 * [OpenGameArt](https://opengameart.org/)
+
+## COCO CREATOR
+
+* Build Resources
+![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorSetup.png)
+![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorBuild.png)

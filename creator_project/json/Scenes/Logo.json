@@ -1,0 +1,332 @@
+{
+	"version": "0.4.0",
+	"root": {
+		"object": {
+			"node": {
+				"contentSize": {
+					"w": 0,
+					"h": 0
+				},
+				"enabled": true,
+				"anchorPoint": {
+					"x": 0,
+					"y": 0
+				},
+				"cascadeOpacityEnabled": true,
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255
+				},
+				"globalZOrder": 0,
+				"localZOrder": 0,
+				"opacity": 255,
+				"opacityModifyRGB": false,
+				"tag": -1,
+				"groupIndex": 0,
+				"colliders": []
+			}
+		},
+		"object_type": "Scene",
+		"children": [
+			{
+				"object": {
+					"contentSize": {
+						"w": 640,
+						"h": 960
+					},
+					"enabled": true,
+					"name": "Canvas",
+					"anchorPoint": {
+						"x": 0.5,
+						"y": 0.5
+					},
+					"cascadeOpacityEnabled": true,
+					"color": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"globalZOrder": 0,
+					"localZOrder": 0,
+					"opacity": 255,
+					"opacityModifyRGB": false,
+					"position": {
+						"x": 320,
+						"y": 480
+					},
+					"rotationSkewX": 0,
+					"rotationSkewY": 0,
+					"scaleX": 1,
+					"scaleY": 1,
+					"skewX": 0,
+					"skewY": 0,
+					"tag": -1,
+					"groupIndex": 0,
+					"colliders": []
+				},
+				"object_type": "Node",
+				"children": [
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 388,
+									"h": 436
+								},
+								"enabled": true,
+								"name": "logo",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 0,
+									"y": 0
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"spriteFrameName": "Sprites/logo.png",
+							"spriteType": "Simple",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": true,
+							"sizeMode": "Trimmed"
+						},
+						"object_type": "Sprite",
+						"children": []
+					}
+				]
+			},
+			{
+				"object": {
+					"node": {
+						"contentSize": {
+							"w": 100,
+							"h": 40
+						},
+						"enabled": true,
+						"name": "Play_button",
+						"anchorPoint": {
+							"x": 0.5,
+							"y": 0.5
+						},
+						"cascadeOpacityEnabled": true,
+						"color": {
+							"r": 255,
+							"g": 255,
+							"b": 255
+						},
+						"globalZOrder": 0,
+						"localZOrder": 0,
+						"opacity": 255,
+						"opacityModifyRGB": false,
+						"position": {
+							"x": 319,
+							"y": 223
+						},
+						"rotationSkewX": 0,
+						"rotationSkewY": 0,
+						"scaleX": 1,
+						"scaleY": 1,
+						"skewX": 0,
+						"skewY": 0,
+						"tag": -1,
+						"groupIndex": 0,
+						"colliders": []
+					},
+					"ignoreContentAdaptWithSize": false,
+					"spriteFrameName": "Sprites/Buttons/play-now-button.png",
+					"transition": 2,
+					"pressedSpriteFrameName": "image/default_btn_pressed.png",
+					"disabledSpriteFrameName": "image/default_btn_disabled.png"
+				},
+				"object_type": "Button",
+				"children": [
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 100,
+									"h": 40
+								},
+								"enabled": true,
+								"name": "Label",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 0,
+									"g": 0,
+									"b": 0
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 0,
+									"y": 0
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"fontSize": 20,
+							"labelText": "",
+							"horizontalAlignment": "Center",
+							"verticalAlignment": "Center",
+							"overflowType": "Clamp",
+							"enableWrap": false,
+							"fontType": "System",
+							"fontName": "arial"
+						},
+						"object_type": "Label",
+						"children": []
+					}
+				]
+			}
+		]
+	},
+	"designResolution": {
+		"w": 640,
+		"h": 960
+	},
+	"resolutionFitWidth": false,
+	"resolutionFitHeight": true,
+	"spriteFrames": [
+		{
+			"name": "Sprites/logo.png",
+			"texturePath": "creator/Sprites/logo.png",
+			"rect": {
+				"x": 27,
+				"y": 5,
+				"w": 388,
+				"h": 436
+			},
+			"offset": {
+				"x": -4,
+				"y": 2
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 450,
+				"h": 450
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 388,
+				"h": 436
+			}
+		},
+		{
+			"name": "Sprites/Buttons/play-now-button.png",
+			"texturePath": "creator/Sprites/Buttons/play-now-button.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 287,
+				"h": 71
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 287,
+				"h": 71
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 287,
+				"h": 71
+			}
+		},
+		{
+			"name": "image/default_btn_pressed.png",
+			"texturePath": "creator/image/default_btn_pressed.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 40,
+				"h": 40
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 40,
+				"h": 40
+			},
+			"centerRect": {
+				"x": 11,
+				"y": 11,
+				"w": 18,
+				"h": 22
+			}
+		},
+		{
+			"name": "image/default_btn_disabled.png",
+			"texturePath": "creator/image/default_btn_disabled.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 40,
+				"h": 40
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 40,
+				"h": 40
+			},
+			"centerRect": {
+				"x": 15,
+				"y": 7,
+				"w": 10,
+				"h": 24
+			}
+		}
+	],
+	"collisionMatrix": [
+		{
+			"value": [
+				true
+			]
+		}
+	]
+}
