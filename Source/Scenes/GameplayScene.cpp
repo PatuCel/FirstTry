@@ -91,6 +91,7 @@ bool GameplayScene::init()
 	auto hud = Hud::createHud();
 	hud->setScore("864");	//Player Score
 	hud->setHP(65);			//Player Health
+	hud->addButtonPressedListener([=](int id) { menuCloseCallback(0); }); //TODO:
 	this->addChild(hud, 10);
     return true;
 }
