@@ -50,7 +50,7 @@ void SceneManager::changeScene(EnumSceneType SceneType, bool replace){
 		pScene = GameplayScene::createScene();
 		break;
 	case MAINMENU_SCENE:
-		pScene = MainMenuScene::createScene();
+		pScene = MainMenuScene::scene();
 		break;
 	}
 	if (pScene == NULL)

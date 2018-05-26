@@ -1,81 +1,75 @@
 #include "Scenes\MainMenuScene.h"
 #include "Managers\SceneManager.h"
+#include "..\libs\cocos_creator\reader\CreatorReader.h"
+#include "globals.h"
 
 using namespace cocos2d;
 
+cocos2d::Scene* MainMenuScene::g_currentScene = nullptr;;
+creator::CreatorReader* MainMenuScene::g_reader = nullptr;
 
-Scene* MainMenuScene::createScene()
+
+Scene* MainMenuScene::scene()
 {
-	return MainMenuScene::create();
+	auto scene = createScene(CC_SCENE_MENU_MAIN);
+	MainMenuScene::handleButtonsClick(scene);
+	return scene;
 }
 
+////////////////////////////////////////////////////
+// private functions
+///////////////////////////////////////////////////
 
-bool MainMenuScene::init()
+cocos2d::Scene* MainMenuScene::createScene(const std::string& ccreatorPath)
 {
-	if (!Scene::init())
-	{
-		return false;
-	}
+	auto reader = creator::CreatorReader::createWithFilename(ccreatorPath);
+	reader->setup();
+	auto scene = reader->getSceneGraph();
 
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("tp_level_01.plist");
+	MainMenuScene::g_reader = reader;
+	MainMenuScene::g_currentScene = scene;
 
-	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-	Vec2 visibleSize = Director::getInstance()->getVisibleSize();
-
-	// background
-	auto background = Sprite::createWithSpriteFrameName("background.png");
-	background->setPosition(origin.x + visibleSize.x / 2, origin.y + visibleSize.y / 2);
-	this->addChild(background);
-
-	// sprite
-	//auto frames = getAnimation("capguy/walk/%04d.png", 8);
-	//auto sprite = Sprite::createWithSpriteFrame(frames.front());
-	//background->addChild(sprite);
-	//sprite->setPosition(100, 620);
-
-	//auto animation = Animation::createWithSpriteFrames(frames, 1.0f / 8);
-	//sprite->runAction(RepeatForever::create(Animate::create(animation)));
-
-	//auto movement = MoveTo::create(10, Vec2(2148, 620));
-	//auto resetPosition = MoveTo::create(0, Vec2(-150, 620));
-	//auto sequence = Sequence::create(movement, resetPosition, NULL);
-	//sprite->runAction(RepeatForever::create(sequence));
-
-
-	// Menu Items
-	auto playItem = MenuItemImage::create("menu_play0.png", "menu_play1.png", [&](Ref *sender) { changeScene(SceneManager::GAMEPLAY_SCENE); });
-
-	if (playItem != nullptr || playItem->getContentSize().width > 0 || playItem->getContentSize().height > 0)
-	{
-		float x = origin.x + Director::getInstance()->getVisibleSize().width - playItem->getContentSize().width / 2;
-		float y = origin.y + playItem->getContentSize().height / 2;
-		playItem->setPosition(x, y);
-	}
-
-	// create menu, it's an autorelease object
-	auto menu = Menu::create(playItem, NULL);
-	menu->setPosition(Vec2::ZERO);
-	this->addChild(menu, 1);
-
-	return true;
+	return scene;;
 }
 
-void MainMenuScene::changeScene(int scene)
+void MainMenuScene::repalceScene(const std::string& ccreatorPath)
 {
-		this->removeAllChildren();
-		SceneManager::getInstance()->changeScene((SceneManager::EnumSceneType)scene, true);
+	auto scene = createScene(ccreatorPath);
+	//auto backButton = MainMenuScene::createBackButton();
+	//scene->addChild(backButton);
+	Director::getInstance()->replaceScene(scene);
 }
 
-
-Vector<SpriteFrame*> MainMenuScene::getAnimation(const char *format, int count)
+void MainMenuScene::handleButtonClick(cocos2d::Scene* scene, const std::string& buttonName, const std::string& ccreatorPath)
 {
-	auto spritecache = SpriteFrameCache::getInstance();
-	Vector<SpriteFrame*> animFrames;
-	char str[100];
-	for (int i = 1; i <= count; i++)
-	{
-		sprintf(str, format, i);
-		animFrames.pushBack(spritecache->getSpriteFrameByName(str));
-	}
-	return animFrames;
+	auto button = utils::findChild<ui::Button*>(scene, buttonName);
+	button->addClickEventListener([=](Ref*) {
+		SceneManager::getInstance()->changeScene(SceneManager::GAMEPLAY_SCENE,true);
+		//MainMenuScene::repalceScene(ccreatorPath);
+	});
+}
+
+void MainMenuScene::handleButtonsClick(cocos2d::Scene* scene)
+{
+	MainMenuScene::handleButtonClick(scene, "Play_button", "creator/scenes/Label/CreatorLabels.ccreator");
+	/*MainMenuScene::handleButtonClick(scene, "mask", "creator/scenes/Mask/Mask.ccreator");
+	MainMenuScene::handleButtonClick(scene, "pageview", "creator/scenes/pageview/pageview.ccreator");
+	MainMenuScene::handleButtonClick(scene, "prefab", "creator/scenes/prefab/prefab-test.ccreator");
+	MainMenuScene::handleButtonClick(scene, "richtext", "creator/scenes/richtext/CreatorRichtext.ccreator");
+	MainMenuScene::handleButtonClick(scene, "slider", "creator/scenes/slider/slider.ccreator");
+	MainMenuScene::handleButtonClick(scene, "sprites", "creator/scenes/sprites/CreatorSprites.ccreator");
+	MainMenuScene::handleButtonClick(scene, "tilemap", "creator/scenes/tilemap/CreatorTilemap.ccreator");
+	MainMenuScene::handleButtonClick(scene, "toggle", "creator/scenes/toggle/toggle.ccreator");
+	MainMenuScene::handleButtonClick(scene, "toggle_group", "creator/scenes/toggle_group/toggle_group.ccreator");
+	MainMenuScene::handleButtonClick(scene, "ui", "creator/scenes/ui/CreatorUI.ccreator");*/
+
+	//MainMenuScene::handleAnimationButtonClick(scene);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+	HelloWorld::handleButtonClick(scene, "webview", "creator/scenes/webview/WebView.ccreator");
+#endif
+	/*MainMenuScene::handleColliderButtonClick(scene);
+	MainMenuScene::handleVideoButtonClick(scene);
+	MainMenuScene::handleDragonbones(scene);*/
+
+	//MainMenuScene::handleButtonClick(scene, "motionstreak", "creator/scenes/motionstreak/motionstreak.ccreator");
 }
