@@ -1,0 +1,666 @@
+{
+	"version": "0.4.0",
+	"root": {
+		"object": {
+			"node": {
+				"contentSize": {
+					"w": 0,
+					"h": 0
+				},
+				"enabled": true,
+				"anchorPoint": {
+					"x": 0,
+					"y": 0
+				},
+				"cascadeOpacityEnabled": true,
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255
+				},
+				"globalZOrder": 0,
+				"localZOrder": 0,
+				"opacity": 255,
+				"opacityModifyRGB": false,
+				"tag": -1,
+				"groupIndex": 0,
+				"colliders": []
+			}
+		},
+		"object_type": "Scene",
+		"children": [
+			{
+				"object": {
+					"contentSize": {
+						"w": 640,
+						"h": 960
+					},
+					"enabled": true,
+					"name": "Hud",
+					"anchorPoint": {
+						"x": 0.5,
+						"y": 0.5
+					},
+					"cascadeOpacityEnabled": true,
+					"color": {
+						"r": 188,
+						"g": 207,
+						"b": 42
+					},
+					"globalZOrder": 0,
+					"localZOrder": 0,
+					"opacity": 255,
+					"opacityModifyRGB": false,
+					"position": {
+						"x": 320,
+						"y": 480
+					},
+					"rotationSkewX": 0,
+					"rotationSkewY": 0,
+					"scaleX": 1,
+					"scaleY": 1,
+					"skewX": 0,
+					"skewY": 0,
+					"tag": -1,
+					"groupIndex": 0,
+					"colliders": []
+				},
+				"object_type": "Node",
+				"children": [
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 72,
+									"h": 72
+								},
+								"enabled": true,
+								"name": "skill_01",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -274,
+									"y": -344
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Buttons/hud_skill01.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Buttons/hud_skill02.png",
+							"disabledSpriteFrameName": "Sprites/Buttons/hud_skill02.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 100,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "Label",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 0,
+											"g": 0,
+											"b": 0
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"fontSize": 20,
+									"labelText": "Power",
+									"horizontalAlignment": "Center",
+									"verticalAlignment": "Center",
+									"overflowType": "Clamp",
+									"enableWrap": false,
+									"fontType": "System",
+									"fontName": "arial"
+								},
+								"object_type": "Label",
+								"children": []
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 72,
+									"h": 72
+								},
+								"enabled": true,
+								"name": "skill_02",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -274,
+									"y": -264
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Buttons/hud_skill01.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Buttons/hud_skill02.png",
+							"disabledSpriteFrameName": "Sprites/Buttons/hud_skill02.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 100,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "Label",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 0,
+											"g": 0,
+											"b": 0
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"fontSize": 20,
+									"labelText": "Power",
+									"horizontalAlignment": "Center",
+									"verticalAlignment": "Center",
+									"overflowType": "Clamp",
+									"enableWrap": false,
+									"fontType": "System",
+									"fontName": "arial"
+								},
+								"object_type": "Label",
+								"children": []
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 72,
+									"h": 72
+								},
+								"enabled": true,
+								"name": "skill_03",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -274,
+									"y": -184
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Buttons/hud_skill01.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Buttons/hud_skill02.png",
+							"disabledSpriteFrameName": "Sprites/Buttons/hud_skill02.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 100,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "Label",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 0,
+											"g": 0,
+											"b": 0
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"fontSize": 20,
+									"labelText": "Power",
+									"horizontalAlignment": "Center",
+									"verticalAlignment": "Center",
+									"overflowType": "Clamp",
+									"enableWrap": false,
+									"fontType": "System",
+									"fontName": "arial"
+								},
+								"object_type": "Label",
+								"children": []
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 150,
+									"h": 48
+								},
+								"enabled": true,
+								"name": "hp",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -235,
+									"y": 446
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"backgroundSpriteFrameName": "creator/Sprites/Buttons/hp_bar_1.png",
+							"percent": 100,
+							"barSpriteFrameName": "creator/Sprites/Buttons/hp_bar_0.png",
+							"barSpriteType": 1,
+							"reverse": false
+						},
+						"object_type": "ProgressBar",
+						"children": []
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 156,
+									"h": 50
+								},
+								"enabled": true,
+								"name": "score",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 162,
+									"y": 439
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"text": "<font><color=#ffff00>1000000</c></font>",
+							"horizontalAlignment": "Right",
+							"fontSize": 40,
+							"maxWidth": 0,
+							"lineHeight": 50,
+							"fontFilename": "Arial"
+						},
+						"object_type": "RichText",
+						"children": []
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 64,
+									"h": 64
+								},
+								"enabled": true,
+								"name": "pause",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 278,
+									"y": 438
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Buttons/hud_skill02.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Buttons/hud_skill01.png",
+							"disabledSpriteFrameName": "Sprites/Buttons/hud_skill01.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 100,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "Label",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 0,
+											"g": 0,
+											"b": 0
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"fontSize": 20,
+									"labelText": "[II]",
+									"horizontalAlignment": "Center",
+									"verticalAlignment": "Center",
+									"overflowType": "Clamp",
+									"enableWrap": false,
+									"fontType": "System",
+									"fontName": "arial"
+								},
+								"object_type": "Label",
+								"children": []
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"designResolution": {
+		"w": 640,
+		"h": 960
+	},
+	"resolutionFitWidth": false,
+	"resolutionFitHeight": true,
+	"spriteFrames": [
+		{
+			"name": "Sprites/Buttons/hud_skill01.png",
+			"texturePath": "creator/Sprites/Buttons/hud_skill01.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 64,
+				"h": 64
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			}
+		},
+		{
+			"name": "Sprites/Buttons/hud_skill02.png",
+			"texturePath": "creator/Sprites/Buttons/hud_skill02.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 64,
+				"h": 64
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			}
+		},
+		{
+			"name": "Sprites/Buttons/hp_bar_1.png",
+			"texturePath": "creator/Sprites/Buttons/hp_bar_1.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 150,
+				"h": 48
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 150,
+				"h": 48
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 150,
+				"h": 48
+			}
+		},
+		{
+			"name": "Sprites/Buttons/hp_bar_0.png",
+			"texturePath": "creator/Sprites/Buttons/hp_bar_0.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 114,
+				"h": 42
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 114,
+				"h": 42
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 114,
+				"h": 42
+			}
+		}
+	],
+	"collisionMatrix": [
+		{
+			"value": [
+				true
+			]
+		}
+	]
+}
