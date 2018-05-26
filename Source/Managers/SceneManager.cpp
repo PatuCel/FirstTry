@@ -42,13 +42,15 @@ void SceneManager::changeScene(EnumSceneType SceneType, bool replace){
 	Scene* pScene = NULL;
 	switch (SceneType) {
 	case LOGO_SCENE:
+		//pScene = LogoScene::create();
 		pScene = LogoScene::createScene();
+		//LogoScene::initGUI();
 		break;
 	case GAMEPLAY_SCENE:
 		pScene = GameplayScene::createScene();
 		break;
 	case MAINMENU_SCENE:
-		pScene = MainMenuScene::createScene();
+		pScene = MainMenuScene::scene();
 		break;
 	}
 	if (pScene == NULL)

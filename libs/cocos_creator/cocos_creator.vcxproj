@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{5920D371-32E7-4EF6-B63F-DE6D924A35F6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>cocoscreator</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>
+      </SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\libs\cocos_creator\reader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="reader\animation\AnimateClip.h" />
+    <ClInclude Include="reader\animation\AnimationClip.h" />
+    <ClInclude Include="reader\animation\AnimationClipProperties.h" />
+    <ClInclude Include="reader\animation\AnimationManager.h" />
+    <ClInclude Include="reader\animation\Bezier.h" />
+    <ClInclude Include="reader\animation\Easing.h" />
+    <ClInclude Include="reader\collider\Collider.h" />
+    <ClInclude Include="reader\collider\ColliderManager.h" />
+    <ClInclude Include="reader\collider\Contract.h" />
+    <ClInclude Include="reader\collider\Intersection.h" />
+    <ClInclude Include="reader\CreatorReader.h" />
+    <ClInclude Include="reader\CreatorReader_generated.h" />
+    <ClInclude Include="reader\dragonbones\animation\Animation.h" />
+    <ClInclude Include="reader\dragonbones\animation\AnimationState.h" />
+    <ClInclude Include="reader\dragonbones\animation\BaseTimelineState.h" />
+    <ClInclude Include="reader\dragonbones\animation\IAnimateble.h" />
+    <ClInclude Include="reader\dragonbones\animation\TimelineState.h" />
+    <ClInclude Include="reader\dragonbones\animation\WorldClock.h" />
+    <ClInclude Include="reader\dragonbones\armature\Armature.h" />
+    <ClInclude Include="reader\dragonbones\armature\Bone.h" />
+    <ClInclude Include="reader\dragonbones\armature\IArmatureDisplay.h" />
+    <ClInclude Include="reader\dragonbones\armature\Slot.h" />
+    <ClInclude Include="reader\dragonbones\armature\TransformObject.h" />
+    <ClInclude Include="reader\dragonbones\cocos2dx\CCArmatureDisplay.h" />
+    <ClInclude Include="reader\dragonbones\cocos2dx\CCDragonBonesHeaders.h" />
+    <ClInclude Include="reader\dragonbones\cocos2dx\CCFactory.h" />
+    <ClInclude Include="reader\dragonbones\cocos2dx\CCSlot.h" />
+    <ClInclude Include="reader\dragonbones\cocos2dx\CCTextureData.h" />
+    <ClInclude Include="reader\dragonbones\core\BaseObject.h" />
+    <ClInclude Include="reader\dragonbones\core\DragonBones.h" />
+    <ClInclude Include="reader\dragonbones\DragonBonesHeaders.h" />
+    <ClInclude Include="reader\dragonbones\events\EventObject.h" />
+    <ClInclude Include="reader\dragonbones\factories\BaseFactory.h" />
+    <ClInclude Include="reader\dragonbones\geom\ColorTransform.h" />
+    <ClInclude Include="reader\dragonbones\geom\Matrix.h" />
+    <ClInclude Include="reader\dragonbones\geom\Point.h" />
+    <ClInclude Include="reader\dragonbones\geom\Rectangle.h" />
+    <ClInclude Include="reader\dragonbones\geom\Transform.h" />
+    <ClInclude Include="reader\dragonbones\model\AnimationData.h" />
+    <ClInclude Include="reader\dragonbones\model\ArmatureData.h" />
+    <ClInclude Include="reader\dragonbones\model\DragonBonesData.h" />
+    <ClInclude Include="reader\dragonbones\model\FrameData.h" />
+    <ClInclude Include="reader\dragonbones\model\TimelineData.h" />
+    <ClInclude Include="reader\dragonbones\parsers\DataParser.h" />
+    <ClInclude Include="reader\dragonbones\parsers\JSONDataParser.h" />
+    <ClInclude Include="reader\dragonbones\textures\TextureData.h" />
+    <ClInclude Include="reader\flatbuffers\code_generators.h" />
+    <ClInclude Include="reader\flatbuffers\flatbuffers.h" />
+    <ClInclude Include="reader\flatbuffers\grpc.h" />
+    <ClInclude Include="reader\flatbuffers\hash.h" />
+    <ClInclude Include="reader\flatbuffers\idl.h" />
+    <ClInclude Include="reader\flatbuffers\reflection.h" />
+    <ClInclude Include="reader\flatbuffers\reflection_generated.h" />
+    <ClInclude Include="reader\flatbuffers\util.h" />
+    <ClInclude Include="reader\Macros.h" />
+    <ClInclude Include="reader\ui\PageView.h" />
+    <ClInclude Include="reader\ui\RichtextStringVisitor.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="reader\animation\AnimateClip.cpp" />
+    <ClCompile Include="reader\animation\AnimationClip.cpp" />
+    <ClCompile Include="reader\animation\AnimationManager.cpp" />
+    <ClCompile Include="reader\animation\Bezier.cpp" />
+    <ClCompile Include="reader\animation\Easing.cpp" />
+    <ClCompile Include="reader\collider\Collider.cpp" />
+    <ClCompile Include="reader\collider\ColliderManager.cpp" />
+    <ClCompile Include="reader\collider\Contract.cpp" />
+    <ClCompile Include="reader\collider\Intersection.cpp" />
+    <ClCompile Include="reader\CreatorReader.cpp" />
+    <ClCompile Include="reader\dragonbones\animation\Animation.cpp" />
+    <ClCompile Include="reader\dragonbones\animation\AnimationState.cpp" />
+    <ClCompile Include="reader\dragonbones\animation\TimelineState.cpp" />
+    <ClCompile Include="reader\dragonbones\animation\WorldClock.cpp" />
+    <ClCompile Include="reader\dragonbones\armature\Armature.cpp" />
+    <ClCompile Include="reader\dragonbones\armature\Bone.cpp" />
+    <ClCompile Include="reader\dragonbones\armature\Slot.cpp" />
+    <ClCompile Include="reader\dragonbones\cocos2dx\CCArmatureDisplay.cpp" />
+    <ClCompile Include="reader\dragonbones\cocos2dx\CCFactory.cpp" />
+    <ClCompile Include="reader\dragonbones\cocos2dx\CCSlot.cpp" />
+    <ClCompile Include="reader\dragonbones\cocos2dx\CCTextureData.cpp" />
+    <ClCompile Include="reader\dragonbones\core\BaseObject.cpp" />
+    <ClCompile Include="reader\dragonbones\events\EventObject.cpp" />
+    <ClCompile Include="reader\dragonbones\factories\BaseFactory.cpp" />
+    <ClCompile Include="reader\dragonbones\model\AnimationData.cpp" />
+    <ClCompile Include="reader\dragonbones\model\ArmatureData.cpp" />
+    <ClCompile Include="reader\dragonbones\model\DragonBonesData.cpp" />
+    <ClCompile Include="reader\dragonbones\model\FrameData.cpp" />
+    <ClCompile Include="reader\dragonbones\model\TimelineData.cpp" />
+    <ClCompile Include="reader\dragonbones\parsers\DataParser.cpp" />
+    <ClCompile Include="reader\dragonbones\parsers\JSONDataParser.cpp" />
+    <ClCompile Include="reader\dragonbones\textures\TextureData.cpp" />
+    <ClCompile Include="reader\ui\PageView.cpp" />
+    <ClCompile Include="reader\ui\RichtextStringVisitor.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
