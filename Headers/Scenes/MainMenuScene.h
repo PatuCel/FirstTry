@@ -1,19 +1,24 @@
 #pragma once
 
 #include "cocos2d.h"
+namespace creator
+{
+	class CreatorReader;
+}
 USING_NS_CC;
 
-class MainMenuScene : public Scene
+class MainMenuScene 
 {
 public:
-    static Scene* createScene();
+	static cocos2d::Scene* scene();
 
-    virtual bool init();
+private:
+    static Scene* createScene(const std::string& ccreatorPath);
+	static void repalceScene(const std::string& ccreatorPath);
+	static void handleButtonClick(cocos2d::Scene* scene, const std::string& buttonName, const std::string& ccreatorPath);
+	static void handleButtonsClick(cocos2d::Scene* scene);	
+	//static void handleAnimationButtonClick(cocos2d::Scene* scene);
 
-	void changeScene(int scene);
-
-	Vector<SpriteFrame*> getAnimation(const char * format, int count);
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(MainMenuScene);
+	static cocos2d::Scene* g_currentScene;
+	static creator::CreatorReader* g_reader;  
 };
