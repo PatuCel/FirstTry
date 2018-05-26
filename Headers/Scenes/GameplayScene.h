@@ -21,7 +21,10 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);
 
+	void update(float delta) override;
+
 private:
-	PlayerUnit* _player;
-	Boss*_boss;
+	PlayerUnit* player;
+	Boss* boss;
+	TMXTiledMap* testMap;
 };
