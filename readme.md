@@ -38,7 +38,7 @@ PaTuCel 1stTry
 
 * [OpenGameArt](https://opengameart.org/)
 
-## COCO CREATOR
+## COCOS CREATOR
 
 * Build Resources
 ![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorSetup.png)
