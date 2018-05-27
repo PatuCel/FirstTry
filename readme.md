@@ -41,5 +41,5 @@ PaTuCel 1stTry
 ## COCO CREATOR
 
 * Build Resources
-![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorSetup.png)
-![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorBuild.png)
+![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorSetup.png)
+![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorBuild.png)
