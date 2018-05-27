@@ -11,7 +11,7 @@ public:
 		UNIT_STATE_SPAWNING,
 		UNIT_STATE_DYING,		
 		UNIT_STATE_UNKNOW
-	};
+	};	
 
 	enum UnitWeapon {
 		UNIT_WEAPON_NONE = 0,
