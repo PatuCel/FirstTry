@@ -5,12 +5,15 @@ PaTuCel 1stTry
 
 ## PREREQUISITES
 
+#### Visual Studio 
 * [Visual2017](https://www.visualstudio.com/es/free-developer-offers/) - Visual Studio Community
 * [C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=30679#) - Visual C++ Redistributable for Visual Studio 2012 Update 4
 
 ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/Visual2017.png)
 
 * [Cocos2dx](http://www.cocos2d-x.org/download) - Version 3.16
+
+#### Android
 * [Python](https://www.python.org/downloads/windows/) - Version 2.7 (For use cocos commands)
 * [Git](https://git-scm.com/) - Download Latest Version
 
