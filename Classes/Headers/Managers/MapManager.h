@@ -21,7 +21,7 @@ public:
 	TMXLayer* getLayer(MapLayer mapLayer);
 	Vec2 tileFromPosition(Vec2 position);
 	Vec2 positionFromTile(Vec2 tile);
-	std::vector<Vec2> MapManager::getTilesFromLayer(MapLayer mapLayer);
+	std::vector<Vec2> getTilesFromLayer(MapLayer mapLayer);
 
 private:
 	static MapManager* m_mapManager;

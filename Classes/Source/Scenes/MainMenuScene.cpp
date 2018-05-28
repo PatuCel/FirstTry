@@ -65,7 +65,7 @@ void MainMenuScene::handleButtonsClick(cocos2d::Scene* scene)
 
 	//MainMenuScene::handleAnimationButtonClick(scene);
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	HelloWorld::handleButtonClick(scene, "webview", "creator/scenes/webview/WebView.ccreator");
+	//HelloWorld::handleButtonClick(scene, "webview", "creator/scenes/webview/WebView.ccreator");
 #endif
 	/*MainMenuScene::handleColliderButtonClick(scene);
 	MainMenuScene::handleVideoButtonClick(scene);

@@ -11,3 +11,5 @@ Release.win32
 *.VC.db*
 *.user
 proj.win32/.vs
+bin
+cocos2d/cocos/platform/android/libcocos2dx/build/
