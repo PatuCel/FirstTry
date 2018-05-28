@@ -15,6 +15,7 @@ PaTuCel 1stTry
 
 #### Android
 * [Python](https://www.python.org/downloads/windows/) - Version 2.7 (For use cocos commands)
+* [Android NDK](https://developer.android.com/ndk/downloads/) - Lastest version
 * [Git](https://git-scm.com/) - Download Latest Version
 
 ## OPTIONAL TOOLS
