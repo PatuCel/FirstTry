@@ -1,5 +1,5 @@
-Projects/Win32/Debug.win32
-Projects/Win32/Release.win32
+Debug.win32
+Release.win32
 *.log
 *.tlog
 *.obj
@@ -10,4 +10,6 @@ Projects/Win32/Release.win32
 *.pch
 *.VC.db*
 *.user
-Projects/Win32/.vs/FirstTry/v15/Browse.VC.opendb
+proj.win32/.vs
+bin
+cocos2d/cocos/platform/android/libcocos2dx/build/
