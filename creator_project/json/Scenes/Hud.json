@@ -82,9 +82,9 @@
 								},
 								"cascadeOpacityEnabled": true,
 								"color": {
-									"r": 241,
-									"g": 57,
-									"b": 57
+									"r": 255,
+									"g": 255,
+									"b": 255
 								},
 								"globalZOrder": 0,
 								"localZOrder": 0,
@@ -104,7 +104,6 @@
 								"groupIndex": 0,
 								"colliders": []
 							},
-							"backgroundSpriteFrameName": "creator/image/default_progressbar_bg.png",
 							"percent": 80,
 							"barSpriteFrameName": "creator/image/default_progressbar.png",
 							"barSpriteType": 1,
@@ -117,7 +116,7 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"w": 323,
+									"w": 240,
 									"h": 40
 								},
 								"enabled": true,
@@ -156,9 +155,8 @@
 							"verticalAlignment": "Center",
 							"overflowType": "None",
 							"enableWrap": true,
-							"fontName": "creator/4d66762b-6cc5-4261-a22e-3eb24241057d/kenvector_future.ttf",
-							"fontType": "TTF",
-							"lineHeight": 40
+							"fontType": "System",
+							"fontName": "arial"
 						},
 						"object_type": "Label",
 						"children": []
@@ -547,31 +545,6 @@
 	"resolutionFitWidth": false,
 	"resolutionFitHeight": true,
 	"spriteFrames": [
-		{
-			"name": "image/default_progressbar_bg.png",
-			"texturePath": "creator/image/default_progressbar_bg.png",
-			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 60,
-				"h": 15
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"rotated": false,
-			"originalSize": {
-				"w": 60,
-				"h": 15
-			},
-			"centerRect": {
-				"x": 5,
-				"y": 0,
-				"w": 50,
-				"h": 15
-			}
-		},
 		{
 			"name": "image/default_progressbar.png",
 			"texturePath": "creator/image/default_progressbar.png",
