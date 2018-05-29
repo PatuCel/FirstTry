@@ -24,7 +24,7 @@ static Size mediumResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H
 static Size largeResolutionSize = Size(SCREEN_RESOLUTION_W * 2, SCREEN_RESOLUTION_H * 2);
 
 //target resolution
-static cocos2d::Size designResolutionSize = mediumResolutionSize;
+static cocos2d::Size designResolutionSize = smallResolutionSize;
 
 
 AppDelegate::AppDelegate()

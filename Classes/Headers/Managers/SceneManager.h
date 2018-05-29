@@ -36,6 +36,8 @@ public:
 	*/
 	void goBackScene();
 
+	Scene * createScene(const std::string & ccreatorPath);
+
 	//@replace true if you want to replace current scene	
 	void changeScene(EnumSceneType SceneType,bool replace);
 	/*
