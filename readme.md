@@ -1,16 +1,22 @@
 # Project Title
 
 
-PaTuCel 1stTry
+PaTuCel 1stTry v0.0.1
 
-### PREREQUISITES
+## PREREQUISITES
 
+#### Visual Studio 
 * [Visual2017](https://www.visualstudio.com/es/free-developer-offers/) - Visual Studio Community
 * [C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=30679#) - Visual C++ Redistributable for Visual Studio 2012 Update 4
 
 ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/Visual2017.png)
 
-* [Cocos2dx](http://www.cocos2d-x.org/download) - Version 3.16
+* [Cocos2dx](http://www.cocos2d-x.org/download) - Version 3.17
+
+#### Android
+* [Python](https://www.python.org/downloads/windows/) - Version 2.7 (For use cocos commands)
+* [Android NDK](https://developer.android.com/ndk/downloads/) - Lastest version
+* [Apache ANT](https://ant.apache.org/bindownload.cgi) - Version 1.9.11
 * [Git](https://git-scm.com/) - Download Latest Version
 
 ## OPTIONAL TOOLS
@@ -28,18 +34,19 @@ PaTuCel 1stTry
 
 * [Cocos2dx](http://www.cocos2d-x.org/docs/cocos2d-x/en/index.html)
 	* [Cocos2dx Api](http://www.cocos2d-x.org/docs/api-ref/cplusplus/v3x/)
-* [CocosCreator](http://cocos2d-x.org/docs/creator/manual/en/)
-	* [CocosCreatorApi](http://www.cocos2d-x.org/docs/creator/api/en/)
+* [Cocos Creator](http://cocos2d-x.org/docs/creator/manual/en/)
+	* [Cocos Creator Api](http://www.cocos2d-x.org/docs/creator/api/en/)
 * [Git](https://git-scm.com/doc)
 * [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/)
 * [GitHub Desktop](https://help.github.com/desktop/)
+* [Git Flow](https://github.com/nvie/gitflow/wiki)
 
 ## FREE ASSETS
 
 * [OpenGameArt](https://opengameart.org/)
 
-## COCO CREATOR
+## COCOS CREATOR
 
 * Build Resources
-![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorSetup.png)
-![alt text](https://github.com/PatuCel/FirstTry/blob/CocosCreator_Integration/docs/cocosCreatorBuild.png)
+![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorSetup.png)
+![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorBuild.png)
