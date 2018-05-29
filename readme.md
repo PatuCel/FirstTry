@@ -6,17 +6,17 @@ PaTuCel 1stTry v0.0.1
 ## PREREQUISITES
 
 * [Cocos2dx](http://www.cocos2d-x.org/download) - Version 3.17
+* [Git](https://git-scm.com/) - Download Latest Version
 
 #### Win32
 * [Visual2017](https://www.visualstudio.com/es/free-developer-offers/) - Visual Studio Community
 * [C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=30679#) - Visual C++ Redistributable for Visual Studio 2012 Update 4
 	* ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/Visual2017.png)
-	
+
 #### Android
 * [Python](https://www.python.org/downloads/windows/) - Version 2.7 (For cocos commands)
 * [Android NDK](https://developer.android.com/ndk/downloads/) - Lastest version
 * [Apache ANT](https://ant.apache.org/bindownload.cgi) - Version 1.9.11
-* [Git](https://git-scm.com/) - Download Latest Version
 
 ## OPTIONAL TOOLS
 
@@ -47,5 +47,5 @@ PaTuCel 1stTry v0.0.1
 ## COCOS CREATOR
 
 * Build Resources
-![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorSetup.png)
-![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorBuild.png)
+	* ![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorSetup.png)
+	* ![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/cocosCreatorBuild.png)
