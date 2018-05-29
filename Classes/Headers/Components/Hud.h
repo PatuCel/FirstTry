@@ -6,7 +6,7 @@
 class Hud : public cocos2d::Layer
 {
 private:
-	cocos2d::Label* score;
+	cocos2d::Label* scoreLabel;
 	cocos2d::ui::LoadingBar* hp;
 	std::function<void(int id)> buttonPressedListener;
 public:

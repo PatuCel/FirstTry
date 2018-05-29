@@ -88,8 +88,8 @@ bool GameplayScene::init()
 	listener->onTouchEnded = [=](Touch* touch, Event* event) {};
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);*/
 
-	auto hud = Hud::createHud();
-	hud->setScore("864");	//Player Score
+	hud = Hud::createHud();
+	hud->setScore("961");	//Player Score
 	hud->setHP(65);			//Player Health
 	hud->addButtonPressedListener([=](int id) { menuCloseCallback(0); }); //TODO:
 	this->addChild(hud, 10);
