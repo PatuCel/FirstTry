@@ -1,4 +1,5 @@
 #include "Units/BaseUnit.h"
+#include "Units/ProjectileUnit.h"
 
 BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon)
 {
@@ -41,3 +42,10 @@ void BaseUnit::setUnitWeapon(UnitWeapon newWeapon)
 {
 	m_unitWeapon = newWeapon;
 }
+
+bool BaseUnit::isAllied() const
+{
+	return mAirCraftType == Player;
+}
+
+

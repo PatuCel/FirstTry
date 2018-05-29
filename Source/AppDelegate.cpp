@@ -3,6 +3,7 @@
 #include "Scenes/GameplayScene.h"
 #include "Scenes/MainMenuScene.h"
 #include "Managers/SceneManager.h"
+#include "Managers/ConfigManager.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -108,6 +109,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	//Init All Managers
 	SceneManager::getInstance();
+	//Iribe
+	ConfigManager::Load_Shooter_Config("Resources/Config.json");
 
 	SceneManager::getInstance()->changeScene(SceneManager::MAINMENU_SCENE, true); //new for calling Scenes
 

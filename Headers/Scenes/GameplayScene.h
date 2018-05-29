@@ -31,6 +31,12 @@ public:
 	bool loadEnemies();
 
 	void update(float) override;
+	
+	//Iribe
+	void				createBullets(bool isAllied);
+	void				createProjectile(float xDirection, float yDirection, float xOffset, float yOffset);
+
+	void myFunc();
 
 private:
 	std::vector<EnemyUnit*> enemies;

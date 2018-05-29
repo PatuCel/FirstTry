@@ -75,6 +75,9 @@
     <ClCompile Include="..\..\Source\Components\Hud.cpp">
       <Filter>Source\Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\ConfigManager.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
@@ -121,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Components\Hud.h">
       <Filter>Headers\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\ConfigManager.h">
+      <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Units\ProjectileUnit.h">
+      <Filter>Headers\Units</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

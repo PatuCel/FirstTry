@@ -1,0 +1,26 @@
+{
+	"player": {
+		"hitpoints" : 20,
+		"speed" : [500,500],
+		"fireInterval" : 2,
+		"spreadlevel"  : 1,
+		"weapontype"   : 1,
+		"isAlly"	   : true,
+	}
+	"projectiles" : {
+			"projectile_1"   : {
+				"name"  : "normal",
+				"velocity"  : 10,
+				"damage"	: 10,
+				"spreadlevel" : 1,
+				"texturePath" : "texture_name"
+			}
+			"projectile_2"   : {
+				"name"  : "special",
+				"velocity"  : 20,
+				"damage"	: 20,
+				"spreadlevel" : 2,
+				"texturePath" : "texture_name"
+			}
+	}
+}

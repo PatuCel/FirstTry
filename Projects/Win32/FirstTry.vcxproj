@@ -170,6 +170,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\..\Source\Components\Hud.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\Managers\CameraManager.cpp" />
+    <ClCompile Include="..\..\Source\Managers\ConfigManager.cpp" />
     <ClCompile Include="..\..\Source\Managers\MapManager.cpp" />
     <ClCompile Include="..\..\Source\Managers\ResourceManager.cpp" />
     <ClCompile Include="..\..\Source\Managers\SceneManager.cpp" />
@@ -187,6 +188,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\..\Headers\Globals.h" />
     <ClInclude Include="..\..\Headers\Main.h" />
     <ClInclude Include="..\..\Headers\Managers\CameraManager.h" />
+    <ClInclude Include="..\..\Headers\Managers\ConfigManager.h" />
     <ClInclude Include="..\..\Headers\Managers\MapManager.h" />
     <ClInclude Include="..\..\Headers\Managers\ResourceManager.h" />
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h" />
@@ -197,6 +199,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\..\Headers\Units\Boss.h" />
     <ClInclude Include="..\..\Headers\Units\EnemyUnit.h" />
     <ClInclude Include="..\..\Headers\Units\PlayerUnit.h" />
+    <ClInclude Include="..\..\Headers\Units\ProjectileUnit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "SimpleAudioEngine.h"
 #include "Scenes/GameplayScene.h"
+#include "Units/PlayerUnit.h"
 #include "Units/Boss.h"
 #include "Units/EnemyUnit.h"
 #include "Managers/ResourceManager.h"
@@ -73,7 +74,7 @@ bool GameplayScene::init()
 	boss->setHealth(500);
 	this->addChild(boss, 1);
 
-	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
 	this->addChild(player, 1);
 
 	MapManager::getInstance()->loadMap("test.tmx");
@@ -181,7 +182,7 @@ bool GameplayScene::loadEnemies()
 
 	for (int x = 0; x<enemiesTiles.size(); x++)
 	{
-		auto tmpEnemy = EnemyUnit::createEnemy("player.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+		auto tmpEnemy = EnemyUnit::createEnemy("player.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
 		enemies.push_back(tmpEnemy);
 	}
 
@@ -219,4 +220,74 @@ void GameplayScene::update(float delta)
 	{
 		movePlayer(Vec2(player->getPosition().x + 2, player->getPosition().y));
 	}
+}
+
+///Iribe 
+
+
+void GameplayScene::createBullets(bool isAllied)
+{
+	int mSpreadLevel = 3;
+	float dirFactor = 0.0f;
+	if (isAllied)
+		dirFactor = 1.0f;
+	else
+		dirFactor = -1.0f;
+
+	switch (mSpreadLevel)
+	{
+	case 1:
+			createProjectile(0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
+		break;
+
+	case 2:
+			createProjectile(0.f, 1.f * dirFactor, -0.33f, 0.33f * dirFactor);
+			createProjectile(0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
+			createProjectile(0.f, 1.f * dirFactor, +0.33f, 0.33f * dirFactor);
+		
+		break;
+
+	case 3:
+			createProjectile(0.f, 1.f * dirFactor, -0.1f, 0.33f * dirFactor);
+			createProjectile(0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
+			createProjectile(0.f, 1.f * dirFactor, +0.1f, 0.33f * dirFactor);
+
+		break;
+	}
+}
+
+
+void GameplayScene::createProjectile(float xDirection, float yDirection, float xOffset, float yOffset)
+{
+	// 1  - Just an example for how to get the  _player object
+	//auto node = unused_event->getCurrentTarget();
+
+	// 2
+	//Vec2 touchLocation = touch->getLocation();
+	Vec2 offset = Vec2(xOffset, yOffset);
+	cocos2d::Vec2 Direction(xDirection, yDirection);
+
+	/*
+	// 3
+	if (offset.x < 0) {
+	return true;
+	}
+	*/
+
+	// 4
+	auto projectile = Sprite::create("missile.png");
+	projectile->setPosition(player->getPosition() + offset + Direction);
+	this->addChild(projectile);
+
+	// 5
+	offset.normalize();
+	auto shootAmount = offset * 1000;
+
+	// 6
+	auto realDest = shootAmount + projectile->getPosition();
+
+	// 7
+	auto actionMove = MoveTo::create(1.5f, realDest);
+	auto actionRemove = RemoveSelf::create();
+	projectile->runAction(Sequence::create(actionMove, actionRemove, nullptr));
 }
