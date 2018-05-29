@@ -11,7 +11,7 @@ PaTuCel 1stTry
 
 ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/Visual2017.png)
 
-* [Cocos2dx](http://www.cocos2d-x.org/download) - Version 3.16
+* [Cocos2dx](http://www.cocos2d-x.org/download) - Version 3.17
 
 #### Android
 * [Python](https://www.python.org/downloads/windows/) - Version 2.7 (For use cocos commands)
