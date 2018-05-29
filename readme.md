@@ -1,7 +1,7 @@
 # Project Title
 
 
-PaTuCel 1stTry
+PaTuCel 1stTry v0.0.1
 
 ## PREREQUISITES
 
