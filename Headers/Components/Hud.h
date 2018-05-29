@@ -2,12 +2,11 @@
 #include "cocos2d.h"
 #include "ui/UILoadingBar.h"
 #include "ui/UIButton.h"
-#include "ui/UIRichText.h"
 
 class Hud : public cocos2d::Layer
 {
 private:
-	cocos2d::ui::RichText* score;
+	cocos2d::Label* score;
 	cocos2d::ui::LoadingBar* hp;
 	std::function<void(int id)> buttonPressedListener;
 public:

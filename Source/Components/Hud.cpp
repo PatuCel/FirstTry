@@ -24,7 +24,8 @@ bool Hud::init()
 	{
 		auto layer = SceneManager::getInstance()->createScene(CC_UI_HUD);
 		hp = findChild<LoadingBar*>(layer, "hp");
-		score = findChild<RichText*>(layer, "score");
+		score = findChild<Label*>(layer, "score");
+		score->setString("679");
 
 		findChild<Button*>(layer, "pause")->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(0); });
 		findChild<Button*>(layer, "skill_01")->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(1); });
@@ -47,8 +48,8 @@ void Hud::setScore(string score)
 
 void Hud::setHP(float percent)
 {
-	hp->setPercent(percent);
-	hp->setColor(Color3B::RED);
+	//hp->setPercent(percent);
+	//hp->setColor(Color3B::RED);
 }
 
 void Hud::addButtonPressedListener(function<void(int id)> buttonPressedListener)
