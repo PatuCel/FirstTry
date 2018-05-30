@@ -1,0 +1,330 @@
+{
+	"version": "0.4.0",
+	"root": {
+		"object": {
+			"node": {
+				"contentSize": {
+					"w": 0,
+					"h": 0
+				},
+				"enabled": true,
+				"anchorPoint": {
+					"x": 0,
+					"y": 0
+				},
+				"cascadeOpacityEnabled": true,
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255
+				},
+				"globalZOrder": 0,
+				"localZOrder": 0,
+				"opacity": 255,
+				"opacityModifyRGB": false,
+				"tag": -1,
+				"groupIndex": 0,
+				"colliders": []
+			}
+		},
+		"object_type": "Scene",
+		"children": [
+			{
+				"object": {
+					"contentSize": {
+						"w": 720,
+						"h": 1280
+					},
+					"enabled": true,
+					"name": "Canvas",
+					"anchorPoint": {
+						"x": 0.5,
+						"y": 0.5
+					},
+					"cascadeOpacityEnabled": true,
+					"color": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"globalZOrder": 0,
+					"localZOrder": 0,
+					"opacity": 255,
+					"opacityModifyRGB": false,
+					"position": {
+						"x": 360,
+						"y": 640
+					},
+					"rotationSkewX": 0,
+					"rotationSkewY": 0,
+					"scaleX": 1,
+					"scaleY": 1,
+					"skewX": 0,
+					"skewY": 0,
+					"tag": -1,
+					"groupIndex": 0,
+					"colliders": []
+				},
+				"object_type": "Node",
+				"children": [
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 256,
+									"h": 256
+								},
+								"enabled": true,
+								"name": "logo",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 0,
+									"y": 0
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"spriteFrameName": "Sprites/logo.png",
+							"spriteType": "Simple",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": true,
+							"sizeMode": "Custom"
+						},
+						"object_type": "Sprite",
+						"children": []
+					}
+				]
+			},
+			{
+				"object": {
+					"node": {
+						"contentSize": {
+							"w": 96,
+							"h": 96
+						},
+						"enabled": true,
+						"name": "Play_button",
+						"anchorPoint": {
+							"x": 0.5,
+							"y": 0.5
+						},
+						"cascadeOpacityEnabled": true,
+						"color": {
+							"r": 255,
+							"g": 202,
+							"b": 33
+						},
+						"globalZOrder": 0,
+						"localZOrder": 0,
+						"opacity": 255,
+						"opacityModifyRGB": false,
+						"position": {
+							"x": 360,
+							"y": 248
+						},
+						"rotationSkewX": 0,
+						"rotationSkewY": 0,
+						"scaleX": 1,
+						"scaleY": 1,
+						"skewX": 0,
+						"skewY": 0,
+						"tag": -1,
+						"groupIndex": 0,
+						"colliders": []
+					},
+					"ignoreContentAdaptWithSize": false,
+					"spriteFrameName": "Sprites/Buttons/img_circle.png",
+					"transition": 2,
+					"pressedSpriteFrameName": "Sprites/Buttons/img_circle_bg.png",
+					"disabledSpriteFrameName": "Sprites/Buttons/img_circle_bg.png"
+				},
+				"object_type": "Button",
+				"children": [
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 50,
+									"h": 50
+								},
+								"enabled": true,
+								"name": "img_play",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 5,
+									"y": 0
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"spriteFrameName": "Sprites/Buttons/img_play.png",
+							"spriteType": "Simple",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": true,
+							"sizeMode": "Custom"
+						},
+						"object_type": "Sprite",
+						"children": []
+					}
+				]
+			}
+		]
+	},
+	"designResolution": {
+		"w": 720,
+		"h": 1280
+	},
+	"resolutionFitWidth": false,
+	"resolutionFitHeight": true,
+	"spriteFrames": [
+		{
+			"name": "Sprites/logo.png",
+			"texturePath": "creator/Sprites/logo.png",
+			"rect": {
+				"x": 27,
+				"y": 5,
+				"w": 388,
+				"h": 436
+			},
+			"offset": {
+				"x": -4,
+				"y": 2
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 450,
+				"h": 450
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 388,
+				"h": 436
+			}
+		},
+		{
+			"name": "Sprites/Buttons/img_play.png",
+			"texturePath": "creator/Sprites/Buttons/img_play.png",
+			"rect": {
+				"x": 9,
+				"y": 5,
+				"w": 35,
+				"h": 40
+			},
+			"offset": {
+				"x": 1.5,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 50,
+				"h": 50
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 35,
+				"h": 40
+			}
+		},
+		{
+			"name": "Sprites/Buttons/img_circle.png",
+			"texturePath": "creator/Sprites/Buttons/img_circle.png",
+			"rect": {
+				"x": 2,
+				"y": 2,
+				"w": 46,
+				"h": 46
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 50,
+				"h": 50
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 46
+			}
+		},
+		{
+			"name": "Sprites/Buttons/img_circle_bg.png",
+			"texturePath": "creator/Sprites/Buttons/img_circle_bg.png",
+			"rect": {
+				"x": 2,
+				"y": 2,
+				"w": 46,
+				"h": 46
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 50,
+				"h": 50
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 46
+			}
+		}
+	],
+	"collisionMatrix": [
+		{
+			"value": [
+				true
+			]
+		}
+	]
+}
