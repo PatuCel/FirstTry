@@ -16,6 +16,7 @@ public:
 	static MapManager* getInstance();
 
 	bool loadMap(const std::string filePath);
+	void checkForLoop();
 
 	TMXTiledMap* getMap();
 	TMXLayer* getLayer(MapLayer mapLayer);
@@ -31,6 +32,14 @@ private:
 	TMXLayer* m_layerCollisions;
 	TMXLayer* m_layerCollectibles;
 	TMXLayer* m_layerEnemies;
+
+	//Loop Map
+	bool m_loopMap;
+	bool m_countMap;	
+	int m_loopStartPosition;
+	int m_mapCounts;
+	int m_loopCounts;
+	//Loop Map
 
 	MapManager();
 };

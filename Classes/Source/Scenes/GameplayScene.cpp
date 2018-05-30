@@ -9,7 +9,6 @@
 #include "ui/UILoadingBar.h"
 #include "components/Hud.h"
 
-
 Scene* GameplayScene::createScene()
 {
     return GameplayScene::create();
@@ -124,7 +123,7 @@ void GameplayScene::movePlayer(Vec2 pos)
 {
 	Vec2 tilePosition = MapManager::getInstance()->tileFromPosition(pos);
 	int tileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_COLLISIONS)->getTileGIDAt(tilePosition);
-	if (!tileGID)
+	if(!tileGID)
 	{
 		player->setPosition(pos);
 	}
@@ -197,8 +196,12 @@ bool GameplayScene::loadEnemies()
 
 void GameplayScene::update(float delta)
 {
-	CameraManager::getInstance()->setCameraPosition(Vec2(CameraManager::getInstance()->getCameraPosition().x, CameraManager::getInstance()->getCameraPosition().y + 1));
-	
+	Vec2 cameraPos = CameraManager::getInstance()->getCameraPosition();	
+
+	MapManager::getInstance()->checkForLoop();
+
+	CameraManager::getInstance()->setCameraPosition(Vec2(cameraPos.x, cameraPos.y + 1));
+
 	movePlayer(Vec2(player->getPosition().x, player->getPosition().y + 1));
 	hud->setPositionY(hud->getPositionY() + 1);
 	boss->setPositionY(boss->getPositionY() + 1);
