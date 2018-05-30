@@ -85,6 +85,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	std::vector<std::string> searchPaths;
 	float scaleFactor = 1.0f;
 	Size frameSize = glview->getFrameSize();
+	
+
+	auto aspect = SceneManager::getInstance()->getAspectRatio(frameSize.height, frameSize.width);
+	if (aspect == "16:9")
+		searchPaths.push_back("creator/Scenes/16.9/");
+	else
+		searchPaths.push_back("creator/Scenes/4.3/");
 
 	if (frameSize.height > mediumResolutionSize.height)
 	{

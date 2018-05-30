@@ -80,3 +80,16 @@ Scene* SceneManager::createScene(const std::string& ccreatorPath)
 	auto scene = reader->getSceneGraph();
 	return scene;;
 }
+
+int SceneManager::gcd(int a, int b)
+{
+	return (b == 0) ? a : gcd(b, a%b);
+}
+
+std::string SceneManager::getAspectRatio(int w, int h)
+{
+	auto r = gcd(w, h);
+	char str[6] = { 0 };
+	sprintf(str, "%d:%d", w / r, h / r);
+	return str;
+}
