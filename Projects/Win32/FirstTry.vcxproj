@@ -181,6 +181,7 @@ xcopy "$(ProjectDir)..\..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\..\Source\Units\Boss.cpp" />
     <ClCompile Include="..\..\Source\Units\EnemyUnit.cpp" />
     <ClCompile Include="..\..\Source\Units\PlayerUnit.cpp" />
+    <ClCompile Include="..\..\Source\Units\ProjectileUnit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\AppDelegate.h" />

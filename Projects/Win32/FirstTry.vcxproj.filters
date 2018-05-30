@@ -78,6 +78,9 @@
     <ClCompile Include="..\..\Source\Managers\ConfigManager.cpp">
       <Filter>Source\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Units\ProjectileUnit.cpp">
+      <Filter>Source\Units</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">

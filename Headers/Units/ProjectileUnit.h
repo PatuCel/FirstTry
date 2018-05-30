@@ -16,16 +16,18 @@ public:
 		TypeCount
 	};
 	
-	static ProjectileUnit* createUnit(const std::string spriteFrameName, Vec2 pos, int Type);
+	static ProjectileUnit* createUnit(int Type);
 
 	float					getMaxSpeed() const;
-	void					setCurrentPosition(Vec2 position);
-	void					setCurrentVelocity(Vec2 velocity);
+	void					setSpread(float spread);
+	void					setDamage(float damage);
+	void					setSpeed(Vec2 speed);
 	
 	
 private:
 
-	Vec2			mCurrentPosition;
-	Vec2			mCurrentVelocity;
+	float			mDamage;
+	int				mSpread;
+	Vec2			mSpeed;
 
 };
