@@ -8,6 +8,7 @@ PaTuCel 1stTry v0.0.1
 * [Cocos2dx](http://www.cocos2d-x.org/download) - Version 3.17
 * [Git](https://git-scm.com/) - Download Latest Version
 * [Cocos Creator](http://www.cocos2d-x.org/creator) - V1.911 WIN
+* [Tiled Map Editor](https://thorbjorn.itch.io/tiled) - installer (without Python support)
 
 #### Win32
 * [Visual2017](https://www.visualstudio.com/es/free-developer-offers/) - Visual Studio Community
