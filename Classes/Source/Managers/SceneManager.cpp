@@ -2,6 +2,8 @@
 #include "Scenes/LogoScene.h"
 #include "Scenes/GameplayScene.h"
 #include "Scenes/MainMenuScene.h"
+#include "../libs/cocos_creator/reader/CreatorReader.h"
+#include "globals.h"
 
 SceneManager* SceneManager::mSceneManager = NULL;
 SceneManager::SceneManager()
@@ -71,3 +73,10 @@ void SceneManager::goBackScene(){
 	Director::getInstance()->popScene();
 }
 
+Scene* SceneManager::createScene(const std::string& ccreatorPath)
+{
+	auto reader = creator::CreatorReader::createWithFilename(ccreatorPath);
+	reader->setup();
+	auto scene = reader->getSceneGraph();
+	return scene;;
+}
