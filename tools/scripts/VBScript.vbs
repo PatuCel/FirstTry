@@ -27,7 +27,7 @@ End Function
 Sub FixCocosProject()
     Set objRegEx = New RegExp
     objRegEx.Global = True
-    objRegEx.Pattern = "\Dpath\D : \D*(.*?),"
+    objRegEx.Pattern = "\Dpath\D\s*: \D*(.*?),"
 
     jsonFile = fileSystemObject.GetAbsolutePathName("../../creator_project/settings/creator-luacpp-support.json")
     jsonText = ReadText(jsonFile)
