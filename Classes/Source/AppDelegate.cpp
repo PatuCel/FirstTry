@@ -86,12 +86,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	float scaleFactor = 1.0f;
 	Size frameSize = glview->getFrameSize();
 	
-
-	auto aspect = SceneManager::getInstance()->getAspectRatio(frameSize.height, frameSize.width);
-	if (aspect == "16:9")
-		searchPaths.push_back("creator/Scenes/16.9/");
-	else
-		searchPaths.push_back("creator/Scenes/4.3/");
+	//Cocos Creator Scenes 
+	searchPaths.push_back("creator/Scenes/");
 
 	if (frameSize.height > mediumResolutionSize.height)
 	{
@@ -105,7 +101,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	}
 	else
 	{
-		searchPaths.push_back("res/SD");
+	searchPaths.push_back("res/SD");
 		scaleFactor = MIN(smallResolutionSize.height / designResolutionSize.height, smallResolutionSize.width / designResolutionSize.width);
 	}
 
