@@ -4,6 +4,7 @@
 
 ::Scripts dir
 pushd tools\scripts\
+call setEnv.bat
 
 :StartProgram
 ::variables
@@ -37,6 +38,7 @@ set /p var=
 
 if %var%==(%1)==() goto Menu
 if %var%==1 (
+	
 	call :BuildWin32 Debug
 	call :result-success
 )
@@ -81,7 +83,8 @@ title Compiling Win32 [%1]
 ::Validate VS PATH
 if "%VS150COMONTOOLS%" == "" ( call vbscript MsgBox "Create VS150COMONTOOLS Enviromment Variable First!, Example: D:\Visual2017\Common7\Tools\" 16 "MSBuild Error" & goto:eof ) 
 ::Compile
-call win_build.bat %1
+set MODE=%1
+call win_build.bat %MODE%
 goto:eof
 
 

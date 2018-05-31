@@ -15,6 +15,4 @@ if %ERRORLEVEL% EQU 0 (
 	goto :end
 )
 :end
-echo.
-
-pause
+%NOTIFU% "Build Succesfull"
