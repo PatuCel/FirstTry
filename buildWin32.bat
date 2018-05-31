@@ -23,8 +23,8 @@ echo.
 call :color 0a "  1.  [WIN32] " & echo Biuld Game (DEBUG)
 call :color 0a "  2.  [WIN32] " & echo Biuld Game (Release)
 call :color 0f "  ---------------------------------------------------------------------------------------------------------------" & echo.
-call :color 0e "  3.  [ANDROID] " & echo Biuld Game (not implemented yet)
-call :color 0e "  4.  [ANDROID] " & echo Biuld Game (not implemented yet)
+call :color 0e "  3.  [ANDROID] " & echo Biuld Game (Debug)
+call :color 0e "  4.  [ANDROID] " & echo Biuld Game (Release)
 call :color 0f "  ---------------------------------------------------------------------------------------------------------------" & echo.
 call :color 0b "  5.  [C-Creator] " & echo Fix Project Path
 echo.
@@ -45,12 +45,16 @@ if %var%==2 (
 	call :result-success
 )
 if %var%==3 (
-    ::TODO
-	call :result-fail
+    cls
+	title Compiling Android [Debug]
+    python cocos_compile.py debug
+	call :result-success
 )
 if %var%==4 (
-	::TODO
-	call :result-fail
+	cls
+	title Compiling Android [Release]
+	python cocos_compile.py release
+	call :result-success
 )
 if %var%==5 (
     cls
