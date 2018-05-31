@@ -46,7 +46,7 @@ PaTuCel 1stTry v0.0.1
 
 ### Android
 
-	```buildAndroid.bat```
+	buildAndroid.bat
 
 ### Win32
 	Open solution project inside of proj.win32/FirstTry.sln
