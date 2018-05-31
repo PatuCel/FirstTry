@@ -45,9 +45,9 @@ if %var%==2 (
 	call :result-success
 )
 if %var%==3 (
-    cls
+	cls
 	title Compiling Android [Debug]
-    python cocos_compile.py debug
+	python cocos_compile.py debug
 	call :result-success
 )
 if %var%==4 (
@@ -57,7 +57,7 @@ if %var%==4 (
 	call :result-success
 )
 if %var%==5 (
-    cls
+	cls
 	title Fix cocos creator project path
 	call vbscript FixCocosProject
 	call :result-success
