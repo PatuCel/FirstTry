@@ -4,6 +4,7 @@
 
 ::Scripts dir
 pushd tools\scripts\
+call setEnv.bat
 
 :StartProgram
 ::variables
@@ -37,6 +38,7 @@ set /p var=
 
 if %var%==(%1)==() goto Menu
 if %var%==1 (
+	
 	call :BuildWin32 Debug
 	call :result-success
 )

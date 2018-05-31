@@ -1,6 +1,6 @@
 #include "Scenes\MainMenuScene.h"
 #include "Managers\SceneManager.h"
-#include "..\libs\cocos_creator\reader\CreatorReader.h"
+#include "CreatorReader.h"
 #include "globals.h"
 
 using namespace cocos2d;
