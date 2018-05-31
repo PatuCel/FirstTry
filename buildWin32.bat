@@ -81,11 +81,12 @@ goto :Menu
 
 :BuildWin32
 cls
-title Compiling Win32 [%1]
+set MODE=%1
+title Compiling Win32 [%MODE%]
 ::Validate VS PATH
 if "%VS150COMONTOOLS%" == "" ( call vbscript MsgBox "Create VS150COMONTOOLS Enviromment Variable First!, Example: D:\Visual2017\Common7\Tools\" 16 "MSBuild Error" & goto:eof ) 
 ::Compile
-call win_build.bat %1
+call win_build.bat "%MODE%"
 goto:eof
 
 
