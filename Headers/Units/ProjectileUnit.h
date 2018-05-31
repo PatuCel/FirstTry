@@ -16,7 +16,7 @@ public:
 		TypeCount
 	};
 	
-	static ProjectileUnit* createUnit(int Type);
+	static ProjectileUnit* createUnit(int Type, Vec2 position, Vec2 offset,Vec2 AircraftPos);
 
 	float					getMaxSpeed() const;
 	void					setSpread(float spread);

@@ -1,35 +1,30 @@
 #include "Units/ProjectileUnit.h"
 #include "Managers/ConfigManager.h"
 
-namespace
-{
-	const std::vector<ConfigManager::ProjectileData> DataTable = initializeProjectileData();
-}
-
-/*
-std::vector<ConfigManager::ProjectileData> initializeProjectileData()
-{
-	ConfigManager::Load_Shooter_Config("Config.json");
-	std::vector<ConfigManager::ProjectileData> data = ConfigManager::GetProjectileDataTable();
-
-	return data;
-}
-*/
-
-ProjectileUnit* ProjectileUnit::createUnit(int Type)
+ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, Vec2 AircraftPos)
 {
 	ProjectileUnit* projectileUnit = new (std::nothrow) ProjectileUnit();
 
-	std::string spriteFrameName = DataTable[Type].texturePath;
+	std::string spriteFrameName = ConfigManager::GetProjectileDataTable()[Type].texturePath;
 
 	if(projectileUnit && projectileUnit->initWithSpriteFrameName(spriteFrameName))
 	{
 		projectileUnit->autorelease();
 		
-		projectileUnit->setDamage(DataTable[Type].damage);
+		projectileUnit->setDamage(ConfigManager::GetProjectileDataTable()[Type].damage);
 		
-		projectileUnit->setSpeed(Vec2(DataTable[Type].speed, DataTable[Type].speed));
-		projectileUnit->setSpread(DataTable[Type].spreadlevel);
+		projectileUnit->setSpeed(Vec2(ConfigManager::GetProjectileDataTable()[Type].speed, ConfigManager::GetProjectileDataTable()[Type].speed));
+		projectileUnit->setSpread(ConfigManager::GetProjectileDataTable()[Type].spreadlevel);
+		projectileUnit->setPosition(position);
+
+		offset.normalize();
+		auto shootAmount = offset * 1000;
+
+		auto realDest = shootAmount + AircraftPos;
+
+		auto actionMove = MoveTo::create(1.5f, realDest);
+		auto actionRemove = RemoveSelf::create();
+		projectileUnit->runAction(Sequence::create(actionMove, actionRemove, nullptr));
 
 		return projectileUnit;
 	}

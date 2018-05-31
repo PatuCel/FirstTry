@@ -1,6 +1,7 @@
 #pragma once
 #include "cocos2d.h"
 USING_NS_CC;
+#include "ProjectileUnit.h"
 
 class BaseUnit : public Sprite
 {
@@ -35,7 +36,10 @@ public:
 	void setUnitWeapon(UnitWeapon newWeapon);
 
 	//Iribe
-	
+	void myFunc();
+	void SetShooter(int ProjectileType, float Multiplier);
+	void				createBullets(bool isAllied);
+	void				createProjectile(float xDirection, float yDirection, float xOffset, float yOffset);
 	bool				isAllied() const;
 
 
@@ -45,7 +49,9 @@ private:
 	UnitWeapon m_unitWeapon;
 	SpriteFrame* m_sprite;
 	Scene* m_Escena;
+	ProjectileUnit* projectileUnit;
 
 	int	mSpreadLevel;
+	float mShooterMultiplier;
 	AirCraftType   mAirCraftType;
 };

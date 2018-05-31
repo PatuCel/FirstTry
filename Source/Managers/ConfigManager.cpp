@@ -8,8 +8,15 @@ static std::vector<ConfigManager::ProjectileData> dataProjectile(ProjectileUnit:
 
 using namespace ConfigManager;
 
-
 rapidjson::Document m_levelJson;
+
+
+std::vector<ConfigManager::ProjectileData> ConfigManager::initializeProjectileData()
+{
+	ConfigManager::Load_Shooter_Config("Config.json");
+	std::vector<ConfigManager::ProjectileData> data = ConfigManager::GetProjectileDataTable();
+	return data;
+}
 
 
 bool ConfigManager::Load_Shooter_Config(const std::string filePath)
@@ -57,6 +64,7 @@ bool ConfigManager::Load_Shooter_Config(const std::string filePath)
 				dataProjectile[x].speed = singleProjectileValue["velocity"].GetFloat();
 				//dataProjectile[x].isAllied = singleProjectileValue["damage"].GetFloat();
 				dataProjectile[x].spreadlevel = singleProjectileValue["spreadlevel"].GetInt();
+				dataProjectile[x].fireRate = singleProjectileValue["fireRate"].GetFloat();
 				dataProjectile[x].texturePath = singleProjectileValue["texturePath"].GetString();
 				
 			}

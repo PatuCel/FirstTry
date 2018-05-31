@@ -13,14 +13,16 @@
 				"velocity"  : 10,
 				"damage"	: 10,
 				"spreadlevel" : 1,
-				"texturePath" : "texture_name"
+				"fireRate"	:0.5,
+				"texturePath" : "player.png"
 			},
 			"projectile_2"   : {
 				"name"  : "special",
 				"velocity"  : 20,
 				"damage"	: 20,
 				"spreadlevel" : 2,
-				"texturePath" : "texture_name"
+				"fireRate"	:0.5,
+				"texturePath" : "player.png"
 			}
 	}
 }

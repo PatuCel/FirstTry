@@ -59,6 +59,10 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+
+	//Iribe
+	ConfigManager::Load_Shooter_Config("Config.json");
+
 	// initialize director
 	auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
@@ -109,8 +113,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	//Init All Managers
 	SceneManager::getInstance();
-	//Iribe
-	ConfigManager::Load_Shooter_Config("Config.json");
+	
 
 	SceneManager::getInstance()->changeScene(SceneManager::MAINMENU_SCENE, true); //new for calling Scenes
 

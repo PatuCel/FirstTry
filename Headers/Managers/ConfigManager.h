@@ -43,6 +43,7 @@ namespace ConfigManager
 		int								damage;
 		float							speed;
 		int								spreadlevel;
+		float							fireRate;
 		std::string						texturePath;
 		//sf::IntRect						textureRect;
 	};
@@ -51,6 +52,9 @@ namespace ConfigManager
 
 	std::vector<AircraftData> GetAircraftDataTable();
 	std::vector<ProjectileData> GetProjectileDataTable();
+
+	std::vector<ConfigManager::AircraftData>	initializeAircraftData();
+	std::vector<ConfigManager::ProjectileData>	initializeProjectileData();
 
 	
 
