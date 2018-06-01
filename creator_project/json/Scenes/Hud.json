@@ -82,9 +82,9 @@
 								},
 								"cascadeOpacityEnabled": true,
 								"color": {
-									"r": 0,
-									"g": 0,
-									"b": 0
+									"r": 255,
+									"g": 255,
+									"b": 255
 								},
 								"globalZOrder": 0,
 								"localZOrder": 0,
@@ -104,11 +104,11 @@
 								"groupIndex": 0,
 								"colliders": []
 							},
-							"spriteFrameName": "image/default_panel.png",
+							"spriteFrameName": "Sprites/Hud/img_bg.png",
 							"spriteType": "Sliced",
 							"srcBlend": 770,
 							"dstBlend": 771,
-							"trimEnabled": false,
+							"trimEnabled": true,
 							"sizeMode": "Custom"
 						},
 						"object_type": "Sprite",
@@ -171,8 +171,8 @@
 								"object": {
 									"node": {
 										"contentSize": {
-											"w": 116,
-											"h": 40
+											"w": 126.67,
+											"h": 44.44
 										},
 										"enabled": true,
 										"name": "pm_music",
@@ -210,8 +210,9 @@
 									"verticalAlignment": "Center",
 									"overflowType": "None",
 									"enableWrap": true,
-									"fontType": "System",
-									"fontName": "arial"
+									"fontName": "creator/Fonts/mikado_outline_shadow.fnt",
+									"fontType": "BMFont",
+									"lineHeight": 40
 								},
 								"object_type": "Label",
 								"children": []
@@ -274,8 +275,8 @@
 								"object": {
 									"node": {
 										"contentSize": {
-											"w": 89,
-											"h": 40
+											"w": 92.22,
+											"h": 44.44
 										},
 										"enabled": true,
 										"name": "pm_sfx",
@@ -313,8 +314,9 @@
 									"verticalAlignment": "Center",
 									"overflowType": "None",
 									"enableWrap": true,
-									"fontType": "System",
-									"fontName": "arial"
+									"fontName": "creator/Fonts/mikado_outline_shadow.fnt",
+									"fontType": "BMFont",
+									"lineHeight": 40
 								},
 								"object_type": "Label",
 								"children": []
@@ -324,7 +326,7 @@
 									"node": {
 										"contentSize": {
 											"w": 100,
-											"h": 40
+											"h": 50
 										},
 										"enabled": true,
 										"name": "pm_ok",
@@ -334,9 +336,9 @@
 										},
 										"cascadeOpacityEnabled": true,
 										"color": {
-											"r": 255,
-											"g": 255,
-											"b": 255
+											"r": 179,
+											"g": 204,
+											"b": 248
 										},
 										"globalZOrder": 0,
 										"localZOrder": 0,
@@ -369,7 +371,7 @@
 											"node": {
 												"contentSize": {
 													"w": 100,
-													"h": 40
+													"h": 50
 												},
 												"enabled": true,
 												"name": "Label",
@@ -379,9 +381,9 @@
 												},
 												"cascadeOpacityEnabled": true,
 												"color": {
-													"r": 0,
-													"g": 0,
-													"b": 0
+													"r": 229,
+													"g": 230,
+													"b": 22
 												},
 												"globalZOrder": 0,
 												"localZOrder": 0,
@@ -401,14 +403,15 @@
 												"groupIndex": 0,
 												"colliders": []
 											},
-											"fontSize": 20,
+											"fontSize": 32,
 											"labelText": "OK",
 											"horizontalAlignment": "Center",
 											"verticalAlignment": "Center",
 											"overflowType": "Clamp",
 											"enableWrap": false,
-											"fontType": "System",
-											"fontName": "arial"
+											"fontName": "creator/Fonts/mikado_outline_shadow.fnt",
+											"fontType": "BMFont",
+											"lineHeight": 40
 										},
 										"object_type": "Label",
 										"children": []
@@ -421,8 +424,8 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"w": 240,
-									"h": 40
+									"w": 238.67,
+									"h": 53.33
 								},
 								"enabled": true,
 								"name": "score",
@@ -433,8 +436,8 @@
 								"cascadeOpacityEnabled": true,
 								"color": {
 									"r": 255,
-									"g": 202,
-									"b": 33
+									"g": 255,
+									"b": 255
 								},
 								"globalZOrder": 0,
 								"localZOrder": 0,
@@ -460,8 +463,9 @@
 							"verticalAlignment": "Center",
 							"overflowType": "None",
 							"enableWrap": true,
-							"fontType": "System",
-							"fontName": "arial"
+							"fontName": "creator/Fonts/mikado_outline_shadow.fnt",
+							"fontType": "BMFont",
+							"lineHeight": 40
 						},
 						"object_type": "Label",
 						"children": []
@@ -1048,13 +1052,13 @@
 			}
 		},
 		{
-			"name": "image/default_panel.png",
-			"texturePath": "creator/image/default_panel.png",
+			"name": "Sprites/Hud/img_bg.png",
+			"texturePath": "creator/Sprites/Hud/img_bg.png",
 			"rect": {
 				"x": 0,
 				"y": 0,
-				"w": 20,
-				"h": 20
+				"w": 14,
+				"h": 14
 			},
 			"offset": {
 				"x": 0,
@@ -1062,14 +1066,14 @@
 			},
 			"rotated": false,
 			"originalSize": {
-				"w": 20,
-				"h": 20
+				"w": 14,
+				"h": 14
 			},
 			"centerRect": {
-				"x": 4,
-				"y": 3,
-				"w": 12,
-				"h": 14
+				"x": 5,
+				"y": 5,
+				"w": 4,
+				"h": 4
 			}
 		},
 		{
