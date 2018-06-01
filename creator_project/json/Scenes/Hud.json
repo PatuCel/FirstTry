@@ -36,7 +36,7 @@
 						"h": 960
 					},
 					"enabled": true,
-					"name": "Hud",
+					"name": "Canvas",
 					"anchorPoint": {
 						"x": 0.5,
 						"y": 0.5
@@ -128,9 +128,9 @@
 										},
 										"cascadeOpacityEnabled": true,
 										"color": {
-											"r": 255,
-											"g": 202,
-											"b": 33
+											"r": 92,
+											"g": 255,
+											"b": 0
 										},
 										"globalZOrder": 0,
 										"localZOrder": 0,
@@ -151,14 +151,14 @@
 										"colliders": []
 									},
 									"percent": 50,
-									"normalTexturePath": "creator/image/default_btn_normal.png",
-									"disabledTexturePath": "creator/image/default_btn_disabled.png",
-									"pressedTexturePath": "creator/image/default_btn_pressed.png",
+									"normalTexturePath": "creator/Sprites/Hud/img_bg.png",
+									"disabledTexturePath": "creator/Sprites/Hud/img_bg.png",
+									"pressedTexturePath": "creator/Sprites/Hud/img_bg.png",
 									"ballSize": {
 										"w": 20,
 										"h": 40
 									},
-									"barTexturePath": "creator/image/default_sprite_splash.png",
+									"barTexturePath": "creator/Sprites/Hud/img_bg.png",
 									"barSize": {
 										"w": 200,
 										"h": 20
@@ -232,9 +232,9 @@
 										},
 										"cascadeOpacityEnabled": true,
 										"color": {
-											"r": 255,
-											"g": 202,
-											"b": 33
+											"r": 92,
+											"g": 255,
+											"b": 0
 										},
 										"globalZOrder": 0,
 										"localZOrder": 0,
@@ -254,15 +254,15 @@
 										"groupIndex": 0,
 										"colliders": []
 									},
-									"percent": 80,
-									"normalTexturePath": "creator/image/default_btn_normal.png",
-									"disabledTexturePath": "creator/image/default_btn_disabled.png",
-									"pressedTexturePath": "creator/image/default_btn_pressed.png",
+									"percent": 100,
+									"normalTexturePath": "creator/Sprites/Hud/img_bg.png",
+									"disabledTexturePath": "creator/Sprites/Hud/img_bg.png",
+									"pressedTexturePath": "creator/Sprites/Hud/img_bg.png",
 									"ballSize": {
 										"w": 20,
 										"h": 40
 									},
-									"barTexturePath": "creator/image/default_sprite_splash.png",
+									"barTexturePath": "creator/Sprites/Hud/img_bg.png",
 									"barSize": {
 										"w": 200,
 										"h": 20
@@ -336,9 +336,9 @@
 										},
 										"cascadeOpacityEnabled": true,
 										"color": {
-											"r": 179,
-											"g": 204,
-											"b": 248
+											"r": 255,
+											"g": 255,
+											"b": 255
 										},
 										"globalZOrder": 0,
 										"localZOrder": 0,
@@ -346,7 +346,7 @@
 										"opacityModifyRGB": false,
 										"position": {
 											"x": 150,
-											"y": -75
+											"y": -70
 										},
 										"rotationSkewX": 0,
 										"rotationSkewY": 0,
@@ -359,9 +359,8 @@
 										"colliders": []
 									},
 									"ignoreContentAdaptWithSize": false,
-									"spriteFrameName": "image/default_btn_normal.png",
+									"spriteFrameName": "Sprites/Hud/img_bg.png",
 									"transition": 2,
-									"pressedSpriteFrameName": "image/default_btn_pressed.png",
 									"disabledSpriteFrameName": "image/default_btn_disabled.png"
 								},
 								"object_type": "Button",
@@ -510,7 +509,6 @@
 							"ignoreContentAdaptWithSize": false,
 							"spriteFrameName": "Sprites/Hud/img_circle.png",
 							"transition": 2,
-							"pressedSpriteFrameName": "Sprites/Hud/img_circle.png",
 							"disabledSpriteFrameName": "Sprites/Hud/img_circle.png"
 						},
 						"object_type": "Button",
@@ -845,102 +843,100 @@
 								"children": []
 							}
 						]
-					},
-					{
-						"object": {
-							"node": {
-								"contentSize": {
-									"w": 250,
-									"h": 48
-								},
-								"enabled": true,
-								"name": "hp_backgroud",
-								"anchorPoint": {
-									"x": 0.5,
-									"y": 0.5
-								},
-								"cascadeOpacityEnabled": true,
-								"color": {
-									"r": 255,
-									"g": 255,
-									"b": 255
-								},
-								"globalZOrder": 0,
-								"localZOrder": 0,
-								"opacity": 255,
-								"opacityModifyRGB": false,
-								"position": {
-									"x": -175,
-									"y": 442
-								},
-								"rotationSkewX": 0,
-								"rotationSkewY": 0,
-								"scaleX": 1,
-								"scaleY": 1,
-								"skewX": 0,
-								"skewY": 0,
-								"tag": -1,
-								"groupIndex": 0,
-								"colliders": []
-							},
-							"spriteFrameName": "Sprites/Hud/img_bar_frame.png",
-							"spriteType": "Simple",
-							"srcBlend": 770,
-							"dstBlend": 771,
-							"trimEnabled": true,
-							"sizeMode": "Custom"
-						},
-						"object_type": "Sprite",
-						"children": [
-							{
-								"object": {
-									"node": {
-										"contentSize": {
-											"w": 242,
-											"h": 40
-										},
-										"enabled": true,
-										"name": "hp",
-										"anchorPoint": {
-											"x": 0.5,
-											"y": 0.5
-										},
-										"cascadeOpacityEnabled": true,
-										"color": {
-											"r": 136,
-											"g": 241,
-											"b": 38
-										},
-										"globalZOrder": 0,
-										"localZOrder": 0,
-										"opacity": 255,
-										"opacityModifyRGB": false,
-										"position": {
-											"x": 0,
-											"y": 0
-										},
-										"rotationSkewX": 0,
-										"rotationSkewY": 0,
-										"scaleX": 1,
-										"scaleY": 1,
-										"skewX": 0,
-										"skewY": 0,
-										"tag": -1,
-										"groupIndex": 0,
-										"colliders": []
-									},
-									"backgroundSpriteFrameName": "creator/image/default_progressbar_bg.png",
-									"percent": 100,
-									"barSpriteFrameName": "creator/image/default_progressbar.png",
-									"barSpriteType": 1,
-									"reverse": false
-								},
-								"object_type": "ProgressBar",
-								"children": []
-							}
-						]
 					}
 				]
+			},
+			{
+				"object": {
+					"node": {
+						"contentSize": {
+							"w": 200,
+							"h": 20
+						},
+						"enabled": true,
+						"name": "sprite_bar",
+						"anchorPoint": {
+							"x": 0,
+							"y": 0.5
+						},
+						"cascadeOpacityEnabled": true,
+						"color": {
+							"r": 0,
+							"g": 255,
+							"b": 20
+						},
+						"globalZOrder": 0,
+						"localZOrder": 0,
+						"opacity": 255,
+						"opacityModifyRGB": false,
+						"position": {
+							"x": 20,
+							"y": 920
+						},
+						"rotationSkewX": 0,
+						"rotationSkewY": 0,
+						"scaleX": 1,
+						"scaleY": 1,
+						"skewX": 0,
+						"skewY": 0,
+						"tag": -1,
+						"groupIndex": 0,
+						"colliders": []
+					},
+					"spriteFrameName": "Sprites/Hud/img_bg.png",
+					"spriteType": "Sliced",
+					"srcBlend": 770,
+					"dstBlend": 771,
+					"trimEnabled": true,
+					"sizeMode": "Custom"
+				},
+				"object_type": "Sprite",
+				"children": []
+			},
+			{
+				"object": {
+					"node": {
+						"contentSize": {
+							"w": 40,
+							"h": 36
+						},
+						"enabled": true,
+						"name": "hp",
+						"anchorPoint": {
+							"x": 0.5,
+							"y": 0.5
+						},
+						"cascadeOpacityEnabled": true,
+						"color": {
+							"r": 255,
+							"g": 255,
+							"b": 255
+						},
+						"globalZOrder": 0,
+						"localZOrder": 0,
+						"opacity": 255,
+						"opacityModifyRGB": false,
+						"position": {
+							"x": 0,
+							"y": 0
+						},
+						"rotationSkewX": 0,
+						"rotationSkewY": 0,
+						"scaleX": 1,
+						"scaleY": 1,
+						"skewX": 0,
+						"skewY": 0,
+						"tag": -1,
+						"groupIndex": 0,
+						"colliders": []
+					},
+					"percent": 100,
+					"barSpriteFrameName": "creator/Sprites/Hud/img_bg.png",
+					"barSpriteType": 1,
+					"reverse": false
+				},
+				"object_type": "ProgressBar",
+				"children": []
 			}
 		]
 	},
@@ -952,13 +948,13 @@
 	"resolutionFitHeight": true,
 	"spriteFrames": [
 		{
-			"name": "image/default_btn_normal.png",
-			"texturePath": "creator/image/default_btn_normal.png",
+			"name": "Sprites/Hud/img_bg.png",
+			"texturePath": "creator/Sprites/Hud/img_bg.png",
 			"rect": {
 				"x": 0,
 				"y": 0,
-				"w": 40,
-				"h": 40
+				"w": 14,
+				"h": 14
 			},
 			"offset": {
 				"x": 0,
@@ -966,14 +962,14 @@
 			},
 			"rotated": false,
 			"originalSize": {
-				"w": 40,
-				"h": 40
+				"w": 14,
+				"h": 14
 			},
 			"centerRect": {
-				"x": 8,
-				"y": 11,
-				"w": 25,
-				"h": 20
+				"x": 5,
+				"y": 5,
+				"w": 4,
+				"h": 4
 			}
 		},
 		{
@@ -999,81 +995,6 @@
 				"y": 7,
 				"w": 10,
 				"h": 24
-			}
-		},
-		{
-			"name": "image/default_btn_pressed.png",
-			"texturePath": "creator/image/default_btn_pressed.png",
-			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 40,
-				"h": 40
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"rotated": false,
-			"originalSize": {
-				"w": 40,
-				"h": 40
-			},
-			"centerRect": {
-				"x": 11,
-				"y": 11,
-				"w": 18,
-				"h": 22
-			}
-		},
-		{
-			"name": "image/default_sprite_splash.png",
-			"texturePath": "creator/image/default_sprite_splash.png",
-			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 2,
-				"h": 2
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"rotated": false,
-			"originalSize": {
-				"w": 2,
-				"h": 2
-			},
-			"centerRect": {
-				"x": 0,
-				"y": 0,
-				"w": 2,
-				"h": 2
-			}
-		},
-		{
-			"name": "Sprites/Hud/img_bg.png",
-			"texturePath": "creator/Sprites/Hud/img_bg.png",
-			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 14,
-				"h": 14
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"rotated": false,
-			"originalSize": {
-				"w": 14,
-				"h": 14
-			},
-			"centerRect": {
-				"x": 5,
-				"y": 5,
-				"w": 4,
-				"h": 4
 			}
 		},
 		{
@@ -1224,81 +1145,6 @@
 				"y": 0,
 				"w": 50,
 				"h": 48
-			}
-		},
-		{
-			"name": "image/default_progressbar_bg.png",
-			"texturePath": "creator/image/default_progressbar_bg.png",
-			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 60,
-				"h": 15
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"rotated": false,
-			"originalSize": {
-				"w": 60,
-				"h": 15
-			},
-			"centerRect": {
-				"x": 5,
-				"y": 0,
-				"w": 50,
-				"h": 15
-			}
-		},
-		{
-			"name": "image/default_progressbar.png",
-			"texturePath": "creator/image/default_progressbar.png",
-			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 30,
-				"h": 15
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"rotated": false,
-			"originalSize": {
-				"w": 30,
-				"h": 15
-			},
-			"centerRect": {
-				"x": 5,
-				"y": 0,
-				"w": 20,
-				"h": 15
-			}
-		},
-		{
-			"name": "Sprites/Hud/img_bar_frame.png",
-			"texturePath": "creator/Sprites/Hud/img_bar_frame.png",
-			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 250,
-				"h": 32
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"rotated": false,
-			"originalSize": {
-				"w": 250,
-				"h": 32
-			},
-			"centerRect": {
-				"x": 0,
-				"y": 0,
-				"w": 250,
-				"h": 32
 			}
 		}
 	],
