@@ -1,0 +1,1308 @@
+{
+	"version": "0.4.0",
+	"root": {
+		"object": {
+			"node": {
+				"contentSize": {
+					"w": 0,
+					"h": 0
+				},
+				"enabled": true,
+				"anchorPoint": {
+					"x": 0,
+					"y": 0
+				},
+				"cascadeOpacityEnabled": true,
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255
+				},
+				"globalZOrder": 0,
+				"localZOrder": 0,
+				"opacity": 255,
+				"opacityModifyRGB": false,
+				"tag": -1,
+				"groupIndex": 0,
+				"colliders": []
+			}
+		},
+		"object_type": "Scene",
+		"children": [
+			{
+				"object": {
+					"contentSize": {
+						"w": 640,
+						"h": 960
+					},
+					"enabled": true,
+					"name": "Hud",
+					"anchorPoint": {
+						"x": 0.5,
+						"y": 0.5
+					},
+					"cascadeOpacityEnabled": true,
+					"color": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"globalZOrder": 0,
+					"localZOrder": 0,
+					"opacity": 255,
+					"opacityModifyRGB": false,
+					"position": {
+						"x": 320,
+						"y": 480
+					},
+					"rotationSkewX": 0,
+					"rotationSkewY": 0,
+					"scaleX": 1,
+					"scaleY": 1,
+					"skewX": 0,
+					"skewY": 0,
+					"tag": -1,
+					"groupIndex": 0,
+					"colliders": []
+				},
+				"object_type": "Node",
+				"children": [
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 440,
+									"h": 210
+								},
+								"enabled": true,
+								"name": "pause_menu",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 0,
+									"g": 0,
+									"b": 0
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 0,
+									"y": 0
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"spriteFrameName": "image/default_panel.png",
+							"spriteType": "Sliced",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": false,
+							"sizeMode": "Custom"
+						},
+						"object_type": "Sprite",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 200,
+											"h": 20
+										},
+										"enabled": true,
+										"name": "pm_music_slider",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 255,
+											"g": 202,
+											"b": 33
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 100,
+											"y": 47
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"percent": 50,
+									"normalTexturePath": "creator/image/default_btn_normal.png",
+									"disabledTexturePath": "creator/image/default_btn_disabled.png",
+									"pressedTexturePath": "creator/image/default_btn_pressed.png",
+									"ballSize": {
+										"w": 20,
+										"h": 40
+									},
+									"barTexturePath": "creator/image/default_sprite_splash.png",
+									"barSize": {
+										"w": 200,
+										"h": 20
+									}
+								},
+								"object_type": "Slider",
+								"children": []
+							},
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 116,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "pm_music",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 255,
+											"g": 255,
+											"b": 255
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": -152,
+											"y": 53
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"fontSize": 40,
+									"labelText": "Music:",
+									"horizontalAlignment": "Center",
+									"verticalAlignment": "Center",
+									"overflowType": "None",
+									"enableWrap": true,
+									"fontType": "System",
+									"fontName": "arial"
+								},
+								"object_type": "Label",
+								"children": []
+							},
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 200,
+											"h": 20
+										},
+										"enabled": true,
+										"name": "pm_sfx_slider",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 255,
+											"g": 202,
+											"b": 33
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 100,
+											"y": -3
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"percent": 80,
+									"normalTexturePath": "creator/image/default_btn_normal.png",
+									"disabledTexturePath": "creator/image/default_btn_disabled.png",
+									"pressedTexturePath": "creator/image/default_btn_pressed.png",
+									"ballSize": {
+										"w": 20,
+										"h": 40
+									},
+									"barTexturePath": "creator/image/default_sprite_splash.png",
+									"barSize": {
+										"w": 200,
+										"h": 20
+									}
+								},
+								"object_type": "Slider",
+								"children": []
+							},
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 89,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "pm_sfx",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 255,
+											"g": 255,
+											"b": 255
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": -165.5,
+											"y": 3
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"fontSize": 40,
+									"labelText": "SFX:",
+									"horizontalAlignment": "Center",
+									"verticalAlignment": "Center",
+									"overflowType": "None",
+									"enableWrap": true,
+									"fontType": "System",
+									"fontName": "arial"
+								},
+								"object_type": "Label",
+								"children": []
+							},
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 100,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "pm_ok",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 255,
+											"g": 255,
+											"b": 255
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 150,
+											"y": -75
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"ignoreContentAdaptWithSize": false,
+									"spriteFrameName": "image/default_btn_normal.png",
+									"transition": 2,
+									"pressedSpriteFrameName": "image/default_btn_pressed.png",
+									"disabledSpriteFrameName": "image/default_btn_disabled.png"
+								},
+								"object_type": "Button",
+								"children": [
+									{
+										"object": {
+											"node": {
+												"contentSize": {
+													"w": 100,
+													"h": 40
+												},
+												"enabled": true,
+												"name": "Label",
+												"anchorPoint": {
+													"x": 0.5,
+													"y": 0.5
+												},
+												"cascadeOpacityEnabled": true,
+												"color": {
+													"r": 0,
+													"g": 0,
+													"b": 0
+												},
+												"globalZOrder": 0,
+												"localZOrder": 0,
+												"opacity": 255,
+												"opacityModifyRGB": false,
+												"position": {
+													"x": 0,
+													"y": 0
+												},
+												"rotationSkewX": 0,
+												"rotationSkewY": 0,
+												"scaleX": 1,
+												"scaleY": 1,
+												"skewX": 0,
+												"skewY": 0,
+												"tag": -1,
+												"groupIndex": 0,
+												"colliders": []
+											},
+											"fontSize": 20,
+											"labelText": "OK",
+											"horizontalAlignment": "Center",
+											"verticalAlignment": "Center",
+											"overflowType": "Clamp",
+											"enableWrap": false,
+											"fontType": "System",
+											"fontName": "arial"
+										},
+										"object_type": "Label",
+										"children": []
+									}
+								]
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 240,
+									"h": 40
+								},
+								"enabled": true,
+								"name": "score",
+								"anchorPoint": {
+									"x": 1,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 202,
+									"b": 33
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 240,
+									"y": 440
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"fontSize": 48,
+							"labelText": "912994154",
+							"horizontalAlignment": "Center",
+							"verticalAlignment": "Center",
+							"overflowType": "None",
+							"enableWrap": true,
+							"fontType": "System",
+							"fontName": "arial"
+						},
+						"object_type": "Label",
+						"children": []
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 64,
+									"h": 64
+								},
+								"enabled": true,
+								"name": "pause",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 170,
+									"g": 168,
+									"b": 168
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": 278,
+									"y": 438
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Hud/img_circle.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Hud/img_circle.png",
+							"disabledSpriteFrameName": "Sprites/Hud/img_circle.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 36,
+											"h": 36
+										},
+										"enabled": true,
+										"name": "pause_spt",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 170,
+											"g": 168,
+											"b": 168
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"spriteFrameName": "Sprites/Hud/img_pause.png",
+									"spriteType": "Simple",
+									"srcBlend": 770,
+									"dstBlend": 771,
+									"trimEnabled": true,
+									"sizeMode": "Trimmed"
+								},
+								"object_type": "Sprite",
+								"children": []
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 72,
+									"h": 72
+								},
+								"enabled": true,
+								"name": "skill_03",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 27,
+									"g": 201,
+									"b": 48
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -274,
+									"y": -184
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Hud/img_circle.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Hud/img_circle_bg.png",
+							"disabledSpriteFrameName": "Sprites/Hud/img_circle_bg.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 48,
+											"h": 48
+										},
+										"enabled": true,
+										"name": "skill_03_spt",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 235,
+											"g": 207,
+											"b": 207
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"spriteFrameName": "Sprites/Hud/img_skill01.png",
+									"spriteType": "Simple",
+									"srcBlend": 770,
+									"dstBlend": 771,
+									"trimEnabled": false,
+									"sizeMode": "Custom"
+								},
+								"object_type": "Sprite",
+								"children": []
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 72,
+									"h": 72
+								},
+								"enabled": true,
+								"name": "skill_02",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 202,
+									"b": 33
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -274,
+									"y": -264
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Hud/img_circle.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Hud/img_circle_bg.png",
+							"disabledSpriteFrameName": "Sprites/Hud/img_circle_bg.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 48,
+											"h": 48
+										},
+										"enabled": true,
+										"name": "skill_02_spt",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 255,
+											"g": 255,
+											"b": 255
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"spriteFrameName": "Sprites/Hud/img_skill02.png",
+									"spriteType": "Simple",
+									"srcBlend": 770,
+									"dstBlend": 771,
+									"trimEnabled": false,
+									"sizeMode": "Custom"
+								},
+								"object_type": "Sprite",
+								"children": []
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 72,
+									"h": 72
+								},
+								"enabled": true,
+								"name": "skill_01",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 0,
+									"g": 235,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -274,
+									"y": -344
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"ignoreContentAdaptWithSize": false,
+							"spriteFrameName": "Sprites/Hud/img_circle.png",
+							"transition": 2,
+							"pressedSpriteFrameName": "Sprites/Hud/img_circle_bg.png",
+							"disabledSpriteFrameName": "Sprites/Hud/img_circle_bg.png"
+						},
+						"object_type": "Button",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 48,
+											"h": 48
+										},
+										"enabled": true,
+										"name": "skill_01_spt",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 255,
+											"g": 255,
+											"b": 255
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"spriteFrameName": "Sprites/Hud/img_skill03.png",
+									"spriteType": "Simple",
+									"srcBlend": 770,
+									"dstBlend": 771,
+									"trimEnabled": true,
+									"sizeMode": "Custom"
+								},
+								"object_type": "Sprite",
+								"children": []
+							}
+						]
+					},
+					{
+						"object": {
+							"node": {
+								"contentSize": {
+									"w": 250,
+									"h": 48
+								},
+								"enabled": true,
+								"name": "hp_backgroud",
+								"anchorPoint": {
+									"x": 0.5,
+									"y": 0.5
+								},
+								"cascadeOpacityEnabled": true,
+								"color": {
+									"r": 255,
+									"g": 255,
+									"b": 255
+								},
+								"globalZOrder": 0,
+								"localZOrder": 0,
+								"opacity": 255,
+								"opacityModifyRGB": false,
+								"position": {
+									"x": -175,
+									"y": 442
+								},
+								"rotationSkewX": 0,
+								"rotationSkewY": 0,
+								"scaleX": 1,
+								"scaleY": 1,
+								"skewX": 0,
+								"skewY": 0,
+								"tag": -1,
+								"groupIndex": 0,
+								"colliders": []
+							},
+							"spriteFrameName": "Sprites/Hud/img_bar_frame.png",
+							"spriteType": "Simple",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": true,
+							"sizeMode": "Custom"
+						},
+						"object_type": "Sprite",
+						"children": [
+							{
+								"object": {
+									"node": {
+										"contentSize": {
+											"w": 242,
+											"h": 40
+										},
+										"enabled": true,
+										"name": "hp",
+										"anchorPoint": {
+											"x": 0.5,
+											"y": 0.5
+										},
+										"cascadeOpacityEnabled": true,
+										"color": {
+											"r": 136,
+											"g": 241,
+											"b": 38
+										},
+										"globalZOrder": 0,
+										"localZOrder": 0,
+										"opacity": 255,
+										"opacityModifyRGB": false,
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"rotationSkewX": 0,
+										"rotationSkewY": 0,
+										"scaleX": 1,
+										"scaleY": 1,
+										"skewX": 0,
+										"skewY": 0,
+										"tag": -1,
+										"groupIndex": 0,
+										"colliders": []
+									},
+									"backgroundSpriteFrameName": "creator/image/default_progressbar_bg.png",
+									"percent": 100,
+									"barSpriteFrameName": "creator/image/default_progressbar.png",
+									"barSpriteType": 1,
+									"reverse": false
+								},
+								"object_type": "ProgressBar",
+								"children": []
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"designResolution": {
+		"w": 640,
+		"h": 960
+	},
+	"resolutionFitWidth": true,
+	"resolutionFitHeight": true,
+	"spriteFrames": [
+		{
+			"name": "image/default_btn_normal.png",
+			"texturePath": "creator/image/default_btn_normal.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 40,
+				"h": 40
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 40,
+				"h": 40
+			},
+			"centerRect": {
+				"x": 8,
+				"y": 11,
+				"w": 25,
+				"h": 20
+			}
+		},
+		{
+			"name": "image/default_btn_disabled.png",
+			"texturePath": "creator/image/default_btn_disabled.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 40,
+				"h": 40
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 40,
+				"h": 40
+			},
+			"centerRect": {
+				"x": 15,
+				"y": 7,
+				"w": 10,
+				"h": 24
+			}
+		},
+		{
+			"name": "image/default_btn_pressed.png",
+			"texturePath": "creator/image/default_btn_pressed.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 40,
+				"h": 40
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 40,
+				"h": 40
+			},
+			"centerRect": {
+				"x": 11,
+				"y": 11,
+				"w": 18,
+				"h": 22
+			}
+		},
+		{
+			"name": "image/default_sprite_splash.png",
+			"texturePath": "creator/image/default_sprite_splash.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 2
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 2,
+				"h": 2
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 2
+			}
+		},
+		{
+			"name": "image/default_panel.png",
+			"texturePath": "creator/image/default_panel.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 20,
+				"h": 20
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 20,
+				"h": 20
+			},
+			"centerRect": {
+				"x": 4,
+				"y": 3,
+				"w": 12,
+				"h": 14
+			}
+		},
+		{
+			"name": "Sprites/Hud/img_pause.png",
+			"texturePath": "creator/Sprites/Hud/img_pause.png",
+			"rect": {
+				"x": 6,
+				"y": 6,
+				"w": 36,
+				"h": 36
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 48,
+				"h": 48
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 36,
+				"h": 36
+			}
+		},
+		{
+			"name": "Sprites/Hud/img_circle.png",
+			"texturePath": "creator/Sprites/Hud/img_circle.png",
+			"rect": {
+				"x": 2,
+				"y": 2,
+				"w": 46,
+				"h": 46
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 50,
+				"h": 50
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 46
+			}
+		},
+		{
+			"name": "Sprites/Hud/img_skill01.png",
+			"texturePath": "creator/Sprites/Hud/img_skill01.png",
+			"rect": {
+				"x": 24,
+				"y": 4,
+				"w": 22,
+				"h": 64
+			},
+			"offset": {
+				"x": 0,
+				"y": -1
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 70,
+				"h": 70
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 22,
+				"h": 64
+			}
+		},
+		{
+			"name": "Sprites/Hud/img_circle_bg.png",
+			"texturePath": "creator/Sprites/Hud/img_circle_bg.png",
+			"rect": {
+				"x": 2,
+				"y": 2,
+				"w": 46,
+				"h": 46
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 50,
+				"h": 50
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 46
+			}
+		},
+		{
+			"name": "Sprites/Hud/img_skill02.png",
+			"texturePath": "creator/Sprites/Hud/img_skill02.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 44,
+				"h": 40
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 44,
+				"h": 40
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 44,
+				"h": 40
+			}
+		},
+		{
+			"name": "Sprites/Hud/img_skill03.png",
+			"texturePath": "creator/Sprites/Hud/img_skill03.png",
+			"rect": {
+				"x": 11,
+				"y": 12,
+				"w": 50,
+				"h": 48
+			},
+			"offset": {
+				"x": 1,
+				"y": -1
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 70,
+				"h": 70
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 50,
+				"h": 48
+			}
+		},
+		{
+			"name": "image/default_progressbar_bg.png",
+			"texturePath": "creator/image/default_progressbar_bg.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 60,
+				"h": 15
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 60,
+				"h": 15
+			},
+			"centerRect": {
+				"x": 5,
+				"y": 0,
+				"w": 50,
+				"h": 15
+			}
+		},
+		{
+			"name": "image/default_progressbar.png",
+			"texturePath": "creator/image/default_progressbar.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 30,
+				"h": 15
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 30,
+				"h": 15
+			},
+			"centerRect": {
+				"x": 5,
+				"y": 0,
+				"w": 20,
+				"h": 15
+			}
+		},
+		{
+			"name": "Sprites/Hud/img_bar_frame.png",
+			"texturePath": "creator/Sprites/Hud/img_bar_frame.png",
+			"rect": {
+				"x": 0,
+				"y": 0,
+				"w": 250,
+				"h": 32
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 250,
+				"h": 32
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 250,
+				"h": 32
+			}
+		}
+	],
+	"collisionMatrix": [
+		{
+			"value": [
+				true
+			]
+		}
+	]
+}
