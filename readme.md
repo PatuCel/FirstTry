@@ -24,7 +24,7 @@ PaTuCel 1stTry v0.0.1
 * [Apache ANT](https://ant.apache.org/bindownload.cgi) - Version 1.9.11
 
 ## Optional Tools
-* ![alt text](https://github.com/PatuCel/FirstTry/blob/master/docs/git-workflow-release-cycle-4maintenance.png)
+* ![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/git-workflow-release-cycle-4maintenance.png)
 * [Git Flow Tool](https://github.com/nvie/gitflow/wiki/Windows)
 	* You need to install [Cygwin](http://www.cygwin.com/) with **util-linux** and **wget**
 	* Add Cygwin in the PATH folder 
