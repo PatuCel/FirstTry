@@ -105,8 +105,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 640,
-      "height": 960
+      "width": 480,
+      "height": 800
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -114,8 +114,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 320,
-      "y": 480
+      "x": 240,
+      "y": 400
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -176,7 +176,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 440,
+      "width": 280,
       "height": 210
     },
     "_rotationX": 0,
@@ -247,7 +247,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 100,
+      "x": 20,
       "y": 47
     },
     "_skewX": 0,
@@ -566,7 +566,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -152,
+      "x": -72,
       "y": 53
     },
     "_skewX": 0,
@@ -678,7 +678,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 100,
+      "x": 20,
       "y": -3
     },
     "_skewX": 0,
@@ -997,7 +997,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -165.5,
+      "x": -85.50000000000001,
       "y": 3
     },
     "_skewX": 0,
@@ -1109,7 +1109,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 150,
+      "x": 70,
       "y": -70
     },
     "_skewX": 0,
@@ -1395,7 +1395,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 238.67,
+      "width": 137.33,
       "height": 53.33
     },
     "_rotationX": 0,
@@ -1404,8 +1404,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 240,
-      "y": 440
+      "x": 160,
+      "y": 360
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1432,7 +1432,7 @@
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
-    "_N$string": "912994154",
+    "_N$string": "91299",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
@@ -1516,8 +1516,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 278,
-      "y": 438
+      "x": 198,
+      "y": 358
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1768,8 +1768,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -274,
-      "y": -184
+      "x": -194,
+      "y": -104
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -2024,8 +2024,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -274,
-      "y": -264
+      "x": -194,
+      "y": -184
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -2280,8 +2280,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -274,
-      "y": -344
+      "x": -194,
+      "y": -264
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -2494,8 +2494,8 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 640,
-      "height": 960
+      "width": 480,
+      "height": 800
     },
     "_fitWidth": true,
     "_fitHeight": true
@@ -2546,7 +2546,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 20,
-      "y": 920
+      "y": 760
     },
     "_skewX": 0,
     "_skewY": 0,

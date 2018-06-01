@@ -32,8 +32,8 @@
 			{
 				"object": {
 					"contentSize": {
-						"w": 640,
-						"h": 960
+						"w": 480,
+						"h": 800
 					},
 					"enabled": true,
 					"name": "Canvas",
@@ -52,8 +52,8 @@
 					"opacity": 255,
 					"opacityModifyRGB": false,
 					"position": {
-						"x": 320,
-						"y": 480
+						"x": 240,
+						"y": 400
 					},
 					"rotationSkewX": 0,
 					"rotationSkewY": 0,
@@ -71,7 +71,7 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"w": 440,
+									"w": 280,
 									"h": 210
 								},
 								"enabled": true,
@@ -137,7 +137,7 @@
 										"opacity": 255,
 										"opacityModifyRGB": false,
 										"position": {
-											"x": 100,
+											"x": 20,
 											"y": 47
 										},
 										"rotationSkewX": 0,
@@ -191,7 +191,7 @@
 										"opacity": 255,
 										"opacityModifyRGB": false,
 										"position": {
-											"x": -152,
+											"x": -72,
 											"y": 53
 										},
 										"rotationSkewX": 0,
@@ -241,7 +241,7 @@
 										"opacity": 255,
 										"opacityModifyRGB": false,
 										"position": {
-											"x": 100,
+											"x": 20,
 											"y": -3
 										},
 										"rotationSkewX": 0,
@@ -295,7 +295,7 @@
 										"opacity": 255,
 										"opacityModifyRGB": false,
 										"position": {
-											"x": -165.5,
+											"x": -85.50000000000001,
 											"y": 3
 										},
 										"rotationSkewX": 0,
@@ -345,7 +345,7 @@
 										"opacity": 255,
 										"opacityModifyRGB": false,
 										"position": {
-											"x": 150,
+											"x": 70,
 											"y": -70
 										},
 										"rotationSkewX": 0,
@@ -423,7 +423,7 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"w": 238.67,
+									"w": 137.33,
 									"h": 53.33
 								},
 								"enabled": true,
@@ -443,8 +443,8 @@
 								"opacity": 255,
 								"opacityModifyRGB": false,
 								"position": {
-									"x": 240,
-									"y": 440
+									"x": 160,
+									"y": 360
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -457,7 +457,7 @@
 								"colliders": []
 							},
 							"fontSize": 48,
-							"labelText": "912994154",
+							"labelText": "91299",
 							"horizontalAlignment": "Center",
 							"verticalAlignment": "Center",
 							"overflowType": "None",
@@ -493,8 +493,8 @@
 								"opacity": 255,
 								"opacityModifyRGB": false,
 								"position": {
-									"x": 278,
-									"y": 438
+									"x": 198,
+									"y": 358
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -586,8 +586,8 @@
 								"opacity": 255,
 								"opacityModifyRGB": false,
 								"position": {
-									"x": -274,
-									"y": -184
+									"x": -194,
+									"y": -104
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -680,8 +680,8 @@
 								"opacity": 255,
 								"opacityModifyRGB": false,
 								"position": {
-									"x": -274,
-									"y": -264
+									"x": -194,
+									"y": -184
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -774,8 +774,8 @@
 								"opacity": 255,
 								"opacityModifyRGB": false,
 								"position": {
-									"x": -274,
-									"y": -344
+									"x": -194,
+									"y": -264
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -871,7 +871,7 @@
 						"opacityModifyRGB": false,
 						"position": {
 							"x": 20,
-							"y": 920
+							"y": 760
 						},
 						"rotationSkewX": 0,
 						"rotationSkewY": 0,
@@ -941,8 +941,8 @@
 		]
 	},
 	"designResolution": {
-		"w": 640,
-		"h": 960
+		"w": 480,
+		"h": 800
 	},
 	"resolutionFitWidth": true,
 	"resolutionFitHeight": true,

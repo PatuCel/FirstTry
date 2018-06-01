@@ -87,11 +87,11 @@ bool GameplayScene::init()
 	listener->onTouchEnded = [=](Touch* touch, Event* event) {};
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);*/
 
-	/*hud = Hud::createHud();
+	hud = Hud::createHud();
 	hud->setScore("961");	//Player Score
 	hud->setHP(65);			//Player Health
 	hud->addButtonPressedListener([=](int id) { menuCloseCallback(0); }); //TODO:
-	this->addChild(hud, 10);*/
+	this->addChild(hud, 10);
 
 	EventListenerKeyboard* keyboardListener = EventListenerKeyboard::create();
 	keyboardListener->onKeyPressed = CC_CALLBACK_2(GameplayScene::keyPressed, this);

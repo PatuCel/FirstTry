@@ -32,8 +32,8 @@
 			{
 				"object": {
 					"contentSize": {
-						"w": 640,
-						"h": 960
+						"w": 480,
+						"h": 800
 					},
 					"enabled": true,
 					"name": "Canvas",
@@ -52,8 +52,8 @@
 					"opacity": 255,
 					"opacityModifyRGB": false,
 					"position": {
-						"x": 320,
-						"y": 480
+						"x": 240,
+						"y": 400
 					},
 					"rotationSkewX": 0,
 					"rotationSkewY": 0,
@@ -92,7 +92,7 @@
 								"opacityModifyRGB": false,
 								"position": {
 									"x": 0,
-									"y": 0
+									"y": 139
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -140,7 +140,7 @@
 						"opacity": 255,
 						"opacityModifyRGB": false,
 						"position": {
-							"x": 320,
+							"x": 240,
 							"y": 248
 						},
 						"rotationSkewX": 0,
@@ -213,8 +213,8 @@
 		]
 	},
 	"designResolution": {
-		"w": 640,
-		"h": 960
+		"w": 480,
+		"h": 800
 	},
 	"resolutionFitWidth": true,
 	"resolutionFitHeight": true,
