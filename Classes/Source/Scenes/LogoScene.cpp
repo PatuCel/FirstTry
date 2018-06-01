@@ -1,6 +1,6 @@
 #include "Scenes/LogoScene.h"
 #include "Managers/SceneManager.h"
-#include "..\libs\cocos_creator\reader\CreatorReader.h"
+#include "CreatorReader.h"
 
 using namespace ui; //use for Button, Scrollview,Label,Panel etc.
 using namespace cocostudio::timeline;

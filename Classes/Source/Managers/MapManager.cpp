@@ -1,4 +1,6 @@
 #include "Managers/MapManager.h"
+#include "Managers/CameraManager.h"
+#include "Globals.h"
 
 MapManager* MapManager::m_mapManager = nullptr;
 
@@ -27,10 +29,46 @@ bool MapManager::loadMap(const std::string filePath)
 		m_layerCollectibles = m_map->getLayer("collectibles");
 		m_layerEnemies = m_map->getLayer("enemies");
 
+		//Loop Map
+		m_loopStartPosition = (m_map->getMapSize().height *  m_map->getTileSize().height) - SCREEN_RESOLUTION_H/2;
+		m_mapCounts = 0;
+		m_loopCounts = 0;
+		m_loopMap = true;
+		m_countMap = false;;
+		//Loop Map
+
 		return true;
 	}
 
 	return false;
+}
+
+void MapManager::checkForLoop()
+{
+	if((int(CameraManager::getInstance()->getCameraPosition().y) == m_loopStartPosition) || (m_mapCounts == SCREEN_RESOLUTION_H))
+	{
+		CCLOG("Looping Map!!!");
+
+		Vec2 mapLayerPos = getLayer(MAP_LAYER_BACKGROUND)->getPosition();
+		getLayer(MAP_LAYER_BACKGROUND)->setPosition(mapLayerPos.x, mapLayerPos.y + (SCREEN_RESOLUTION_H));
+
+		mapLayerPos = getLayer(MAP_LAYER_COLLISIONS)->getPosition();
+		getLayer(MAP_LAYER_COLLISIONS)->setPosition(mapLayerPos.x, mapLayerPos.y + (SCREEN_RESOLUTION_H));
+
+		m_countMap = true;
+
+		if(m_mapCounts == SCREEN_RESOLUTION_H)
+		{
+			m_mapCounts = 0;
+		}
+
+		m_loopCounts++;
+	}
+
+	if(m_countMap)
+	{
+		m_mapCounts++;
+	}
 }
 
 TMXTiledMap* MapManager::getMap()
@@ -62,7 +100,7 @@ TMXLayer* MapManager::getLayer(MapLayer mapLayer)
 Vec2 MapManager::tileFromPosition(Vec2 position)
 {
 	int x = position.x / m_map->getTileSize().width;
-	int y = ((m_map->getMapSize().height * m_map->getTileSize().height) - position.y) / m_map->getTileSize().height;
+	int y = (((m_map->getMapSize().height * m_map->getTileSize().height) + (m_loopCounts * SCREEN_RESOLUTION_H)) - position.y) / m_map->getTileSize().height;
 
 	return Vec2(x, y);
 }

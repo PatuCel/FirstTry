@@ -85,6 +85,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	std::vector<std::string> searchPaths;
 	float scaleFactor = 1.0f;
 	Size frameSize = glview->getFrameSize();
+	
+	//Cocos Creator Scenes 
+	searchPaths.push_back("creator/Scenes/");
 
 	if (frameSize.height > mediumResolutionSize.height)
 	{
@@ -98,7 +101,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	}
 	else
 	{
-		searchPaths.push_back("res/SD");
+	searchPaths.push_back("res/SD");
 		scaleFactor = MIN(smallResolutionSize.height / designResolutionSize.height, smallResolutionSize.width / designResolutionSize.width);
 	}
 
