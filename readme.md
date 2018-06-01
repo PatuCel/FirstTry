@@ -31,6 +31,7 @@ PaTuCel 1stTry v0.0.1
 		* Then simply run this command from a Cygwin shell, open CMD and TYPE $bash to enter cygwin shell
 			* ```$wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash```
 * [GitHub Desktop](https://desktop.github.com/) - GitHub Desktop app
+* [GitKraken](https://www.gitkraken.com/download) - GitKraken last version
 * [TortoiseGit](https://tortoisegit.org/) - TortoiseGit is a Windows Shell Interface to Git and based on TortoiseSVN
 * [Atom](https://atom.io/) - Like Sublime but has Git build inside the editor.
 
