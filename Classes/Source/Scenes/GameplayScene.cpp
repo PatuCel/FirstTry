@@ -68,11 +68,11 @@ bool GameplayScene::init()
 	// boss sprite
 	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
 	boss = Boss::createBoss(frameArray, 0.05f);
-	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
+	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height);
 	boss->setHealth(500);
-	this->addChild(boss, 1);
+	this->addChild(boss, 2);
 
-	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 4), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(player, 1);
 
 	MapManager::getInstance()->loadMap("test.tmx");
@@ -87,11 +87,11 @@ bool GameplayScene::init()
 	listener->onTouchEnded = [=](Touch* touch, Event* event) {};
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);*/
 
-	hud = Hud::createHud();
+	/*hud = Hud::createHud();
 	hud->setScore("961");	//Player Score
 	hud->setHP(65);			//Player Health
 	hud->addButtonPressedListener([=](int id) { menuCloseCallback(0); }); //TODO:
-	this->addChild(hud, 10);
+	this->addChild(hud, 10);*/
 
 	EventListenerKeyboard* keyboardListener = EventListenerKeyboard::create();
 	keyboardListener->onKeyPressed = CC_CALLBACK_2(GameplayScene::keyPressed, this);
@@ -196,7 +196,7 @@ bool GameplayScene::loadEnemies()
 
 void GameplayScene::update(float delta)
 {
-	Vec2 cameraPos = CameraManager::getInstance()->getCameraPosition();	
+	/*Vec2 cameraPos = CameraManager::getInstance()->getCameraPosition();	
 
 	MapManager::getInstance()->checkForLoop();
 
@@ -204,7 +204,7 @@ void GameplayScene::update(float delta)
 
 	movePlayer(Vec2(player->getPosition().x, player->getPosition().y + 1));
 	hud->setPositionY(hud->getPositionY() + 1);
-	boss->setPositionY(boss->getPositionY() + 1);
+	boss->setPositionY(boss->getPositionY() + 1);*/
 
 	if(player->isMovingUp() && !player->isMovingDown())
 	{

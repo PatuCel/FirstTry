@@ -19,13 +19,8 @@ using namespace experimental;
 using namespace CocosDenshion;
 #endif
 
-static Size smallResolutionSize = Size(SCREEN_RESOLUTION_W / 2, SCREEN_RESOLUTION_H / 2);
-static Size mediumResolutionSize = Size(SCREEN_RESOLUTION_W, SCREEN_RESOLUTION_H);
-static Size largeResolutionSize = Size(SCREEN_RESOLUTION_W * 2, SCREEN_RESOLUTION_H * 2);
-
-//target resolution
-static cocos2d::Size designResolutionSize = smallResolutionSize;
-
+static Size designResolutionSize = Size(SCREEN_RESOLUTION_WIDTH, SCREEN_RESOLUTION_HEIGHT);
+static Size highResolutionSize = Size(SCREEN_RESOLUTION_WIDTH*2, SCREEN_RESOLUTION_HEIGHT*2);
 
 AppDelegate::AppDelegate()
 {
@@ -63,10 +58,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	auto glview = director->getOpenGLView();
 	if (!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-		HDC hScreenDC = GetDC(nullptr);
-		int initPosX = (GetDeviceCaps(hScreenDC, HORZRES) / 2) - designResolutionSize.width / 2;
-		int initPosY = (GetDeviceCaps(hScreenDC, VERTRES) / 2) - designResolutionSize.height / 2;
-		glview = GLViewImpl::createWithRect("FirstTry", Rect(initPosX, initPosY, designResolutionSize.width, designResolutionSize.height));
+		glview = GLViewImpl::createWithRect("FirstTry", Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
 #else
 		glview = GLViewImpl::create("FirstTry");
 #endif
@@ -80,39 +72,30 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	director->setAnimationInterval(1.0f / 60);
 
 	// Set the design resolution
-	glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+	glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::EXACT_FIT);
 
 	std::vector<std::string> searchPaths;
-	float scaleFactor = 1.0f;
+
 	Size frameSize = glview->getFrameSize();
-	
+	if (frameSize.height >= highResolutionSize.height || frameSize.width >= highResolutionSize.width)
+	{
+		searchPaths.push_back(SEARCH_PATH_HD);
+		director->setContentScaleFactor(SCALE_HD);
+	}
+	{
+		searchPaths.push_back(SEARCH_PATH_SD);
+	}
+
 	//Cocos Creator Scenes 
-	searchPaths.push_back("creator/Scenes/");
-
-	if (frameSize.height > mediumResolutionSize.height)
-	{
-		searchPaths.push_back("res/HDR");
-		scaleFactor = MIN(largeResolutionSize.height / designResolutionSize.height, largeResolutionSize.width / designResolutionSize.width);
-	}
-	else if (frameSize.height > smallResolutionSize.height)
-	{
-		searchPaths.push_back("res/HD");
-		scaleFactor = MIN(mediumResolutionSize.height / designResolutionSize.height, mediumResolutionSize.width / designResolutionSize.width);
-	}
-	else
-	{
-	searchPaths.push_back("res/SD");
-		scaleFactor = MIN(smallResolutionSize.height / designResolutionSize.height, smallResolutionSize.width / designResolutionSize.width);
-	}
-
-	director->setContentScaleFactor(scaleFactor);
+	searchPaths.push_back(SEARCH_PATH_CREATOR_SCENES);
 	FileUtils::getInstance()->setSearchPaths(searchPaths);
+
 	register_all_packages();
 
 	//Init All Managers
 	SceneManager::getInstance();
 
-	SceneManager::getInstance()->changeScene(SceneManager::MAINMENU_SCENE, true); //new for calling Scenes
+	SceneManager::getInstance()->changeScene(SceneManager::GAMEPLAY_SCENE, true); //new for calling Scenes
 
 	return true;
 }

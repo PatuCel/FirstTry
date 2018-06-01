@@ -29,13 +29,13 @@ bool MapManager::loadMap(const std::string filePath)
 		m_layerCollectibles = m_map->getLayer("collectibles");
 		m_layerEnemies = m_map->getLayer("enemies");
 
-		//Loop Map
-		m_loopStartPosition = (m_map->getMapSize().height *  m_map->getTileSize().height) - SCREEN_RESOLUTION_H/2;
+		m_screenScale = Director::getInstance()->getContentScaleFactor();
+
+		m_loopStartPosition = (m_map->getMapSize().height *  m_map->getTileSize().height) - SCREEN_RESOLUTION_HEIGHT /2;
 		m_mapCounts = 0;
 		m_loopCounts = 0;
 		m_loopMap = true;
-		m_countMap = false;;
-		//Loop Map
+		m_countMap = false;
 
 		return true;
 	}
@@ -45,19 +45,19 @@ bool MapManager::loadMap(const std::string filePath)
 
 void MapManager::checkForLoop()
 {
-	if((int(CameraManager::getInstance()->getCameraPosition().y) == m_loopStartPosition) || (m_mapCounts == SCREEN_RESOLUTION_H))
+	if((int(CameraManager::getInstance()->getCameraPosition().y) == m_loopStartPosition) || (m_mapCounts == SCREEN_RESOLUTION_HEIGHT))
 	{
 		CCLOG("Looping Map!!!");
 
 		Vec2 mapLayerPos = getLayer(MAP_LAYER_BACKGROUND)->getPosition();
-		getLayer(MAP_LAYER_BACKGROUND)->setPosition(mapLayerPos.x, mapLayerPos.y + (SCREEN_RESOLUTION_H));
+		getLayer(MAP_LAYER_BACKGROUND)->setPosition(mapLayerPos.x, mapLayerPos.y + (SCREEN_RESOLUTION_HEIGHT));
 
 		mapLayerPos = getLayer(MAP_LAYER_COLLISIONS)->getPosition();
-		getLayer(MAP_LAYER_COLLISIONS)->setPosition(mapLayerPos.x, mapLayerPos.y + (SCREEN_RESOLUTION_H));
+		getLayer(MAP_LAYER_COLLISIONS)->setPosition(mapLayerPos.x, mapLayerPos.y + (SCREEN_RESOLUTION_HEIGHT));
 
 		m_countMap = true;
 
-		if(m_mapCounts == SCREEN_RESOLUTION_H)
+		if(m_mapCounts == SCREEN_RESOLUTION_HEIGHT)
 		{
 			m_mapCounts = 0;
 		}
@@ -99,16 +99,16 @@ TMXLayer* MapManager::getLayer(MapLayer mapLayer)
 
 Vec2 MapManager::tileFromPosition(Vec2 position)
 {
-	int x = position.x / m_map->getTileSize().width;
-	int y = (((m_map->getMapSize().height * m_map->getTileSize().height) + (m_loopCounts * SCREEN_RESOLUTION_H)) - position.y) / m_map->getTileSize().height;
+	int x = (position.x * m_screenScale) / m_map->getTileSize().width;
+	int y = (((m_map->getMapSize().height * m_map->getTileSize().height) + (m_loopCounts * SCREEN_RESOLUTION_HEIGHT)) - (position.y * m_screenScale)) / m_map->getTileSize().height;
 
 	return Vec2(x, y);
 }
 
 Vec2 MapManager::positionFromTile(Vec2 tile)
 {
-	int x = (tile.x * m_map->getTileSize().width) + m_map->getTileSize().width/2;
-	int y = (m_map->getMapSize().height * m_map->getTileSize().height) - (tile.y * m_map->getTileSize().height) - m_map->getTileSize().height / 2;
+	int x = ((tile.x * m_map->getTileSize().width) + m_map->getTileSize().width/2) / m_screenScale;
+	int y = ((m_map->getMapSize().height * m_map->getTileSize().height) - (tile.y * m_map->getTileSize().height) - m_map->getTileSize().height / 2) / m_screenScale;
 
 	return Vec2(x, y);
 }
