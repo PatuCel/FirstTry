@@ -3,8 +3,6 @@
 
 PaTuCel 1stTry v0.0.1
 
-##Getting Started
-
 ## Prerequisites
 
 ### Project Tools
@@ -24,12 +22,14 @@ PaTuCel 1stTry v0.0.1
 * [Apache ANT](https://ant.apache.org/bindownload.cgi) - Version 1.9.11
 
 ## Optional Tools
+
+### Git Flow Scheme
 * ![alt text](https://github.com/PatuCel/FirstTry/blob/Develop/docs/git-workflow-release-cycle-4maintenance.png)
-* [Git Flow Tool](https://github.com/nvie/gitflow/wiki/Windows)
-	* You need to install [Cygwin](http://www.cygwin.com/) with **util-linux** and **wget**
-	* Add Cygwin in the PATH folder 
-	* Then simply run this command from a Cygwin shell, open CMD and TYPE $bash to enter cygwin shell
-		* ```$wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash```
+	* [Git Flow Tool](https://github.com/nvie/gitflow/wiki/Windows)
+		* You need to install [Cygwin](http://www.cygwin.com/) with **util-linux** and **wget**
+		* Add Cygwin in the PATH folder 
+		* Then simply run this command from a Cygwin shell, open CMD and TYPE $bash to enter cygwin shell
+			* ```$wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash```
 * [GitHub Desktop](https://desktop.github.com/) - GitHub Desktop app
 * [TortoiseGit](https://tortoisegit.org/) - TortoiseGit is a Windows Shell Interface to Git and based on TortoiseSVN
 * [Atom](https://atom.io/) - Like Sublime but has Git build inside the editor.
@@ -50,6 +50,7 @@ PaTuCel 1stTry v0.0.1
 
 ### Win32
 	Open solution project inside of proj.win32/FirstTry.sln
+	or run buildWin32.bat
 
 ## Documentation
 
