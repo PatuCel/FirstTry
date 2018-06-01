@@ -10,5 +10,7 @@
 
 #define SCALE_HD 2
 
+#define TEST 1
+
 #define CC_SCENE_MENU_MAIN "Logo.ccreator"
 #define CC_UI_HUD "Hud.ccreator"
