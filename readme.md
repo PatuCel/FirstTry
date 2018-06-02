@@ -46,6 +46,8 @@ PaTuCel 1stTry v0.0.1
 ## Compilation steps
 
 ### Android
+* Make Sure you run the setup.py insiede the cocos3.17 folder
+	* Then open your Enviroment Variables and Check if your *NDK_ROOT* is set to android-ndk-r17 and you *ANDROID_SDK_ROOT* is set to your lastest sdk for example: *C:\Users\finalpets\AppData\Local\Android\Sdk*
 
 	buildAndroid.bat
 
