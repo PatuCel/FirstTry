@@ -9,7 +9,6 @@
 #include "ui/UILoadingBar.h"
 #include "components/Hud.h"
 
-
 Scene* GameplayScene::createScene()
 {
     return GameplayScene::create();
@@ -69,11 +68,11 @@ bool GameplayScene::init()
 	// boss sprite
 	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
 	boss = Boss::createBoss(frameArray, 0.05f);
-	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height / 2);
+	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height);
 	boss->setHealth(500);
-	this->addChild(boss, 1);
+	this->addChild(boss, 2);
 
-	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 2), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 4), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 	this->addChild(player, 1);
 
 	MapManager::getInstance()->loadMap("test.tmx");
@@ -89,8 +88,9 @@ bool GameplayScene::init()
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);*/
 
 	hud = Hud::createHud();
-	hud->setScore("864");	//Player Score
+	hud->setScore("961");	//Player Score
 	hud->setHP(65);			//Player Health
+	hud->addButtonPressedListener([=](int id) { menuCloseCallback(0); }); //TODO:
 	this->addChild(hud, 10);
 
 	EventListenerKeyboard* keyboardListener = EventListenerKeyboard::create();
@@ -123,7 +123,7 @@ void GameplayScene::movePlayer(Vec2 pos)
 {
 	Vec2 tilePosition = MapManager::getInstance()->tileFromPosition(pos);
 	int tileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_COLLISIONS)->getTileGIDAt(tilePosition);
-	if (!tileGID)
+	if(!tileGID)
 	{
 		player->setPosition(pos);
 	}
@@ -196,11 +196,15 @@ bool GameplayScene::loadEnemies()
 
 void GameplayScene::update(float delta)
 {
-	CameraManager::getInstance()->setCameraPosition(Vec2(CameraManager::getInstance()->getCameraPosition().x, CameraManager::getInstance()->getCameraPosition().y + 1));
-	
+	/*Vec2 cameraPos = CameraManager::getInstance()->getCameraPosition();	
+
+	MapManager::getInstance()->checkForLoop();
+
+	CameraManager::getInstance()->setCameraPosition(Vec2(cameraPos.x, cameraPos.y + 1));
+
 	movePlayer(Vec2(player->getPosition().x, player->getPosition().y + 1));
 	hud->setPositionY(hud->getPositionY() + 1);
-	boss->setPositionY(boss->getPositionY() + 1);
+	boss->setPositionY(boss->getPositionY() + 1);*/
 
 	if(player->isMovingUp() && !player->isMovingDown())
 	{

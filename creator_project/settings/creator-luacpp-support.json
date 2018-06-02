@@ -1,7 +1,7 @@
 {
-  "autoBuild": false,
+  "autoBuild": true,
   "exportResourceDynamicallyLoaded": false,
   "exportResourceOnly": true,
-  "path": "F:\\PatuCel\\FirstTry",
+  "path": "D:\\Assembla\\PatuCoco",
   "setup": false
 }

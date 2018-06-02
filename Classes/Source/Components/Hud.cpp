@@ -1,8 +1,10 @@
 #include "Components/Hud.h"
 #include "managers/ResourceManager.h"
-#include "ui/UILoadingBar.h"
+#include "managers/SceneManager.h"
+#include "Globals.h"
 
 using namespace cocos2d;
+using namespace utils;
 using namespace std;
 using namespace ui;
 
@@ -12,31 +14,44 @@ Hud* Hud::createHud()
 	return (hud->init()) ? hud : nullptr;
 }
 
+Hud::Hud() : buttonPressedListener(nullptr)
+{
+}
 
 bool Hud::init()
 {
 	if (Layer::init())
 	{
-		auto winSize = Director::getInstance()->getWinSize();
-		scoreLabel = Label::createWithSystemFont("0", "Arial", 16);
-		scoreLabel->setTextColor(Color4B::YELLOW);
-		scoreLabel->setPosition(winSize.width - scoreLabel->getContentSize().width / 2, winSize.height - scoreLabel->getContentSize().height / 2);
+		auto layer = SceneManager::getInstance()->createScene(CC_UI_HUD);
+		hp = findChild<LoadingBar*>(layer, "hp");
+		scoreLabel = findChild<Label*>(layer, "score");
 
-		auto bar = ui::LoadingBar::create("hud/hp_bar_0.png");
-		bar->setPercent(100);
-		bar->setColor(Color3B::YELLOW);
-		bar->setPosition(Vec2(bar->getContentSize().width / 2, winSize.height - bar->getContentSize().height / 2));
-		
-		auto hp = Sprite::create("hud/hp_bar_1.png");
-		hp->setPosition(Vec2(bar->getContentSize().width / 2, bar->getContentSize().height / 2));
-		bar->addChild(hp);
+		//Pause Menu
+		pauseMenu = findChild<Node*>(layer, "pause_menu");
+		findChild<Button*>(layer, "pm_ok")->addClickEventListener([=](Ref* ref) { HideMenu(); });
 
-		addChild(bar, 0, "hp");
-		addChild(scoreLabel, 3);
+		findChild<Button*>(layer, "pause")->addClickEventListener([=](Ref* ref) { pauseMenu->isVisible() ? HideMenu() : ShowMenu(); });
+		findChild<Button*>(layer, "skill_01")->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(1); });
+		findChild<Button*>(layer, "skill_02")->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(2); });
+		findChild<Button*>(layer, "skill_03")->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(3); });
+
+		addChild(layer);
+
+		HideMenu();
 		return true;
 	}
 
 	return false;
+}
+
+void Hud::ShowMenu() 
+{
+	pauseMenu->setVisible(true);
+}
+
+void Hud::HideMenu()
+{
+	pauseMenu->setVisible(false);
 }
 
 
@@ -48,10 +63,10 @@ void Hud::setScore(string score)
 
 void Hud::setHP(float percent)
 {
-	if (getChildrenCount() > 0)
-	{
-		auto hp = (LoadingBar*)getChildByName("hp");
-		if (hp)
-			hp->setPercent(percent);
-	}
+	hp->setPercent(percent);
+}
+
+void Hud::addButtonPressedListener(function<void(int id)> buttonPressedListener)
+{
+	this->buttonPressedListener = buttonPressedListener;
 }

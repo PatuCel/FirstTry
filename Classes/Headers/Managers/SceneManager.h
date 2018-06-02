@@ -36,6 +36,13 @@ public:
 	*/
 	void goBackScene();
 
+	Scene * createScene(const std::string & ccreatorPath);
+private:
+	int gcd(int a, int b);
+
+public:
+	std::string getAspectRatio(int w, int h);
+
 	//@replace true if you want to replace current scene	
 	void changeScene(EnumSceneType SceneType,bool replace);
 	/*

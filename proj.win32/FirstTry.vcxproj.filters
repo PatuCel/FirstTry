@@ -36,7 +36,7 @@
     <ClCompile Include="..\Classes\Source\AppDelegate.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Source\main.cpp">
+    <ClCompile Include="..\Classes\Source\Main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Source\Scenes\GameplayScene.cpp">
@@ -95,7 +95,7 @@
     <ClInclude Include="..\Classes\Headers\AppDelegate.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Headers\main.h">
+    <ClInclude Include="..\Classes\Headers\Main.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Headers\Globals.h">

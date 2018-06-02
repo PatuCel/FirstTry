@@ -10,6 +10,8 @@ Release.win32
 *.pch
 *.VC.db*
 *.user
+*.pyc
 proj.win32/.vs
 bin
+build
 cocos2d/cocos/platform/android/libcocos2dx/build/
