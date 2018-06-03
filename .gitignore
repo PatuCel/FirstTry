@@ -13,5 +13,6 @@ Release.win32
 *.pyc
 proj.win32/.vs
 bin
-build
+build/*
+!build/test.txt
 cocos2d/cocos/platform/android/libcocos2dx/build/
