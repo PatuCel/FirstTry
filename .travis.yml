@@ -10,4 +10,5 @@ matrix:
 script:
 - tools/travis-scripts/run-script.sh
 before_install:
+- chmod +x tools/travis-scripts/before-install.sh
 - tools/travis-scripts/before-install.sh
