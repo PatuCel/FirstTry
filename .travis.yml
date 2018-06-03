@@ -1,12 +1,10 @@
 matrix:
   include:
-    # linux
+    # android
     - os: linux
-      env: 
-        - BUILD_TARGET=patucel 
-        - GEN_BINDING_AND_COCOSFILE=false
+      env: BUILD_TARGET=android
+      language: android
       sudo: required
-      language: cpp
 script:
 - tools/travis-scripts/run-script.sh
 before_install:
