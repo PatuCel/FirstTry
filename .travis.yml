@@ -1,11 +1,13 @@
-sudo: false
-language: cpp
-compiler:
-  - clang
-  - gcc
-os:
-  - linux
+matrix:
+  include:
+    # linux
+    - os: linux
+      env: 
+        - BUILD_TARGET=linux 
+        - GEN_BINDING_AND_COCOSFILE=true
+      sudo: required
+      language: cpp
 script:
-  - mkdir build
-  - cd build
-  - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make
+- tools/travis-scripts/run-script.sh
+before_install:
+- tools/travis-scripts/before-install.sh
