@@ -262,7 +262,10 @@ fi
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     run_pull_request
 fi
-
+# build pull request
+if [ "$BUILD_TARGET" == "patucel" ]; then
+    build_linux
+fi
 # run after merging
 # - make cocos robot to send PR to cocos2d-x for new binding codes
 # - generate cocos_files.json for template
