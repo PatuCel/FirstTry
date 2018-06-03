@@ -9,4 +9,5 @@ script:
   - mkdir build
   - cd build
   - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make
-  - ./Classes
+  - ./Classes/Headers
+  - ./Classes/Source
