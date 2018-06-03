@@ -3,7 +3,7 @@ matrix:
     # linux
     - os: linux
       env: 
-        - BUILD_TARGET=linux 
+        - BUILD_TARGET=linux_cocos_new_test 
         - GEN_BINDING_AND_COCOSFILE=true
       sudo: required
       language: cpp
