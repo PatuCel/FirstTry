@@ -4,7 +4,7 @@ matrix:
     - os: linux
       env: 
         - BUILD_TARGET=linux 
-        - GEN_BINDING_AND_COCOSFILE=true
+        - GEN_BINDING_AND_COCOSFILE=false
       sudo: required
       language: cpp
 script:
