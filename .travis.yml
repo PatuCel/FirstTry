@@ -1,6 +1,12 @@
+sudo: false
 language: cpp
 compiler:
   - clang
   - gcc
-  script:
-  - ./Classes && make && make test
+os:
+  - linux
+script:
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make
+  - ./Classes
