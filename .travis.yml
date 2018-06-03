@@ -11,3 +11,9 @@ before_install:
 - chmod +x tools/travis-scripts/before-install.sh
 - chmod +x tools/travis-scripts/run-script.sh
 - tools/travis-scripts/before-install.sh
+
+cache:
+  bundler: true
+
+notifications:
+  email: false
