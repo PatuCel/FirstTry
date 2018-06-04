@@ -14,8 +14,11 @@ public:
 	static Hud* createHud();
 	Hud();
 	bool init();
-	void ShowMenu();
-	void HideMenu();
+
+private:
+	cocos2d::ui::Button* createButton(std::string normal, std::string pressed, std::string icon, cocos2d::Color3B iconColor = cocos2d::Color3B::WHITE);
+
+public:
 	void setScore(std::string score);
 	void setHP(float percent);
 	void addButtonPressedListener(std::function<void(int id)> buttonPressedListener);
