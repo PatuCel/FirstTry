@@ -23,6 +23,7 @@ bool Hud::init()
 	if (Layer::init())
 	{
 		auto visibleSize = Director::getInstance()->getVisibleSize();
+		ResourceManager::getInstance()->LoadSpriteSheet("hud.plist");
 
 		//Score label
 		scoreLabel = Label::createWithBMFont("fonts/mikado_outline_shadow.fnt", "999", CCTextAlignment::RIGHT);
@@ -40,17 +41,17 @@ bool Hud::init()
 		//Skill Buttons
 		auto skill01 = createButton("img_circle.png", "img_circle_bg.png", "img_skill01.png");
 		skill01->setColor(Color3B(27, 201, 48));
-		skill01->setPosition(Vec2(skill01->getContentSize().width / 2, skill01->getContentSize().height * 4));
+		skill01->setPosition(Vec2(5 + skill01->getContentSize().width / 2, skill01->getContentSize().height * 4));
 		skill01->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(1); });
 
 		auto skill02 = createButton("img_circle.png", "img_circle_bg.png", "img_skill02.png");
 		skill02->setColor(Color3B(255, 202, 33));
-		skill02->setPosition(Vec2(skill02->getContentSize().width / 2, skill01->getContentSize().height * 3));
+		skill02->setPosition(Vec2(5 + skill02->getContentSize().width / 2, skill01->getContentSize().height * 3));
 		skill02->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(2); });
 
 		auto skill03 = createButton("img_circle.png", "img_circle_bg.png", "img_skill03.png");
 		skill03->setColor(Color3B(0, 235, 255));
-		skill03->setPosition(Vec2(skill03->getContentSize().width / 2, skill01->getContentSize().height * 2));
+		skill03->setPosition(Vec2(5 + skill03->getContentSize().width / 2, skill01->getContentSize().height * 2));
 		skill03->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(3); });
 
 		addChild(scoreLabel);
@@ -66,8 +67,8 @@ bool Hud::init()
 
 Button* Hud::createButton(std::string normal, std::string pressed, std::string icon, Color3B iconColor)
 {
-	auto button = Button::create(normal, pressed);
-	auto btnIcon = Sprite::create(icon);
+	auto button = Button::create(normal, pressed, "", Widget::TextureResType::PLIST); //Load from hud.plist
+	auto btnIcon = ResourceManager::getInstance()->LoadSprite(icon);
 	btnIcon->setColor(iconColor);
 	btnIcon->setPosition(Vec2(button->getContentSize().width / 2, button->getContentSize().height / 2));
 	button->addChild(btnIcon);
