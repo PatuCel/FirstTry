@@ -30,7 +30,7 @@ bool Hud::init()
 		barBorder->setAnchorPoint(Vec2(0, 1.0f));
 		barBorder->setPosition(Vec2(5, visibleSize.height - 2));
 
-		Sprite* barBg = Sprite::create("hud_bar.png"); //Load from file (plist does not work)
+		Sprite* barBg = ResourceManager::getInstance()->LoadSprite("img_bar.png");
 		hp = ProgressTimer::create(barBg);
 		hp->setType(ProgressTimerType::BAR);
 		hp->setAnchorPoint(Vec2(0.0, 0.0));
