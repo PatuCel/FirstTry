@@ -12,7 +12,7 @@ Release.win32
 *.user
 *.pyc
 proj.win32/.vs
-bin
+*.bin
 build/*
 !build/test.txt
 !build/install-deps-linux.sh
