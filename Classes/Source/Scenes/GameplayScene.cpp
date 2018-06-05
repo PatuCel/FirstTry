@@ -90,7 +90,8 @@ bool GameplayScene::init()
 	hud = Hud::createHud();
 	hud->setScore("961");	//Player Score
 	hud->setHP(65);			//Player Health
-	hud->addButtonPressedListener([=](int id) { menuCloseCallback(0); }); //TODO:
+	hud->addButtonSkillListener([=](int id) { }); //TODO:
+	hud->addButtonPauseListener([=](bool isPaused) {}); //TODO:
 	this->addChild(hud, 10);
 
 	EventListenerKeyboard* keyboardListener = EventListenerKeyboard::create();

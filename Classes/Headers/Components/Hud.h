@@ -6,9 +6,10 @@ class Hud : public cocos2d::Layer
 {
 private:
 	cocos2d::Label* scoreLabel;
+	cocos2d::Label* pauseLabel;
 	cocos2d::ProgressTimer* hp;
-	cocos2d::Node* pauseMenu;
-	std::function<void(int id)> buttonPressedListener;
+	std::function<void(int id)> buttonSkillListener;
+	std::function<void(bool isPaused)> buttonPauseListener;
 public:
 	static Hud* createHud();
 	Hud();
@@ -20,5 +21,6 @@ private:
 public:
 	void setScore(std::string score);
 	void setHP(float percent);
-	void addButtonPressedListener(std::function<void(int id)> buttonPressedListener);
+	void addButtonSkillListener(std::function<void(int id)> buttonSkillListener);
+	void addButtonPauseListener(std::function<void(bool isPaused)> buttonPauseListener);
 };
