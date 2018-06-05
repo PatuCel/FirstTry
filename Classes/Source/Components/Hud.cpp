@@ -113,7 +113,7 @@ void Hud::setScore(string score)
 
 void Hud::setHP(float percent)
 {
-	hp->setPercentage(percent);
+	hp->runAction(ProgressTo::create(1.0f, percent)); //hp->runAction(ProgressFromTo::create(2.0f, 30.0f, 75.0f)); // filling from 30% to 75% in 2 seconds
 }
 
 void Hud::addButtonSkillListener(function<void(int id)> buttonSkillListener)
