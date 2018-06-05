@@ -2,8 +2,8 @@ matrix:
   include:
     # android
     - os: linux
-      env: BUILD_TARGET=android
-      language: android
+      env: BUILD_TARGET=linux_cocos_new_test
+      language: cpp
       sudo: required
 script:
 - tools/travis-scripts/run-script.sh
