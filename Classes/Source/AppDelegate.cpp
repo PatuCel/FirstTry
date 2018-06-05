@@ -82,6 +82,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		searchPaths.push_back(SEARCH_PATH_HD);
 		director->setContentScaleFactor(SCALE_HD);
 	}
+	else
 	{
 		searchPaths.push_back(SEARCH_PATH_SD);
 	}
