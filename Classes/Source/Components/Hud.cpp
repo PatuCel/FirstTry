@@ -1,7 +1,6 @@
 #include "Components/Hud.h"
 #include "managers/ResourceManager.h"
 #include "managers/SceneManager.h"
-#include "Globals.h"
 
 using namespace cocos2d;
 using namespace utils;
@@ -25,11 +24,24 @@ bool Hud::init()
 		auto visibleSize = Director::getInstance()->getVisibleSize();
 		ResourceManager::getInstance()->LoadSpriteSheet("hud.plist");
 
-		//Score label
-		scoreLabel = Label::createWithBMFont("fonts/mikado_outline_shadow.fnt", "999", CCTextAlignment::RIGHT);
-		scoreLabel->setAnchorPoint(Vec2(1.0f, 1.0f));
-		scoreLabel->setPosition(visibleSize.width - 50, visibleSize.height - 10);
-		scoreLabel->setBMFontSize(22);
+
+		//ProgressTimer (Progressbar)
+		Sprite* barBorder = ResourceManager::getInstance()->LoadSprite("img_borderbar.png");
+		barBorder->setAnchorPoint(Vec2(0, 1.0f));
+		barBorder->setPosition(Vec2(5, visibleSize.height - 2));
+
+		Sprite* barBg = ResourceManager::getInstance()->LoadSprite("img_bar.png");
+		barBg->setAnchorPoint(Vec2(0.0, 0.0));
+		barBg->setPosition(Vec2(0.0, 0.0));
+
+		hp = ProgressTimer::create(barBg);
+		hp->setType(ProgressTimerType::BAR);
+		hp->setAnchorPoint(Vec2(0.0, 0.0));
+		hp->setPosition(Vec2(0.0, 0.0));
+		hp->setBarChangeRate(Vec2(1, 0));
+		hp->setMidpoint(Vec2(0.0, 0.0));
+		hp->setPercentage(100);
+		barBorder->addChild(hp);
 
 		//Puase button
 		auto pauseBtn = createButton("img_circle.png", "img_circle_bg.png", "img_pause.png", Color3B::YELLOW);
@@ -37,6 +49,13 @@ bool Hud::init()
 		pauseBtn->setColor(Color3B::GRAY);
 		pauseBtn->setPosition(Vec2(visibleSize.width - pauseBtn->getContentSize().width / 2, visibleSize.height - pauseBtn->getContentSize().height / 2));
 		pauseBtn->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(0); });
+
+
+		//Score label
+		scoreLabel = Label::createWithBMFont("fonts/mikado_outline_shadow.fnt", "0", CCTextAlignment::RIGHT);
+		scoreLabel->setAnchorPoint(Vec2(1.0f, 1.0f));
+		scoreLabel->setPosition(visibleSize.width - (pauseBtn->getContentSize().width + 10), visibleSize.height - 10);
+		scoreLabel->setBMFontSize(22);
 
 		//Skill Buttons
 		auto skill01 = createButton("img_circle.png", "img_circle_bg.png", "img_skill01.png");
@@ -54,6 +73,7 @@ bool Hud::init()
 		skill03->setPosition(Vec2(5 + skill03->getContentSize().width / 2, skill01->getContentSize().height * 2));
 		skill03->addClickEventListener([=](Ref* ref) { if (buttonPressedListener) buttonPressedListener(3); });
 
+		addChild(barBorder);
 		addChild(scoreLabel);
 		addChild(pauseBtn);
 		addChild(skill01);
@@ -85,7 +105,7 @@ void Hud::setScore(string score)
 
 void Hud::setHP(float percent)
 {
-	//hp->setPercent(percent); //TODO
+	hp->setPercentage(percent);
 }
 
 void Hud::addButtonPressedListener(function<void(int id)> buttonPressedListener)

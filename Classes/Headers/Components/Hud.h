@@ -1,13 +1,12 @@
 #pragma once
 #include "cocos2d.h"
-#include "ui/UILoadingBar.h"
 #include "ui/UIButton.h"
 
 class Hud : public cocos2d::Layer
 {
 private:
 	cocos2d::Label* scoreLabel;
-	cocos2d::ui::LoadingBar* hp;
+	cocos2d::ProgressTimer* hp;
 	cocos2d::Node* pauseMenu;
 	std::function<void(int id)> buttonPressedListener;
 public:
