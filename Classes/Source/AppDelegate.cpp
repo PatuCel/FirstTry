@@ -19,8 +19,11 @@ using namespace experimental;
 using namespace CocosDenshion;
 #endif
 
-static Size designResolutionSize = Size(SCREEN_RESOLUTION_WIDTH, SCREEN_RESOLUTION_HEIGHT);
-static Size highResolutionSize = Size(SCREEN_RESOLUTION_WIDTH*2, SCREEN_RESOLUTION_HEIGHT*2);
+
+static Size lowResolutionSize = Size(SCREEN_RESOLUTION_WIDTH, SCREEN_RESOLUTION_HEIGHT);
+static Size highResolutionSize = Size(SCREEN_RESOLUTION_WIDTH * 2, SCREEN_RESOLUTION_HEIGHT * 2);
+
+static Size designResolutionSize = lowResolutionSize; //Scale Test: Size(768, 1024); 
 
 AppDelegate::AppDelegate()
 {
@@ -80,11 +83,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	if (frameSize.height >= highResolutionSize.height || frameSize.width >= highResolutionSize.width)
 	{
 		searchPaths.push_back(SEARCH_PATH_HD);
-		director->setContentScaleFactor(SCALE_HD);
+		director->setContentScaleFactor(highResolutionSize.width / frameSize.width);
 	}
 	else
 	{
 		searchPaths.push_back(SEARCH_PATH_SD);
+		director->setContentScaleFactor(lowResolutionSize.width / frameSize.width);
 	}
 
 	//Cocos Creator Scenes 
