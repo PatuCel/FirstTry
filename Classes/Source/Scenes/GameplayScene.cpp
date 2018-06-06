@@ -63,7 +63,10 @@ bool GameplayScene::init()
     this->addChild(menu, 10);
 
 
+	ResourceManager::getInstance()->LoadSpriteSheet("units.plist");
+
 	ResourceManager::getInstance()->LoadSpriteSheet("tp_level_01.plist");
+	
 
 	// boss sprite
 	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
@@ -227,7 +230,7 @@ bool GameplayScene::loadEnemies()
 
 	for (int x = 0; x<enemiesTiles.size(); x++)
 	{
-		auto tmpEnemy = EnemyUnit::createEnemy("player.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+		auto tmpEnemy = EnemyUnit::createEnemy("enemy02.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
 		enemies.push_back(tmpEnemy);
 	}
 
