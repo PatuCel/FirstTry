@@ -19,7 +19,7 @@ public:
     // a selector callback
     void menuCloseCallback(Ref* pSender);
 
-	void movePlayer(Vec2 pos);
+	void movePlayer(PlayerMoveDirection direction);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameplayScene);

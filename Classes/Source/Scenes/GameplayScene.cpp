@@ -120,13 +120,58 @@ void GameplayScene::menuCloseCallback(Ref* pSender)
 }
 
 
-void GameplayScene::movePlayer(Vec2 pos)
+void GameplayScene::movePlayer(PlayerMoveDirection direction)
 {
-	Vec2 tilePosition = MapManager::getInstance()->tileFromPosition(pos);
-	int tileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_COLLISIONS)->getTileGIDAt(tilePosition);
-	if(!tileGID)
+	bool canMovePlayer = true;
+
+	int moveOffsetX = 0;
+	int moveOffsetY = 0;
+
+	switch (direction)
 	{
-		player->setPosition(pos);
+		case PLAYER_MOVE_DIRECTION_UP:
+			moveOffsetY -= 2;
+			break;
+
+		case PLAYER_MOVE_DIRECTION_LEFT:
+			moveOffsetX += 2;
+			break;
+
+		case PLAYER_MOVE_DIRECTION_DOWN:
+			moveOffsetY += 2;
+			break;
+
+		case PLAYER_MOVE_DIRECTION_RIGHT:
+			moveOffsetX -= 2;
+			break;
+	}
+
+	Vec2 newPos = player->getPosition() + Vec2(moveOffsetX, moveOffsetY);
+
+	Vec2 tilePosition = MapManager::getInstance()->tileFromPosition(newPos);
+	int tileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_COLLISIONS)->getTileGIDAt(tilePosition);
+
+	if (tileGID)
+	{
+		CCLOG("Tile Collision!!!");
+		canMovePlayer = false;
+	}
+
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		Rect playerRect = Rect(Vec2(player->getBoundingBox().origin.x + moveOffsetX, player->getBoundingBox().origin.y + moveOffsetY), player->getBoundingBox().size);
+		Rect enemyRect = enemies[i]->getBoundingBox();
+
+		if (playerRect.intersectsRect(enemyRect))
+		{
+			CCLOG("Enemy Collision!!!");
+			canMovePlayer = false;
+		}
+	}
+
+	if (canMovePlayer)
+	{
+		player->setPosition(newPos);
 	}
 }
 
@@ -209,19 +254,19 @@ void GameplayScene::update(float delta)
 
 	if(player->isMovingUp() && !player->isMovingDown())
 	{
-		movePlayer(Vec2(player->getPosition().x, player->getPosition().y + 2));
+		movePlayer(PLAYER_MOVE_DIRECTION_DOWN);
 	}
 	else if(player->isMovingDown() && !player->isMovingUp())
 	{
-		movePlayer(Vec2(player->getPosition().x, player->getPosition().y - 2));
+		movePlayer(PLAYER_MOVE_DIRECTION_UP);
 	}
 
 	if(player->isMovingLeft() && !player->isMovingRight())
 	{
-		movePlayer(Vec2(player->getPosition().x - 2, player->getPosition().y));
+		movePlayer(PLAYER_MOVE_DIRECTION_RIGHT);
 	}
 	else if(player->isMovingRight() && !player->isMovingLeft())
 	{
-		movePlayer(Vec2(player->getPosition().x + 2, player->getPosition().y));
+		movePlayer(PLAYER_MOVE_DIRECTION_LEFT);
 	}
 }
