@@ -77,6 +77,7 @@ void BaseUnit::SetShooter(const int Type, const int Multiplier, const bool isAll
 	
 	auto callLater(MCBPlatformSupport::MCBCallLambda::createWithDelay(projectileFrecuency,[=]() {
 		ShooterFunc(Type, isAllied);
+		SetShooter(Type, Multiplier, isAllied);
 	}));
 
 	runAction(CCSequence::createWithTwoActions(CCDelayTime::create(projectileFrecuency), callLater));
