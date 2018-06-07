@@ -3,6 +3,7 @@
 ::for /f "delims=" %%x in (_config.inf) do (set "%%x")
 
 ::Scripts dir
+set ROOT_DIR=~dp0
 pushd tools\scripts\
 call setEnv.bat
 
@@ -23,11 +24,12 @@ call :color 0f "  --------------------------------------------------------------
 echo.
 call :color 0a "  1.  [WIN32] " & echo Biuld Game (DEBUG)
 call :color 0a "  2.  [WIN32] " & echo Biuld Game (Release)
+call :color 0a "  3.  [WIN32] " & echo Run (Debug)
 call :color 0f "  ---------------------------------------------------------------------------------------------------------------" & echo.
-call :color 0e "  3.  [ANDROID] " & echo Biuld Game (Debug)
-call :color 0e "  4.  [ANDROID] " & echo Biuld Game (Release)
+call :color 0e "  4.  [ANDROID] " & echo Biuld Game (Debug)
+call :color 0e "  5.  [ANDROID] " & echo Biuld Game (Release)
 call :color 0f "  ---------------------------------------------------------------------------------------------------------------" & echo.
-call :color 0b "  5.  [C-Creator] " & echo Fix Project Path
+call :color 0b "  6.  [C-Creator] " & echo Fix Project Path
 echo.
 call :color 0f "  0.  Exit"
 echo.
@@ -48,23 +50,28 @@ if %var%==2 (
 )
 if %var%==3 (
 	cls
+	title Run Win32 Debug
+	start "PATUCEL" %ROOT_DIR%\build\Debug.win32\FirstTry.exe
+	call :result-success
+)
+if %var%==4 (
+	cls
 	title Compiling Android [Debug]
 	python cocos_compile.py debug
 	call :result-success
 )
-if %var%==4 (
+if %var%==5 (
 	cls
 	title Compiling Android [Release]
 	python cocos_compile.py release
 	call :result-success
 )
-if %var%==5 (
+if %var%==6 (
 	cls
 	title Fix cocos creator project path
 	call vbscript FixCocosProject
 	call :result-success
 )
-
 if %var%==0 (popd & exit)
 goto :Menu
 
