@@ -13,7 +13,7 @@
 				"velocity"  : 10,
 				"damage"	: 10,
 				"spreadlevel" : 1,
-				"fireRate"	:0.5,
+				"fireRate"	:1.0,
 				"texturePath" : "player.png"
 			},
 			"projectile_2"   : {
@@ -21,7 +21,7 @@
 				"velocity"  : 20,
 				"damage"	: 20,
 				"spreadlevel" : 2,
-				"fireRate"	:0.5,
+				"fireRate"	:3.0,
 				"texturePath" : "player.png"
 			}
 	}

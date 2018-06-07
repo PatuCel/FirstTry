@@ -1,6 +1,8 @@
 #include "Units/BaseUnit.h"
 #include "Units/ProjectileUnit.h"
 #include "Managers/ConfigManager.h"
+#include "Managers/MCBCallLambda.h"
+
 
 /*
 namespace
@@ -9,7 +11,7 @@ namespace
 }
 */
 
-BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon)
+BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon, const bool isAllied)
 {
 	BaseUnit* baseUnit = new (std::nothrow) BaseUnit();
 
@@ -21,7 +23,10 @@ BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, Unit
 		baseUnit->setUnitState(state);
 		baseUnit->setUnitWeapon(weapon);
 		baseUnit->mShooterMultiplier = 1.0f;
-		baseUnit->SetShooter(1, baseUnit->mShooterMultiplier);//Iribe
+		if (isAllied)//Iribe
+			baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);
+		else
+			baseUnit->SetShooter(2, baseUnit->mShooterMultiplier, isAllied);
 
 		return baseUnit;
 	}
@@ -30,14 +35,14 @@ BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, Unit
 	return nullptr;
 }
 
-BaseUnit* BaseUnit::createUnit(Vector<SpriteFrame*> frameArray, float delay)
+BaseUnit* BaseUnit::createUnit(Vector<SpriteFrame*> frameArray, float delay, const bool isAllied)
 {
 	BaseUnit* baseUnit = new (std::nothrow) BaseUnit();
 
 	baseUnit->initWithSpriteFrame(frameArray.front());
 	baseUnit->setPosition(0, 0);
 	baseUnit->mShooterMultiplier = 1.0f;
-	baseUnit->SetShooter(1, baseUnit->mShooterMultiplier);//Iribe
+	baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);//Iribe
 
 	auto animation = Animation::createWithSpriteFrames(frameArray, delay);
 	baseUnit->runAction(RepeatForever::create(Animate::create(animation)));
@@ -62,21 +67,27 @@ bool BaseUnit::isAllied() const
 
 ///Iribe 
 
-void BaseUnit::myFunc() {
+void BaseUnit::ShooterFunc(const int Type, const bool isAllied) {
+	BaseUnit::createBullets(Type, isAllied);
 }
 
-void BaseUnit::SetShooter(int ProjectileType, float Multiplier) {
-	//float projectileFrecuency = ConfigManager::GetProjectileDataTable()[ProjectileType].fireRate * Multiplier;
-	//float projectileFrecuency = 1.5f * Multiplier;
-	auto sequence = Sequence::createWithTwoActions(DelayTime::create(1.5f), CallFunc::create([&]() {BaseUnit::createBullets(true); SetShooter(ProjectileType, Multiplier); }));
-	runAction(sequence);
+void BaseUnit::SetShooter(const int Type, const int Multiplier, const bool isAllied) {
+
+	float projectileFrecuency = ConfigManager::GetProjectileDataTable()[Type].fireRate * Multiplier;
+	
+	auto callLater(MCBPlatformSupport::MCBCallLambda::createWithDelay(projectileFrecuency,[=]() {
+		ShooterFunc(Type, isAllied);
+	}));
+
+	runAction(CCSequence::createWithTwoActions(CCDelayTime::create(projectileFrecuency), callLater));
 }
 
-void BaseUnit::createBullets(bool isAllied)
+void BaseUnit::createBullets(const int Type, const bool isAllied)
 {
-	int mSpreadLevel = 3;
+	int mSpreadLevel = ConfigManager::GetProjectileDataTable()[Type].spreadlevel;
+	bool isAlliedBullet = isAllied;
 	float dirFactor = 0.0f;
-	if (isAllied)
+	if (isAlliedBullet)
 		dirFactor = 1.0f;
 	else
 		dirFactor = -1.0f;
@@ -110,7 +121,7 @@ void BaseUnit::createProjectile(float xDirection, float yDirection, float xOffse
 	cocos2d::Vec2 Direction(xDirection, yDirection);
 
 	Vec2 projectilePos = this->getPosition() + offset + Direction;
-	projectileUnit= ProjectileUnit::createUnit(1, projectilePos, offset, this->getPosition());
+	projectileUnit= ProjectileUnit::createUnit(2, projectilePos, offset, this->getPosition());
 	Director *pDirector = Director::getInstance();
 	Scene* curScene = pDirector->getRunningScene();
 	curScene->addChild(projectileUnit, 1);

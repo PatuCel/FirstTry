@@ -81,6 +81,9 @@
     <ClCompile Include="..\..\Source\Units\ProjectileUnit.cpp">
       <Filter>Source\Units</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Managers\MCBCallLambda.cpp">
+      <Filter>Source\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Headers\Managers\SceneManager.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Headers\Units\ProjectileUnit.h">
       <Filter>Headers\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Managers\MCBCallLambda.h">
+      <Filter>Headers\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -30,15 +30,15 @@ public:
 		TypeCount
 	};
 	
-	static BaseUnit* createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon);
-	static BaseUnit* createUnit(Vector<SpriteFrame*> frameArray, float delay);
+	static BaseUnit* createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon, const bool isAllied);
+	static BaseUnit* createUnit(Vector<SpriteFrame*> frameArray, float delay, const bool isAllied);
 	void setUnitState(UnitState newState);
 	void setUnitWeapon(UnitWeapon newWeapon);
 
 	//Iribe
-	void myFunc();
-	void SetShooter(int ProjectileType, float Multiplier);
-	void				createBullets(bool isAllied);
+	void ShooterFunc(const int Type, const bool isAllied);
+	void SetShooter(const int Type, const int Multiplier, const bool isAllied);
+	void				createBullets(const int Type, const bool isAllied);
 	void				createProjectile(float xDirection, float yDirection, float xOffset, float yOffset);
 	bool				isAllied() const;
 

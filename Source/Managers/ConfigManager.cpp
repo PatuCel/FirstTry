@@ -60,12 +60,11 @@ bool ConfigManager::Load_Shooter_Config(const std::string filePath)
 				const rapidjson::Value& singleProjectileValue = projectilesValue[projectileName.c_str()];
 				//std::string projec
 
-				dataProjectile[x].damage = singleProjectileValue["damage"].GetFloat();
-				dataProjectile[x].speed = singleProjectileValue["velocity"].GetFloat();
-				//dataProjectile[x].isAllied = singleProjectileValue["damage"].GetFloat();
-				dataProjectile[x].spreadlevel = singleProjectileValue["spreadlevel"].GetInt();
-				dataProjectile[x].fireRate = singleProjectileValue["fireRate"].GetFloat();
-				dataProjectile[x].texturePath = singleProjectileValue["texturePath"].GetString();
+				dataProjectile[x + 1].damage = singleProjectileValue["damage"].GetFloat();
+				dataProjectile[x + 1].speed = singleProjectileValue["velocity"].GetFloat();
+				dataProjectile[x + 1].spreadlevel = singleProjectileValue["spreadlevel"].GetInt();
+				dataProjectile[x + 1].fireRate = singleProjectileValue["fireRate"].GetFloat();
+				dataProjectile[x + 1].texturePath = singleProjectileValue["texturePath"].GetString();
 				
 			}
 			

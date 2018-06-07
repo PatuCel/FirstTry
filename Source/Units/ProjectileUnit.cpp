@@ -17,6 +17,8 @@ ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, 
 		projectileUnit->setSpread(ConfigManager::GetProjectileDataTable()[Type].spreadlevel);
 		projectileUnit->setPosition(position);
 
+		float bulletSpeed = 1/ConfigManager::GetProjectileDataTable()[Type].speed;
+
 		offset.normalize();
 		auto shootAmount = offset * 1000;
 

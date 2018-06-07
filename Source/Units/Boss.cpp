@@ -6,7 +6,7 @@ using namespace ui;
 
 Boss* Boss::createBoss(Vector<SpriteFrame*> frameArray, float delay)
 {
-	return (Boss*)createUnit(frameArray, delay);
+	return (Boss*)createUnit(frameArray, delay,false);
 }
 
 void Boss::setHealth(float health)

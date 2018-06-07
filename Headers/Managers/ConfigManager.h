@@ -39,7 +39,6 @@ namespace ConfigManager
 
 	static struct ProjectileData
 	{
-		int								isAllied;
 		int								damage;
 		float							speed;
 		int								spreadlevel;
