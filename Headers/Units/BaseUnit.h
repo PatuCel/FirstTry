@@ -39,7 +39,7 @@ public:
 	void ShooterFunc(const int Type, const bool isAllied);
 	void SetShooter(const int Type, const int Multiplier, const bool isAllied);
 	void				createBullets(const int Type, const bool isAllied);
-	void				createProjectile(float xDirection, float yDirection, float xOffset, float yOffset);
+	void				createProjectile(const int Type,float xDirection, float yDirection, float xOffset, float yOffset);
 	bool				isAllied() const;
 
 

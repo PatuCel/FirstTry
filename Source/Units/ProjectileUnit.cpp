@@ -1,5 +1,6 @@
 #include "Units/ProjectileUnit.h"
 #include "Managers/ConfigManager.h"
+#include "Globals.h"
 
 ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, Vec2 AircraftPos)
 {
@@ -17,14 +18,23 @@ ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, 
 		projectileUnit->setSpread(ConfigManager::GetProjectileDataTable()[Type].spreadlevel);
 		projectileUnit->setPosition(position);
 
-		float bulletSpeed = 1/ConfigManager::GetProjectileDataTable()[Type].speed;
+		float projectileSpeed =0.0f;
+		float projectileSpeedFactor = ConfigManager::GetProjectileDataTable()[Type].speed;
+		if (projectileSpeedFactor <= 0) {
+			projectileSpeed = 0.0f;
+		}
+		else {
+			projectileSpeed = (1.0f / projectileSpeedFactor);
+		}
+		float bulletSpeed = PROJECTILE_SPEED_FACTOR * (projectileSpeed);
+		
 
 		offset.normalize();
 		auto shootAmount = offset * 1000;
 
 		auto realDest = shootAmount + AircraftPos;
 
-		auto actionMove = MoveTo::create(1.5f, realDest);
+		auto actionMove = MoveTo::create(bulletSpeed, realDest);
 		auto actionRemove = RemoveSelf::create();
 		projectileUnit->runAction(Sequence::create(actionMove, actionRemove, nullptr));
 

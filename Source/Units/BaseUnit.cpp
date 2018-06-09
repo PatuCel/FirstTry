@@ -2,7 +2,7 @@
 #include "Units/ProjectileUnit.h"
 #include "Managers/ConfigManager.h"
 #include "Managers/MCBCallLambda.h"
-
+#include "Globals.h"
 
 /*
 namespace
@@ -24,9 +24,9 @@ BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, Unit
 		baseUnit->setUnitWeapon(weapon);
 		baseUnit->mShooterMultiplier = 1.0f;
 		if (isAllied)//Iribe
-			baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);
+			baseUnit->SetShooter(0, baseUnit->mShooterMultiplier, isAllied);
 		else
-			baseUnit->SetShooter(2, baseUnit->mShooterMultiplier, isAllied);
+			baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);
 
 		return baseUnit;
 	}
@@ -42,7 +42,10 @@ BaseUnit* BaseUnit::createUnit(Vector<SpriteFrame*> frameArray, float delay, con
 	baseUnit->initWithSpriteFrame(frameArray.front());
 	baseUnit->setPosition(0, 0);
 	baseUnit->mShooterMultiplier = 1.0f;
-	baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);//Iribe
+	if (isAllied)//Iribe
+		baseUnit->SetShooter(0, baseUnit->mShooterMultiplier, isAllied);
+	else
+		baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);
 
 	auto animation = Animation::createWithSpriteFrames(frameArray, delay);
 	baseUnit->runAction(RepeatForever::create(Animate::create(animation)));
@@ -73,14 +76,22 @@ void BaseUnit::ShooterFunc(const int Type, const bool isAllied) {
 
 void BaseUnit::SetShooter(const int Type, const int Multiplier, const bool isAllied) {
 
-	float projectileFrecuency = ConfigManager::GetProjectileDataTable()[Type].fireRate * Multiplier;
+	float projectileFrecuencyFactor = ConfigManager::GetProjectileDataTable()[Type].fireRate * Multiplier;
+	float projectileFrecuency = 0.0f;
+	if (projectileFrecuencyFactor <= 0) {
+		projectileFrecuency = 0.0f;
+	}
+	else {
+		projectileFrecuency = 1.0f / projectileFrecuencyFactor;
+	}
+	float projectileFrecuencyNew = PROJECTILE_FREQUENCY_FACTOR * (projectileFrecuency);
 	
-	auto callLater(MCBPlatformSupport::MCBCallLambda::createWithDelay(projectileFrecuency,[=]() {
+	auto callLater(MCBPlatformSupport::MCBCallLambda::createWithDelay(projectileFrecuencyNew,[=]() {
 		ShooterFunc(Type, isAllied);
 		SetShooter(Type, Multiplier, isAllied);
 	}));
 
-	runAction(CCSequence::createWithTwoActions(CCDelayTime::create(projectileFrecuency), callLater));
+	runAction(CCSequence::createWithTwoActions(CCDelayTime::create(projectileFrecuencyNew), callLater));
 }
 
 void BaseUnit::createBullets(const int Type, const bool isAllied)
@@ -96,33 +107,33 @@ void BaseUnit::createBullets(const int Type, const bool isAllied)
 	switch (mSpreadLevel)
 	{
 	case 1:
-		createProjectile(0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
+		createProjectile(Type,0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
 		break;
 
 	case 2:
-		createProjectile(0.f, 1.f * dirFactor, -0.33f, 0.33f * dirFactor);
-		createProjectile(0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
-		createProjectile(0.f, 1.f * dirFactor, +0.33f, 0.33f * dirFactor);
+		createProjectile(Type,0.f, 1.f * dirFactor, -0.33f, 0.33f * dirFactor);
+		createProjectile(Type,0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
+		createProjectile(Type,0.f, 1.f * dirFactor, +0.33f, 0.33f * dirFactor);
 
 		break;
 
 	case 3:
-		createProjectile(0.f, 1.f * dirFactor, -0.1f, 0.33f * dirFactor);
-		createProjectile(0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
-		createProjectile(0.f, 1.f * dirFactor, +0.1f, 0.33f * dirFactor);
+		createProjectile(Type,0.f, 1.f * dirFactor, -0.1f, 0.33f * dirFactor);
+		createProjectile(Type,0.0f, 1.f * dirFactor, 0.0f, 0.5f * dirFactor);
+		createProjectile(Type,0.f, 1.f * dirFactor, +0.1f, 0.33f * dirFactor);
 
 		break;
 	}
 }
 
 
-void BaseUnit::createProjectile(float xDirection, float yDirection, float xOffset, float yOffset)
+void BaseUnit::createProjectile(const int Type,float xDirection, float yDirection, float xOffset, float yOffset)
 {
 	Vec2 offset = Vec2(xOffset, yOffset);
 	cocos2d::Vec2 Direction(xDirection, yDirection);
 
 	Vec2 projectilePos = this->getPosition() + offset + Direction;
-	projectileUnit= ProjectileUnit::createUnit(2, projectilePos, offset, this->getPosition());
+	projectileUnit= ProjectileUnit::createUnit(Type, projectilePos, offset, this->getPosition());
 	Director *pDirector = Director::getInstance();
 	Scene* curScene = pDirector->getRunningScene();
 	curScene->addChild(projectileUnit, 1);

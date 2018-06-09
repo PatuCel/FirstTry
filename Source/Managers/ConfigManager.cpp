@@ -45,9 +45,7 @@ bool ConfigManager::Load_Shooter_Config(const std::string filePath)
 			int playerFireInterval= playerValue["hitpoints"].GetFloat();
 			int playerSpreadLevel = playerValue["spreadlevel"].GetFloat();
 			int playerWeaponType = playerValue["weapontype"].GetFloat();
-			//bool playerIsAlly=
-
-
+			
 			std::vector<ConfigManager::ProjectileData> dataProjectileTest(ProjectileUnit::TypeCount);
 			dataProjectile = dataProjectileTest;
 			//////Projectiles
@@ -56,15 +54,15 @@ bool ConfigManager::Load_Shooter_Config(const std::string filePath)
 
 			for (int x = 0; x < projectilesMembers; x++)
 			{
-				std::string projectileName = "projectile_" + std::to_string(x + 1);
+				std::string projectileName = "projectile_" + std::to_string(x);
 				const rapidjson::Value& singleProjectileValue = projectilesValue[projectileName.c_str()];
 				//std::string projec
 
-				dataProjectile[x + 1].damage = singleProjectileValue["damage"].GetFloat();
-				dataProjectile[x + 1].speed = singleProjectileValue["velocity"].GetFloat();
-				dataProjectile[x + 1].spreadlevel = singleProjectileValue["spreadlevel"].GetInt();
-				dataProjectile[x + 1].fireRate = singleProjectileValue["fireRate"].GetFloat();
-				dataProjectile[x + 1].texturePath = singleProjectileValue["texturePath"].GetString();
+				dataProjectile[x].damage = singleProjectileValue["damage"].GetFloat();
+				dataProjectile[x].speed = singleProjectileValue["velocity"].GetFloat();
+				dataProjectile[x].spreadlevel = singleProjectileValue["spreadlevel"].GetInt();
+				dataProjectile[x].fireRate = singleProjectileValue["fireRate"].GetFloat();
+				dataProjectile[x].texturePath = singleProjectileValue["texturePath"].GetString();
 				
 			}
 			
