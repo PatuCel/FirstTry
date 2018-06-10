@@ -32,8 +32,8 @@
 			{
 				"object": {
 					"contentSize": {
-						"w": 640,
-						"h": 960
+						"w": 480,
+						"h": 800
 					},
 					"enabled": true,
 					"name": "Canvas",
@@ -52,8 +52,8 @@
 					"opacity": 255,
 					"opacityModifyRGB": false,
 					"position": {
-						"x": 320,
-						"y": 480
+						"x": 240,
+						"y": 400
 					},
 					"rotationSkewX": 0,
 					"rotationSkewY": 0,
@@ -71,8 +71,8 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"w": 388,
-									"h": 436
+									"w": 256,
+									"h": 256
 								},
 								"enabled": true,
 								"name": "logo",
@@ -92,7 +92,7 @@
 								"opacityModifyRGB": false,
 								"position": {
 									"x": 0,
-									"y": 0
+									"y": 139
 								},
 								"rotationSkewX": 0,
 								"rotationSkewY": 0,
@@ -109,7 +109,7 @@
 							"srcBlend": 770,
 							"dstBlend": 771,
 							"trimEnabled": true,
-							"sizeMode": "Trimmed"
+							"sizeMode": "Custom"
 						},
 						"object_type": "Sprite",
 						"children": []
@@ -120,8 +120,8 @@
 				"object": {
 					"node": {
 						"contentSize": {
-							"w": 100,
-							"h": 40
+							"w": 96,
+							"h": 96
 						},
 						"enabled": true,
 						"name": "Play_button",
@@ -132,16 +132,16 @@
 						"cascadeOpacityEnabled": true,
 						"color": {
 							"r": 255,
-							"g": 255,
-							"b": 255
+							"g": 202,
+							"b": 33
 						},
 						"globalZOrder": 0,
 						"localZOrder": 0,
 						"opacity": 255,
 						"opacityModifyRGB": false,
 						"position": {
-							"x": 319,
-							"y": 223
+							"x": 240,
+							"y": 248
 						},
 						"rotationSkewX": 0,
 						"rotationSkewY": 0,
@@ -154,10 +154,10 @@
 						"colliders": []
 					},
 					"ignoreContentAdaptWithSize": false,
-					"spriteFrameName": "Sprites/Buttons/play-now-button.png",
+					"spriteFrameName": "Sprites/Hud/img_circle.png",
 					"transition": 2,
-					"pressedSpriteFrameName": "image/default_btn_pressed.png",
-					"disabledSpriteFrameName": "image/default_btn_disabled.png"
+					"pressedSpriteFrameName": "Sprites/Hud/img_circle_bg.png",
+					"disabledSpriteFrameName": "Sprites/Hud/img_circle_bg.png"
 				},
 				"object_type": "Button",
 				"children": [
@@ -165,27 +165,27 @@
 						"object": {
 							"node": {
 								"contentSize": {
-									"w": 100,
-									"h": 40
+									"w": 50,
+									"h": 50
 								},
 								"enabled": true,
-								"name": "Label",
+								"name": "img_play",
 								"anchorPoint": {
 									"x": 0.5,
 									"y": 0.5
 								},
 								"cascadeOpacityEnabled": true,
 								"color": {
-									"r": 0,
-									"g": 0,
-									"b": 0
+									"r": 255,
+									"g": 255,
+									"b": 255
 								},
 								"globalZOrder": 0,
 								"localZOrder": 0,
 								"opacity": 255,
 								"opacityModifyRGB": false,
 								"position": {
-									"x": 0,
+									"x": 5,
 									"y": 0
 								},
 								"rotationSkewX": 0,
@@ -198,16 +198,14 @@
 								"groupIndex": 0,
 								"colliders": []
 							},
-							"fontSize": 20,
-							"labelText": "",
-							"horizontalAlignment": "Center",
-							"verticalAlignment": "Center",
-							"overflowType": "Clamp",
-							"enableWrap": false,
-							"fontType": "System",
-							"fontName": "arial"
+							"spriteFrameName": "Sprites/Hud/img_play.png",
+							"spriteType": "Simple",
+							"srcBlend": 770,
+							"dstBlend": 771,
+							"trimEnabled": true,
+							"sizeMode": "Custom"
 						},
-						"object_type": "Label",
+						"object_type": "Sprite",
 						"children": []
 					}
 				]
@@ -215,10 +213,10 @@
 		]
 	},
 	"designResolution": {
-		"w": 640,
-		"h": 960
+		"w": 480,
+		"h": 800
 	},
-	"resolutionFitWidth": false,
+	"resolutionFitWidth": true,
 	"resolutionFitHeight": true,
 	"spriteFrames": [
 		{
@@ -247,38 +245,38 @@
 			}
 		},
 		{
-			"name": "Sprites/Buttons/play-now-button.png",
-			"texturePath": "creator/Sprites/Buttons/play-now-button.png",
+			"name": "Sprites/Hud/img_play.png",
+			"texturePath": "creator/Sprites/Hud/img_play.png",
 			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 287,
-				"h": 71
+				"x": 9,
+				"y": 5,
+				"w": 35,
+				"h": 40
 			},
 			"offset": {
-				"x": 0,
+				"x": 1.5,
 				"y": 0
 			},
 			"rotated": false,
 			"originalSize": {
-				"w": 287,
-				"h": 71
+				"w": 50,
+				"h": 50
 			},
 			"centerRect": {
 				"x": 0,
 				"y": 0,
-				"w": 287,
-				"h": 71
+				"w": 35,
+				"h": 40
 			}
 		},
 		{
-			"name": "image/default_btn_pressed.png",
-			"texturePath": "creator/image/default_btn_pressed.png",
+			"name": "Sprites/Hud/img_circle.png",
+			"texturePath": "creator/Sprites/Hud/img_circle.png",
 			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 40,
-				"h": 40
+				"x": 2,
+				"y": 2,
+				"w": 46,
+				"h": 46
 			},
 			"offset": {
 				"x": 0,
@@ -286,24 +284,24 @@
 			},
 			"rotated": false,
 			"originalSize": {
-				"w": 40,
-				"h": 40
+				"w": 50,
+				"h": 50
 			},
 			"centerRect": {
-				"x": 11,
-				"y": 11,
-				"w": 18,
-				"h": 22
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 46
 			}
 		},
 		{
-			"name": "image/default_btn_disabled.png",
-			"texturePath": "creator/image/default_btn_disabled.png",
+			"name": "Sprites/Hud/img_circle_bg.png",
+			"texturePath": "creator/Sprites/Hud/img_circle_bg.png",
 			"rect": {
-				"x": 0,
-				"y": 0,
-				"w": 40,
-				"h": 40
+				"x": 2,
+				"y": 2,
+				"w": 46,
+				"h": 46
 			},
 			"offset": {
 				"x": 0,
@@ -311,14 +309,14 @@
 			},
 			"rotated": false,
 			"originalSize": {
-				"w": 40,
-				"h": 40
+				"w": 50,
+				"h": 50
 			},
 			"centerRect": {
-				"x": 15,
-				"y": 7,
-				"w": 10,
-				"h": 24
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 46
 			}
 		}
 	],

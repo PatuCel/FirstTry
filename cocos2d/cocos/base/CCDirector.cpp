@@ -1,8 +1,9 @@
-﻿/****************************************************************************
+/****************************************************************************
 Copyright (c) 2008-2010 Ricardo Quesada
 Copyright (c) 2010-2013 cocos2d-x.org
 Copyright (c) 2011      Zynga Inc.
-Copyright (c) 2013-2017 Chukong Technologies Inc.
+Copyright (c) 2013-2016 Chukong Technologies Inc.
+Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
 http://www.cocos2d-x.org
 
@@ -60,6 +61,7 @@ THE SOFTWARE.
 #include "base/CCAutoreleasePool.h"
 #include "base/CCConfiguration.h"
 #include "base/CCAsyncTaskPool.h"
+#include "base/ObjectFactory.h"
 #include "platform/CCApplication.h"
 
 #if CC_ENABLE_SCRIPT_BINDING
@@ -134,7 +136,7 @@ bool Director::init(void)
     // FPS
     _accumDt = 0.0f;
     _frameRate = 0.0f;
-    _FPSLabel = _drawnBatchesLabel = _drawnVerticesLabel = nullptr;
+    _FPSLabel = _drawnBatchesLabel = _drawnVerticesLabel = _drawnFrameSizeLabel = nullptr; //Antonio.Luna
     _totalFrames = 0;
     _lastUpdate = std::chrono::steady_clock::now();
     
@@ -207,6 +209,7 @@ Director::~Director(void)
     CC_SAFE_RELEASE(_FPSLabel);
     CC_SAFE_RELEASE(_drawnVerticesLabel);
     CC_SAFE_RELEASE(_drawnBatchesLabel);
+	CC_SAFE_RELEASE(_drawnFrameSizeLabel); //Antonio.Luna
 
     CC_SAFE_RELEASE(_runningScene);
     CC_SAFE_RELEASE(_notificationNode);
@@ -230,6 +233,7 @@ Director::~Director(void)
     CC_SAFE_RELEASE(_eventDispatcher);
     
     Configuration::destroyInstance();
+    ObjectFactory::destroyInstance();
 
     s_SharedDirector = nullptr;
 }
@@ -323,7 +327,8 @@ void Director::drawScene()
         _renderer->clearDrawStats();
         
         //render the scene
-        _openGLView->renderScene(_runningScene, _renderer);
+        if(_openGLView)
+            _openGLView->renderScene(_runningScene, _renderer);
         
         _eventDispatcher->dispatchEvent(_eventAfterVisit);
     }
@@ -864,6 +869,18 @@ Vec2 Director::getVisibleOrigin() const
     }
 }
 
+Rect Director::getSafeAreaRect() const
+{
+    if (_openGLView)
+    {
+        return _openGLView->getSafeAreaRect();
+    }
+    else
+    {
+        return Rect::ZERO;
+    }
+}
+
 // scene management
 
 void Director::runWithScene(Scene *scene)
@@ -1051,7 +1068,8 @@ void Director::reset()
     _runningScene = nullptr;
     _nextScene = nullptr;
 
-    _eventDispatcher->dispatchEvent(_eventResetDirector);
+    if (_eventDispatcher)
+        _eventDispatcher->dispatchEvent(_eventResetDirector);
     
     // cleanup scheduler
     getScheduler()->unscheduleAll();
@@ -1091,6 +1109,7 @@ void Director::reset()
     CC_SAFE_RELEASE_NULL(_FPSLabel);
     CC_SAFE_RELEASE_NULL(_drawnBatchesLabel);
     CC_SAFE_RELEASE_NULL(_drawnVerticesLabel);
+	CC_SAFE_RELEASE_NULL(_drawnFrameSizeLabel); //Antonio.Luna
     
     // purge bitmap cache
     FontFNT::purgeCachedData();
@@ -1279,7 +1298,7 @@ void Director::showStats()
     ++_frames;
     _accumDt += _deltaTime;
     
-    if (_displayStats && _FPSLabel && _drawnBatchesLabel && _drawnVerticesLabel)
+    if (_displayStats && _FPSLabel && _drawnBatchesLabel && _drawnVerticesLabel && _drawnFrameSizeLabel) //Antonio.Luna
     {
         char buffer[30] = {0};
 
@@ -1307,8 +1326,15 @@ void Director::showStats()
             _drawnVerticesLabel->setString(buffer);
             prevVerts = currentVerts;
         }
+		
+		//Antonio.Luna
+		Size frameSize = Director::getInstance()->getOpenGLView()->getFrameSize();
+		sprintf(buffer, "FrameSize: %dx%d", (int)frameSize.width, (int)frameSize.height);
+		_drawnFrameSizeLabel->setString(buffer);
+		//Antonio.Luna
 
-        const Mat4& identity = Mat4::IDENTITY;
+		const Mat4& identity = Mat4::IDENTITY;
+		_drawnFrameSizeLabel->visit(_renderer, identity, 0); //Antonio.Luna
         _drawnVerticesLabel->visit(_renderer, identity, 0);
         _drawnBatchesLabel->visit(_renderer, identity, 0);
         _FPSLabel->visit(_renderer, identity, 0);
@@ -1338,15 +1364,20 @@ void Director::createStatsLabel()
     std::string fpsString = "00.0";
     std::string drawBatchString = "000";
     std::string drawVerticesString = "00000";
+	std::string drawFrameSizeString = "00000"; //Antonio.Luna
+
     if (_FPSLabel)
     {
         fpsString = _FPSLabel->getString();
         drawBatchString = _drawnBatchesLabel->getString();
         drawVerticesString = _drawnVerticesLabel->getString();
+		drawFrameSizeString = _drawnFrameSizeLabel->getString(); //Antonio.Luna
         
         CC_SAFE_RELEASE_NULL(_FPSLabel);
         CC_SAFE_RELEASE_NULL(_drawnBatchesLabel);
         CC_SAFE_RELEASE_NULL(_drawnVerticesLabel);
+		CC_SAFE_RELEASE_NULL(_drawnFrameSizeLabel); //Antonio.Luna
+
         _textureCache->removeTextureForKey("/cc_fps_images");
         FileUtils::getInstance()->purgeCachedEntries();
     }
@@ -1358,8 +1389,10 @@ void Director::createStatsLabel()
     getFPSImageData(&data, &dataLength);
 
     Image* image = new (std::nothrow) Image();
-    bool isOK = image->initWithImageData(data, dataLength);
+    bool isOK = image ? image->initWithImageData(data, dataLength) : false;
     if (! isOK) {
+        if(image)
+            delete image;
         CCLOGERROR("%s", "Fails: init fps_images");
         return;
     }
@@ -1395,10 +1428,19 @@ void Director::createStatsLabel()
     _drawnVerticesLabel->initWithString(drawVerticesString, texture, 12, 32, '.');
     _drawnVerticesLabel->setScale(scaleFactor);
 
+	//Antonio.Luna
+	_drawnFrameSizeLabel = LabelAtlas::create();
+	_drawnFrameSizeLabel->retain();
+	_drawnFrameSizeLabel->setIgnoreContentScaleFactor(true);
+	_drawnFrameSizeLabel->initWithString(drawVerticesString, texture, 12, 32, '.');
+	_drawnFrameSizeLabel->setScale(scaleFactor);
+	//Antonio.Luna
+
 
     Texture2D::setDefaultAlphaPixelFormat(currentFormat);
 
     const int height_spacing = 22 / CC_CONTENT_SCALE_FACTOR();
+	_drawnFrameSizeLabel->setPosition(Vec2(0, height_spacing*3) + CC_DIRECTOR_STATS_POSITION); //Antonio.Luna
     _drawnVerticesLabel->setPosition(Vec2(0, height_spacing*2) + CC_DIRECTOR_STATS_POSITION);
     _drawnBatchesLabel->setPosition(Vec2(0, height_spacing*1) + CC_DIRECTOR_STATS_POSITION);
     _FPSLabel->setPosition(Vec2(0, height_spacing*0)+CC_DIRECTOR_STATS_POSITION);
