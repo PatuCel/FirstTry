@@ -104,7 +104,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	//Init All Managers
 	SceneManager::getInstance();
-	
 
 	SceneManager::getInstance()->changeScene(SceneManager::GAMEPLAY_SCENE, true); //new for calling Scenes
 
