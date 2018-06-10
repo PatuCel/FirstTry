@@ -170,6 +170,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Source\Components\Hud.cpp" />
     <ClCompile Include="..\Classes\Source\Main.cpp" />
     <ClCompile Include="..\Classes\Source\Managers\CameraManager.cpp" />
+    <ClCompile Include="..\Classes\Source\Managers\ConfigManager.cpp" />
     <ClCompile Include="..\Classes\Source\Managers\MapManager.cpp" />
     <ClCompile Include="..\Classes\Source\Managers\ResourceManager.cpp" />
     <ClCompile Include="..\Classes\Source\Managers\SceneManager.cpp" />
@@ -180,6 +181,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Source\Units\Boss.cpp" />
     <ClCompile Include="..\Classes\Source\Units\EnemyUnit.cpp" />
     <ClCompile Include="..\Classes\Source\Units\PlayerUnit.cpp" />
+    <ClCompile Include="..\Classes\Source\Units\ProjectileUnit.cpp" />
+    <ClCompile Include="..\Classes\Source\Utils\DataTables.cpp" />
+    <ClCompile Include="..\Classes\Source\Utils\MCBCallLambda.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\Headers\AppDelegate.h" />
@@ -187,6 +191,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Headers\Globals.h" />
     <ClInclude Include="..\Classes\Headers\Main.h" />
     <ClInclude Include="..\Classes\Headers\Managers\CameraManager.h" />
+    <ClInclude Include="..\Classes\Headers\Managers\ConfigManager.h" />
     <ClInclude Include="..\Classes\Headers\Managers\MapManager.h" />
     <ClInclude Include="..\Classes\Headers\Managers\ResourceManager.h" />
     <ClInclude Include="..\Classes\Headers\Managers\SceneManager.h" />
@@ -197,6 +202,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Headers\Units\Boss.h" />
     <ClInclude Include="..\Classes\Headers\Units\EnemyUnit.h" />
     <ClInclude Include="..\Classes\Headers\Units\PlayerUnit.h" />
+    <ClInclude Include="..\Classes\Headers\Units\ProjectileUnit.h" />
+    <ClInclude Include="..\Classes\Headers\Utils\DataTables.h" />
+    <ClInclude Include="..\Classes\Headers\Utils\MCBCallLambda.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

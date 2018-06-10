@@ -31,6 +31,12 @@
     <Filter Include="Headers\Components">
       <UniqueIdentifier>{96667bd6-3e43-473e-933e-16b511062818}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headers\Utils">
+      <UniqueIdentifier>{f78f15ff-46d2-4197-9a1b-f1f1f093052f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils">
+      <UniqueIdentifier>{c66ac09c-8e64-4cb5-8149-fee58fa49d72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\Source\AppDelegate.cpp">
@@ -74,6 +80,18 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Source\Components\Hud.cpp">
       <Filter>Source\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Source\Units\ProjectileUnit.cpp">
+      <Filter>Source\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Source\Utils\DataTables.cpp">
+      <Filter>Source\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Source\Utils\MCBCallLambda.cpp">
+      <Filter>Source\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Source\Managers\ConfigManager.cpp">
+      <Filter>Source\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +139,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Headers\Components\Hud.h">
       <Filter>Headers\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Headers\Utils\DataTables.h">
+      <Filter>Headers\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Headers\Utils\MCBCallLambda.h">
+      <Filter>Headers\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Headers\Managers\ConfigManager.h">
+      <Filter>Headers\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Headers\Units\ProjectileUnit.h">
+      <Filter>Headers\Units</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

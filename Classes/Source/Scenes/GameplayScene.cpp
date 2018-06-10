@@ -1,5 +1,6 @@
 #include "SimpleAudioEngine.h"
 #include "Scenes/GameplayScene.h"
+#include "Units/PlayerUnit.h"
 #include "Units/Boss.h"
 #include "Units/EnemyUnit.h"
 #include "Managers/ResourceManager.h"
@@ -75,7 +76,7 @@ bool GameplayScene::init()
 	boss->setHealth(500);
 	this->addChild(boss, 2);
 
-	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 4), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 4), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
 	this->addChild(player, 1);
 
 	MapManager::getInstance()->loadMap("test.tmx");
@@ -230,7 +231,7 @@ bool GameplayScene::loadEnemies()
 
 	for (int x = 0; x<enemiesTiles.size(); x++)
 	{
-		auto tmpEnemy = EnemyUnit::createEnemy("enemy02.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::UNIT_WEAPON_DEFAULT);
+		auto tmpEnemy = EnemyUnit::createEnemy("enemy02.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
 		enemies.push_back(tmpEnemy);
 	}
 
