@@ -3,6 +3,7 @@
 #include "Scenes/GameplayScene.h"
 #include "Scenes/MainMenuScene.h"
 #include "Managers/SceneManager.h"
+#include "Managers/ConfigManager.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -56,6 +57,10 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+
+	//Iribe
+	ConfigManager::Load_Shooter_Config("Config.json");
+
 	// initialize director
 	auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();

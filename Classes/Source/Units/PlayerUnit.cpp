@@ -7,7 +7,7 @@ bool PlayerUnit::m_moveToRight = false;
 
 PlayerUnit* PlayerUnit::createPlayer(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon)
 {
-	return (PlayerUnit*) createUnit(filePath, pos, state, weapon);
+	return (PlayerUnit*) createUnit(filePath, pos, state, weapon,true);
 }
 
 void PlayerUnit::startPlayerDirection(PlayerMoveDirection direction)

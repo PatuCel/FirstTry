@@ -12,5 +12,8 @@
 
 #define TEST 1
 
+#define PROJECTILE_SPEED_FACTOR 3.00f
+#define PROJECTILE_FREQUENCY_FACTOR 3.00f
+
 #define CC_SCENE_MENU_MAIN "Logo.ccreator"
 #define CC_UI_HUD "Hud.ccreator"
