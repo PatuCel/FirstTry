@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-up" width="15" height="25" tilewidth="32" tileheight="32" infinite="0" nextobjectid="11">
- <tileset firstgid="1" source="background_tiles.tsx"/>
+ <tileset firstgid="1" name="background_tiles" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="2" columns="2">
+  <image source="background_tiles.png" width="67" height="34"/>
+ </tileset>
+ <tileset firstgid="3" source="enemies_tiles.tsx"/>
  <layer name="background" width="15" height="25">
   <data encoding="csv">
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -88,7 +91,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="enemies" width="15" height="25" opacity="0">
+ <layer name="enemies" width="15" height="25">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -101,7 +104,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,
+0,0,0,3,0,0,0,0,0,0,0,4,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

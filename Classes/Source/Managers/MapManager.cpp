@@ -29,6 +29,8 @@ bool MapManager::loadMap(const std::string filePath)
 		m_layerCollectibles = m_map->getLayer("collectibles");
 		m_layerEnemies = m_map->getLayer("enemies");
 
+		m_layerEnemies->setVisible(false); //Hiding Enemies Tiles
+
 		m_screenScale = Director::getInstance()->getContentScaleFactor();
 
 		m_loopStartPosition = (m_map->getMapSize().height *  m_map->getTileSize().height) - SCREEN_RESOLUTION_HEIGHT /2;
