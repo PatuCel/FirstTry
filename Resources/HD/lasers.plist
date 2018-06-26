@@ -4,7 +4,7 @@
  <dict>
   <key>frames</key>
   <dict>
-   <key>./laserEnemy</key>
+   <key>laserEnemy.png</key>
    <dict>
     <key>aliases</key>
     <array/>
@@ -19,7 +19,7 @@
     <key>textureRotated</key>
     <false/>
    </dict>
-   <key>./laserPlayer</key>
+   <key>laserPlayer.png</key>
    <dict>
     <key>aliases</key>
     <array/>

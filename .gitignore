@@ -12,6 +12,8 @@ Release.win32
 *.user
 *.pyc
 proj.win32/.vs
-bin
-build
+*.bin
+build/*
+!build/test.txt
+!build/install-deps-linux.sh
 cocos2d/cocos/platform/android/libcocos2dx/build/

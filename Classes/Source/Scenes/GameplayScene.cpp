@@ -231,7 +231,21 @@ bool GameplayScene::loadEnemies()
 
 	for (int x = 0; x<enemiesTiles.size(); x++)
 	{
-		auto tmpEnemy = EnemyUnit::createEnemy("enemy02.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
+		EnemyUnit* tmpEnemy;
+
+		int enemyTileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_ENEMIES)->getTileGIDAt(enemiesTiles[x]);
+
+		switch (enemyTileGID)
+		{
+			case 3: //Enemy0 Type: 01
+				tmpEnemy = EnemyUnit::createEnemy("enemy01.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
+				break;
+
+			case 4: //Enemy Type: 02
+				tmpEnemy = EnemyUnit::createEnemy("enemy02.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
+				break;
+		}
+		
 		enemies.push_back(tmpEnemy);
 	}
 
