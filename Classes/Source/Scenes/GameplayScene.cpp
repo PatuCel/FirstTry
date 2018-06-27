@@ -65,18 +65,19 @@ bool GameplayScene::init()
 
 
 	ResourceManager::getInstance()->LoadSpriteSheet("units.plist");
+	ResourceManager::getInstance()->LoadSpriteSheet("lasers.plist");
 
 	ResourceManager::getInstance()->LoadSpriteSheet("tp_level_01.plist");
 	
 
 	// boss sprite
 	auto frameArray = ResourceManager::getInstance()->LoadSpriteAnimation("frame_%02d_delay-0.05s.png", 20);
-	boss = Boss::createBoss(frameArray, 0.05f);
+	boss = Boss::createBoss(2,frameArray, 0.05f);
 	boss->setPosition(visibleSize.width / 2, visibleSize.height - boss->getContentSize().height);
 	boss->setHealth(500);
 	this->addChild(boss, 2);
 
-	player = PlayerUnit::createPlayer("player.png", Vec2(visibleSize.width / 2, visibleSize.height / 4), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
+	player = PlayerUnit::createPlayer(0, Vec2(visibleSize.width / 2, visibleSize.height / 4), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
 	this->addChild(player, 1);
 
 	MapManager::getInstance()->loadMap("test.tmx");
@@ -234,17 +235,7 @@ bool GameplayScene::loadEnemies()
 		EnemyUnit* tmpEnemy;
 
 		int enemyTileGID = MapManager::getInstance()->getLayer(MapLayer::MAP_LAYER_ENEMIES)->getTileGIDAt(enemiesTiles[x]);
-
-		switch (enemyTileGID)
-		{
-			case 3: //Enemy0 Type: 01
-				tmpEnemy = EnemyUnit::createEnemy("enemy01.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
-				break;
-
-			case 4: //Enemy Type: 02
-				tmpEnemy = EnemyUnit::createEnemy("enemy02.png", Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
-				break;
-		}
+		tmpEnemy = EnemyUnit::createEnemy(enemyTileGID, Vec2(MapManager::getInstance()->positionFromTile(enemiesTiles[x])), BaseUnit::UnitState::UNIT_STATE_NORMAL, BaseUnit::UnitWeapon::ALLIED);
 		
 		enemies.push_back(tmpEnemy);
 	}

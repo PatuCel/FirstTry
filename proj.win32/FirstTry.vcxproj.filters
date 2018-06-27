@@ -84,9 +84,6 @@
     <ClCompile Include="..\Classes\Source\Units\ProjectileUnit.cpp">
       <Filter>Source\Units</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Source\Utils\DataTables.cpp">
-      <Filter>Source\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Source\Utils\MCBCallLambda.cpp">
       <Filter>Source\Utils</Filter>
     </ClCompile>
@@ -139,9 +136,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Headers\Components\Hud.h">
       <Filter>Headers\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Headers\Utils\DataTables.h">
-      <Filter>Headers\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Headers\Utils\MCBCallLambda.h">
       <Filter>Headers\Utils</Filter>

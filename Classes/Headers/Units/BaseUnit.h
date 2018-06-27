@@ -22,16 +22,15 @@ public:
 	enum AirCraftType
 	{
 		Player,
-		Raptor,
-		Avenger,
-		Falcon,
-		Crow,
-		Condor,
+		Enemy,
+		Boss,
+		Enemy2,
+		Enemy3,
 		TypeCount
 	};
 	
-	static BaseUnit* createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon, const bool isAllied);
-	static BaseUnit* createUnit(Vector<SpriteFrame*> frameArray, float delay, const bool isAllied);
+	static BaseUnit* createUnit(int UnitType ,const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon, const bool isAllied);
+	static BaseUnit* createUnit(int UnitType,Vector<SpriteFrame*> frameArray, float delay, const bool isAllied);
 	void setUnitState(UnitState newState);
 	void setUnitWeapon(UnitWeapon newWeapon);
 

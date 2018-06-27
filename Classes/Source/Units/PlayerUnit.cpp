@@ -1,13 +1,15 @@
 #include "Units/PlayerUnit.h"
+#include "Managers/ConfigManager.h"
 
 bool PlayerUnit::m_moveToUp = false;
 bool PlayerUnit::m_moveToLeft = false;
 bool PlayerUnit::m_moveToDown = false;
 bool PlayerUnit::m_moveToRight = false;
 
-PlayerUnit* PlayerUnit::createPlayer(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon)
+PlayerUnit* PlayerUnit::createPlayer(int UnitType,Vec2 pos, UnitState state, UnitWeapon weapon)
 {
-	return (PlayerUnit*) createUnit(filePath, pos, state, weapon,true);
+	std::string filePath = ConfigManager::GetAircraftDataTable()[UnitType].texturePath;
+	return (PlayerUnit*) createUnit(UnitType,filePath, pos, state, weapon,true);
 }
 
 void PlayerUnit::startPlayerDirection(PlayerMoveDirection direction)

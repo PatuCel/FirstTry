@@ -1,6 +1,8 @@
 #include "Units/EnemyUnit.h"
+#include "Managers/ConfigManager.h"
 
-EnemyUnit* EnemyUnit::createEnemy(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon)
+EnemyUnit* EnemyUnit::createEnemy(int UnitType, Vec2 pos, UnitState state, UnitWeapon weapon)
 {
-	return (EnemyUnit*) createUnit(filePath, pos, state, weapon,false);
+	std::string filePath = ConfigManager::GetAircraftDataTable()[UnitType].texturePath;
+	return (EnemyUnit*) createUnit(UnitType,filePath, pos, state, weapon,false);
 }

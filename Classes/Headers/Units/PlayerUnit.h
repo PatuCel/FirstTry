@@ -14,7 +14,7 @@ enum PlayerMoveDirection {
 class PlayerUnit: public BaseUnit
 {
 public:
-	static PlayerUnit* createPlayer(const std::string filePath, Vec2 pos, UnitState state, UnitWeapon weapon);
+	static PlayerUnit* createPlayer(int UnitType, Vec2 pos, UnitState state, UnitWeapon weapon);
 	static void startPlayerDirection(PlayerMoveDirection direction);
 	static void stopPlayerDirection(PlayerMoveDirection direction);
 

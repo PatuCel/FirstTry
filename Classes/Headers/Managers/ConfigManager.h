@@ -26,19 +26,15 @@ namespace ConfigManager
 
 	static struct AircraftData
 	{
+		std::string                     name;
 		int								hitPoints;
-		float							speed_x;
-		float							speed_y;
+		int								projectileType;
 		std::string						texturePath;
-		//sf::IntRect						textureRect;
-		float							fireInterval;
-		std::vector<Direction>			directions;
-		//bool							hasRollAnimation;
-		int								spreadLevel;
 	};
 
 	static struct ProjectileData
 	{
+		std::string						name;
 		int								damage;
 		float							speed;
 		int								spreadlevel;
@@ -51,11 +47,6 @@ namespace ConfigManager
 
 	std::vector<AircraftData> GetAircraftDataTable();
 	std::vector<ProjectileData> GetProjectileDataTable();
-
-	std::vector<ConfigManager::AircraftData>	initializeAircraftData();
-	std::vector<ConfigManager::ProjectileData>	initializeProjectileData();
-
-	
 
 };
 #endif//CONFIGMANAGER_H

@@ -14,7 +14,7 @@ ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, 
 		
 		projectileUnit->setDamage(ConfigManager::GetProjectileDataTable()[Type].damage);
 		
-		projectileUnit->setSpeed(Vec2(ConfigManager::GetProjectileDataTable()[Type].speed, ConfigManager::GetProjectileDataTable()[Type].speed));
+		//projectileUnit->setSpeed(Vec2(ConfigManager::GetProjectileDataTable()[Type].speed, ConfigManager::GetProjectileDataTable()[Type].speed));
 		projectileUnit->setSpread(ConfigManager::GetProjectileDataTable()[Type].spreadlevel);
 		projectileUnit->setPosition(position);
 
@@ -29,14 +29,51 @@ ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, 
 		float bulletSpeed = PROJECTILE_SPEED_FACTOR * (projectileSpeed);
 		
 
+		projectileUnit->setSpeed(Vec2(projectileSpeed, projectileSpeed));
+
 		offset.normalize();
 		auto shootAmount = offset * 1000;
 
 		auto realDest = shootAmount + AircraftPos;
 
-		auto actionMove = MoveTo::create(bulletSpeed, realDest);
-		auto actionRemove = RemoveSelf::create();
-		projectileUnit->runAction(Sequence::create(actionMove, actionRemove, nullptr));
+
+		
+		///Projectile Pattern
+
+		switch (Type)
+		{
+		case 0:
+		{
+			auto actionMove = MoveTo::create(bulletSpeed, realDest);
+			auto actionRemoveZero = RemoveSelf::create();
+			projectileUnit->runAction(Sequence::create(actionMove, actionRemoveZero, nullptr));
+		}
+			break;
+		case 1:
+		{
+			ccBezierConfig configName;
+			configName.controlPoint_1 = Point(AircraftPos.x - 100, AircraftPos.y + 100);
+			configName.controlPoint_2 = Point(AircraftPos.x + 200, AircraftPos.y + 100);
+			configName.endPosition = realDest;
+			auto actionMoveBezier = BezierTo::create(bulletSpeed, configName);
+			auto actionRemoveOne = RemoveSelf::create();
+			projectileUnit->runAction(Sequence::create(actionMoveBezier, actionRemoveOne, nullptr));
+		}
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		default:
+		{
+			MoveTo * actionMove = MoveTo::create(bulletSpeed, realDest);
+			auto actionRemoveZero = RemoveSelf::create();
+			projectileUnit->runAction(Sequence::create(actionMove, actionRemoveZero, nullptr));
+		}
+			break;
+		}
 
 		return projectileUnit;
 	}
@@ -44,16 +81,6 @@ ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, 
 	CC_SAFE_DELETE(projectileUnit);
 	return nullptr;
 }
-
-
-
-
-
-float ProjectileUnit::getMaxSpeed() const
-{
-	return 10.f;
-}
-
 
 void ProjectileUnit::setSpeed(Vec2 speed)
 {
@@ -65,7 +92,33 @@ void ProjectileUnit::setDamage(float damage)
 	mDamage = damage;
 }
 
-void ProjectileUnit::setSpread(float spread)
+void ProjectileUnit::setSpread(int spread)
 {
 	mSpread = spread;
+}
+
+
+Vec2 ProjectileUnit::getSpeed()
+{
+	return mSpeed;
+}
+
+float ProjectileUnit::getDamage()
+{
+	return mDamage;
+}
+
+int ProjectileUnit::getSpread()
+{
+	return mSpread;
+}
+
+float ProjectileUnit::toDegree(float radian)
+{
+	return 180.f / 3.141592653589793238462643383f * radian;
+}
+
+float ProjectileUnit::toRadian(float degree)
+{
+	return 3.141592653589793238462643383f / 180.f * degree;
 }

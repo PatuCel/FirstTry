@@ -1,28 +1,52 @@
 {
-	"player": {
-		"hitpoints" : 20,
-		"speed" : [500,500],
-		"fireInterval" : 2,
-		"spreadlevel"  : 1,
-		"weapontype"   : 1,
-		"isAlly"	   : true
+	"aircrafts" : {
+			"aircraft_0"   : {
+				"name"  : "aircraft_player_0",
+				"projectile_type" : 1,
+				"hitpoints" : 10,
+				"texturePath" : "player.png"
+			},
+			"aircraft_1"   : {
+				"name"  : "aircraft_enemy_0",
+				"projectile_type" : 0,
+				"hitpoints" : 1,
+				"texturePath" : "enemy02.png"
+			},
+			"aircraft_2"   : {
+				"name"  : "aircraft_boss_0",
+				"projectile_type" : 0,
+				"hitpoints" : 30,
+				"texturePath" : "frame_%02d_delay-0.05s.png"
+			},
+			"aircraft_3"   : {
+				"name"  : "aircraft_enemy_2",
+				"projectile_type" : 0,
+				"hitpoints" : 1,
+				"texturePath" : "enemy01.png"
+			},
+			"aircraft_4"   : {
+				"name"  : "aircraft_enemy_3",
+				"projectile_type" : 0,
+				"hitpoints" : 5,
+				"texturePath" : "enemy02.png"
+			}
 	},
 	"projectiles" : {
 			"projectile_0"   : {
 				"name"  : "normal",
-				"velocity"  : 3.0,
+				"velocity"  : 2.0,
 				"damage"	: 10,
 				"spreadlevel" : 1,
 				"fireRate"	:50.0,
-				"texturePath" : "player.png"
+				"texturePath" : "laserEnemy.png"
 			},
 			"projectile_1"   : {
 				"name"  : "special",
-				"velocity"  : 0.5,
+				"velocity"  : 1.0,
 				"damage"	: 20,
-				"spreadlevel" : 2,
-				"fireRate"	:1.5,
-				"texturePath" : "player.png"
+				"spreadlevel" : 1,
+				"fireRate"	:30.0,
+				"texturePath" : "laserPlayer.png"
 			}
 	}
 }

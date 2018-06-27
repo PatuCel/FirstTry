@@ -182,7 +182,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Source\Units\EnemyUnit.cpp" />
     <ClCompile Include="..\Classes\Source\Units\PlayerUnit.cpp" />
     <ClCompile Include="..\Classes\Source\Units\ProjectileUnit.cpp" />
-    <ClCompile Include="..\Classes\Source\Utils\DataTables.cpp" />
     <ClCompile Include="..\Classes\Source\Utils\MCBCallLambda.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -203,7 +202,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Headers\Units\EnemyUnit.h" />
     <ClInclude Include="..\Classes\Headers\Units\PlayerUnit.h" />
     <ClInclude Include="..\Classes\Headers\Units\ProjectileUnit.h" />
-    <ClInclude Include="..\Classes\Headers\Utils\DataTables.h" />
     <ClInclude Include="..\Classes\Headers\Utils\MCBCallLambda.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

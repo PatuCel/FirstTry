@@ -11,7 +11,7 @@ namespace
 }
 */
 
-BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon, const bool isAllied)
+BaseUnit* BaseUnit::createUnit(int UnitType,const std::string spriteFrameName, Vec2 pos, UnitState state, UnitWeapon weapon, const bool isAllied)
 {
 	BaseUnit* baseUnit = new (std::nothrow) BaseUnit();
 
@@ -23,10 +23,7 @@ BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, Unit
 		baseUnit->setUnitState(state);
 		baseUnit->setUnitWeapon(weapon);
 		baseUnit->mShooterMultiplier = 1.0f;
-		if (isAllied)//Iribe
-			baseUnit->SetShooter(0, baseUnit->mShooterMultiplier, isAllied);
-		else
-			baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);
+		baseUnit->SetShooter(ConfigManager::GetAircraftDataTable()[UnitType].projectileType, baseUnit->mShooterMultiplier, isAllied);
 
 		return baseUnit;
 	}
@@ -35,18 +32,14 @@ BaseUnit* BaseUnit::createUnit(const std::string spriteFrameName, Vec2 pos, Unit
 	return nullptr;
 }
 
-BaseUnit* BaseUnit::createUnit(Vector<SpriteFrame*> frameArray, float delay, const bool isAllied)
+BaseUnit* BaseUnit::createUnit(int UnitType,Vector<SpriteFrame*> frameArray, float delay, const bool isAllied)
 {
 	BaseUnit* baseUnit = new (std::nothrow) BaseUnit();
 
 	baseUnit->initWithSpriteFrame(frameArray.front());
 	baseUnit->setPosition(0, 0);
 	baseUnit->mShooterMultiplier = 1.0f;
-	if (isAllied)//Iribe
-		baseUnit->SetShooter(0, baseUnit->mShooterMultiplier, isAllied);
-	else
-		baseUnit->SetShooter(1, baseUnit->mShooterMultiplier, isAllied);
-
+	baseUnit->SetShooter(ConfigManager::GetAircraftDataTable()[UnitType].projectileType, baseUnit->mShooterMultiplier, isAllied);
 	auto animation = Animation::createWithSpriteFrames(frameArray, delay);
 	baseUnit->runAction(RepeatForever::create(Animate::create(animation)));
 

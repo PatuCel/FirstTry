@@ -11,13 +11,6 @@ using namespace ConfigManager;
 rapidjson::Document m_levelJson;
 
 
-std::vector<ConfigManager::ProjectileData> ConfigManager::initializeProjectileData()
-{
-	ConfigManager::Load_Shooter_Config("Config.json");
-	std::vector<ConfigManager::ProjectileData> data = ConfigManager::GetProjectileDataTable();
-	return data;
-}
-
 
 bool ConfigManager::Load_Shooter_Config(const std::string filePath)
 {
@@ -36,15 +29,26 @@ bool ConfigManager::Load_Shooter_Config(const std::string filePath)
 				return false;
 			}
 
-			//Player
+			////Aircrafts
 
-			const rapidjson::Value& playerValue = m_levelJson["player"];
-			int playerHitpoints = playerValue["hitpoints"].GetFloat();
-			const rapidjson::Value& playerSpeedPos = playerValue["speed"];
-			Vec2 playerSpeed = Vec2(playerSpeedPos[0].GetInt(), playerSpeedPos[1].GetInt());
-			int playerFireInterval= playerValue["hitpoints"].GetFloat();
-			int playerSpreadLevel = playerValue["spreadlevel"].GetFloat();
-			int playerWeaponType = playerValue["weapontype"].GetFloat();
+			std::vector<ConfigManager::AircraftData> dataAircraftTest(BaseUnit::TypeCount);
+			dataAircraft = dataAircraftTest;
+			
+			const rapidjson::Value& aircraftsValue = m_levelJson["aircrafts"];
+			int aircraftsMembers = aircraftsValue.MemberCount();
+
+			for (int x = 0; x < aircraftsMembers; x++)
+			{
+				std::string aircraftName = "aircraft_" + std::to_string(x);
+				const rapidjson::Value& singleAircraftValue = aircraftsValue[aircraftName.c_str()];
+			
+				dataAircraft[x].name= singleAircraftValue["name"].GetString();
+				dataAircraft[x].hitPoints = singleAircraftValue["hitpoints"].GetInt();
+				dataAircraft[x].projectileType = singleAircraftValue["projectile_type"].GetInt();
+				dataAircraft[x].texturePath = singleAircraftValue["texturePath"].GetString();
+		
+			}
+
 			
 			std::vector<ConfigManager::ProjectileData> dataProjectileTest(ProjectileUnit::TypeCount);
 			dataProjectile = dataProjectileTest;
@@ -58,6 +62,7 @@ bool ConfigManager::Load_Shooter_Config(const std::string filePath)
 				const rapidjson::Value& singleProjectileValue = projectilesValue[projectileName.c_str()];
 				//std::string projec
 
+				dataProjectile[x].name = singleProjectileValue["name"].GetString();
 				dataProjectile[x].damage = singleProjectileValue["damage"].GetFloat();
 				dataProjectile[x].speed = singleProjectileValue["velocity"].GetFloat();
 				dataProjectile[x].spreadlevel = singleProjectileValue["spreadlevel"].GetInt();

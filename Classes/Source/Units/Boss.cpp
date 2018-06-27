@@ -4,9 +4,10 @@
 
 using namespace ui;
 
-Boss* Boss::createBoss(Vector<SpriteFrame*> frameArray, float delay)
+Boss* Boss::createBoss(int UnitType,Vector<SpriteFrame*> frameArray, float delay)
 {
-	return (Boss*)createUnit(frameArray, delay,false);
+
+	return (Boss*)createUnit(UnitType,frameArray, delay,false);
 }
 
 void Boss::setHealth(float health)
