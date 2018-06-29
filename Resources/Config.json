@@ -34,15 +34,15 @@
 	"projectiles" : {
 			"projectile_0"   : {
 				"name"  : "normal",
-				"velocity"  : 2.0,
+				"velocity"  : 1.0,
 				"damage"	: 10,
 				"spreadlevel" : 1,
-				"fireRate"	:50.0,
+				"fireRate"	:4.0,
 				"texturePath" : "laserEnemy.png"
 			},
 			"projectile_1"   : {
 				"name"  : "special",
-				"velocity"  : 1.0,
+				"velocity"  : 2.0,
 				"damage"	: 20,
 				"spreadlevel" : 1,
 				"fireRate"	:30.0,

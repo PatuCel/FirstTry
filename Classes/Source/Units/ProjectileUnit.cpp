@@ -38,7 +38,7 @@ ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, 
 
 
 		
-		///Projectile Pattern
+		///Projectile Pattern//TO DO: to add different type of projectiles, Homing Missiles, Curve Lasers. 
 
 		switch (Type)
 		{
@@ -51,20 +51,22 @@ ProjectileUnit* ProjectileUnit::createUnit(int Type,Vec2 position, Vec2 offset, 
 			break;
 		case 1:
 		{
+			/*
 			ccBezierConfig configName;
 			configName.controlPoint_1 = Point(AircraftPos.x - 100, AircraftPos.y + 100);
 			configName.controlPoint_2 = Point(AircraftPos.x + 200, AircraftPos.y + 100);
 			configName.endPosition = realDest;
+
 			auto actionMoveBezier = BezierTo::create(bulletSpeed, configName);
+
 			auto actionRemoveOne = RemoveSelf::create();
 			projectileUnit->runAction(Sequence::create(actionMoveBezier, actionRemoveOne, nullptr));
+			*/
+
+			auto actionMove = MoveTo::create(bulletSpeed, realDest);
+			auto actionRemoveZero = RemoveSelf::create();
+			projectileUnit->runAction(Sequence::create(actionMove, actionRemoveZero, nullptr));
 		}
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
 			break;
 		default:
 		{
